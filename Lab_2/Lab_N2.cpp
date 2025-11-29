@@ -5,7 +5,7 @@
 /*  By: st93642@students.tsi.lv                             TT    SSSSSSS II */
 /*                                                          TT         SS II */
 /*  Created: Nov 07 2025 00:29 st93642                      TT    SSSSSSS II */
-/*  Updated: Nov 07 2025 01:24 st93642                                       */
+/*  Updated: Nov 07 2025 16:34 st93642                                       */
 /*                                                                           */
 /*   Transport and Telecommunication Institute - Riga, Latvia                */
 /*                       https://tsi.lv                                      */
@@ -35,6 +35,7 @@ int     main(void)
     int     abs_d;
     int     i;
 
+    printf("Task number = %d\n", 93642 % 16);
     printf("Enter coefficients a, b, c, d: ");
     scanf("%d %d %d %d", &eq.a, &eq.b, &eq.c, &eq.d);
 
