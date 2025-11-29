@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Comprehensive test script for main.cpp
-# Tests various scenarios with and without Valgrind
+# Test scenarios with and without Valgrind
 
 PROGRAM="./main"
 VALGRIND="valgrind --leak-check=full"
@@ -19,7 +18,7 @@ test_cases=(
     "Large size|5\n1\n1\n2\n3\n4\n5|0"
 )
 
-echo "=== Comprehensive Test Script for main.cpp ==="
+echo "=== Test Script for main.cpp ==="
 echo
 
 total_tests=${#test_cases[@]}
@@ -37,10 +36,10 @@ for i in "${!test_cases[@]}"; do
     exit_code=$?
     echo "Exit code: $exit_code (expected: $expected_exit)"
     if [ "$exit_code" -eq "$expected_exit" ]; then
-        echo "✓ Exit code correct"
+        echo "Exit code correct"
         ((passed++))
     else
-        echo "✗ Exit code mismatch"
+        echo "Exit code mismatch"
         ((failed++))
     fi
 
@@ -48,9 +47,9 @@ for i in "${!test_cases[@]}"; do
     valgrind_output=$(echo -e "$inputs" | timeout 10s $VALGRIND $PROGRAM 2>&1)
     valgrind_exit=$?
     if echo "$valgrind_output" | grep -q "no leaks are possible" && echo "$valgrind_output" | grep -q "ERROR SUMMARY: 0 errors"; then
-        echo "✓ No memory leaks or errors"
+        echo "No memory leaks or errors"
     else
-        echo "✗ Possible memory leaks or errors"
+        echo "Possible memory leaks or errors"
         echo "Valgrind summary:"
         echo "$valgrind_output" | grep -E "(HEAP SUMMARY|ERROR SUMMARY|definitely lost|indirectly lost|possibly lost|All heap blocks)" | head -10
     fi
@@ -64,7 +63,7 @@ done
 
 echo "Summary: $passed passed, $failed failed out of $total_tests tests"
 if [ $failed -eq 0 ]; then
-    echo "All tests passed! 🎉"
+    echo "All tests passed"
 else
     echo "Some tests failed. Check output above."
 fi
