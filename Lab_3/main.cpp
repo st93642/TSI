@@ -5,7 +5,7 @@
 /*  By: st93642@students.tsi.lv                             TT    SSSSSSS II */
 /*                                                          TT         SS II */
 /*  Created: Nov 29 2025 17:19 st93642                      TT    SSSSSSS II */
-/*  Updated: Nov 30 2025 01:58 st93642                                       */
+/*  Updated: Dec 01 2025 00:03 st93642                                       */
 /*                                                                           */
 /*   Transport and Telecommunication Institute - Riga, Latvia                */
 /*                       https://tsi.lv                                      */
@@ -27,8 +27,8 @@ int ft_error_exit_msg(const char *msg, double *arr)
 int main(void)
 {
     srand(time(NULL));
-    int     n, choice, maxI, minI, start, end, i, swap;
-    double  res, tmp, min, max;
+    int     n, flag, start, end, i;
+    double  tmp, min, max;
     double  *arr;
     
     printf("\nTask number = %d\n\n", 93642 % 20);
@@ -42,15 +42,15 @@ int main(void)
         return  (ft_error_exit_msg("Memory allocation failed", NULL));
     
     printf("Fill array (1 = Manual, 2 = Auto): ");
-    if (scanf("%d", &choice) != 1 || (choice != 1 && choice != 2))
-        return  (ft_error_exit_msg("Invalid choice", arr));
-    if (choice == 1)
+    if (scanf("%d", &flag) != 1 || (flag != 1 && flag != 2))
+        return  (ft_error_exit_msg("Invalid flag", arr));
+    if (flag == 1)
     {
-        i = 0;
-        while (i < n)
+        i = -1;
+        while (++i < n)
         {
-            printf("arr[%d] = ", i);
-            if (scanf("%lf", &arr[i++]) != 1)
+            printf("Enter element %d: ", i + 1);
+            if (scanf("%lf", &arr[i]) != 1)
                 return  (ft_error_exit_msg("Invalid input", arr));
         }
     }
@@ -62,42 +62,50 @@ int main(void)
         printf("Max: ");
         if (scanf("%lf", &max) != 1)
             return  (ft_error_exit_msg("Invalid max", arr));
-        i = 0;
-        while (i < n) arr[i++] = min + (max - min) * rand() / RAND_MAX;
+        i = -1;
+        while (++i < n) arr[i] = min + (max - min) * rand() / RAND_MAX;
     }
     
     printf("Array: ");
-    i = 0;
-    while (i < n) printf("%.2f ", arr[i++]);
+    i = -1;
+    while (++i < n) printf("%.2f ", arr[i]);
     
     printf("\n\n======= Results =======\n");
     
-    res = 0;
+    tmp = 0;
     i = -1;
     while (++i < n)
-        if (arr[i] > 0) res += arr[i];
-    printf("Sum of positives: %.2f\n", res);
+        if (arr[i] > 0) tmp += arr[i];
+    printf("Sum of positive elements: %.2f\n", tmp);
     
-    res = 1;
-    maxI = 0;
-    minI = 0;
+    tmp = 1;
+    max = 0;
+    min = 0;
     i = 0;
     while (++i < n)
     {
-        if (fabs(arr[i]) > fabs(arr[maxI])) maxI = i;
-        if (fabs(arr[i]) < fabs(arr[minI])) minI = i;
+        if (fabs(arr[i]) > fabs(arr[(int)max])) max = i;
+        if (fabs(arr[i]) < fabs(arr[(int)min])) min = i;
     }
-    start = (maxI < minI) ? maxI + 1 : minI + 1;
-    end = (maxI < minI) ? minI : maxI;
-    while (start < end)
-        res *= arr[start++];
+    start = (max < min) ? max : min;
+    end = (max < min) ? min : max;
+    if (end - start <= 1)
+    {
+        printf("No elements between extremes.\n");
+    }
+    else
+    {
+        while (++start < end)
+            tmp *= arr[start];
 
-    printf("Product of elements between extremes: %.2f\n", res);
+        printf("Product of elements between extremes: %.2f\n", tmp);
+    }
+    
 
     end = n - 1;
     do
     {
-        swap = 0;
+        flag = 0;
         i = -1;
         while (++i < end)
         {
@@ -106,19 +114,19 @@ int main(void)
                 tmp = arr[i];
                 arr[i] = arr[i + 1];
                 arr[i + 1] = tmp;
-                swap = 1;
+                flag = 1;
             }
         }
         end--;
     }
-    while (swap);
+    while (flag);
 
     printf("Sorted (descending): ");
 
-    i = 0;
-    while (i < n) printf("%.2f ", arr[i++]);
+    i = -1;
+    while (++i < n) printf("%.2f ", arr[i]);
+
     printf("\n");
-    
     free(arr);
     return (0);
 }
