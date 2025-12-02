@@ -5,7 +5,7 @@
 /*  By: st93642@students.tsi.lv                             TT    SSSSSSS II */
 /*                                                          TT         SS II */
 /*  Created: Nov 29 2025 17:19 st93642                      TT    SSSSSSS II */
-/*  Updated: Dec 01 2025 00:03 st93642                                       */
+/*  Updated: Dec 01 2025 03:57 st93642                                       */
 /*                                                                           */
 /*   Transport and Telecommunication Institute - Riga, Latvia                */
 /*                       https://tsi.lv                                      */
@@ -101,7 +101,6 @@ int main(void)
         printf("Product of elements between extremes: %.2f\n", tmp);
     }
     
-
     end = n - 1;
     do
     {
