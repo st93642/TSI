@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="1260" viewBox="0 0 840 1260">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+    </marker>
+    <style>
+      .shape { fill: #fff; stroke: #000; stroke-width: 2; }
+      .line { fill: none; stroke: #000; stroke-width: 2; marker-end: url(#arrow); }
+      .label { font-family: 'Times New Roman', serif; font-size: 18px; text-anchor: middle; }
+      .small { font-family: 'Times New Roman', serif; font-size: 16px; }
+    </style>
+  </defs>
+
+  <ellipse class="shape" cx="420" cy="45" rx="90" ry="25"/>
+  <text class="label" x="420" y="51">Begin</text>
+
+  <rect class="shape" x="230" y="110" width="380" height="80"/>
+  <text class="label" x="420" y="140">best_start = 0; best_len = 0;</text>
+  <text class="label" x="420" y="165">i = 0; found = false;</text>
+
+  <polygon class="shape" points="420,225 540,280 420,335 300,280"/>
+  <text class="label" x="420" y="275">str[i] ?</text>
+  <text class="label" x="420" y="298">(loop condition)</text>
+
+  <rect class="shape" x="240" y="390" width="360" height="70"/>
+  <text class="label" x="420" y="420">Skip spaces</text>
+  <text class="label" x="420" y="445">while (str[i] == ' ')</text>
+
+  <polygon class="shape" points="420,500 540,555 420,610 300,555"/>
+  <text class="label" x="420" y="550">!str[i] ?</text>
+  <text class="label" x="420" y="573">end of string</text>
+
+  <rect class="shape" x="205" y="660" width="430" height="95"/>
+  <text class="label" x="420" y="690">word_start = i</text>
+  <text class="label" x="420" y="715">move i until space or end</text>
+  <text class="label" x="420" y="740">len = i - word_start</text>
+
+  <polygon class="shape" points="420,795 565,860 420,925 275,860"/>
+  <text class="label" x="420" y="855">!found || len &lt; best_len ?</text>
+
+  <rect class="shape" x="270" y="970" width="300" height="65"/>
+  <text class="label" x="420" y="1000">Save best_start, best_len,</text>
+  <text class="label" x="420" y="1025">found = true</text>
+
+  <rect class="shape" x="185" y="1085" width="470" height="70"/>
+  <text class="label" x="420" y="1115">If found, copy shortest word to result</text>
+  <text class="label" x="420" y="1140">Else write empty string</text>
+
+  <ellipse class="shape" cx="420" cy="1215" rx="90" ry="25" visibility="hidden"/>
+
+  <path class="line" d="M420 70 L420 110"/>
+  <path class="line" d="M420 190 L420 225"/>
+  <path class="line" d="M420 335 L420 390"/>
+  <path class="line" d="M420 460 L420 500"/>
+  <path class="line" d="M420 610 L420 660"/>
+  <path class="line" d="M420 755 L420 795"/>
+  <path class="line" d="M420 925 L420 970"/>
+
+  <path class="line" d="M540 280 L720 280 L720 1085 L655 1085"/>
+  <text class="small" x="668" y="265">No</text>
+
+  <path class="line" d="M540 555 L700 555 L700 1085 L655 1085"/>
+  <text class="small" x="652" y="540">Yes</text>
+
+  <path class="line" d="M565 860 L720 860 L720 280 L540 280"/>
+  <text class="small" x="650" y="845">No</text>
+
+  <path class="line" d="M420 1035 L420 1060 L120 1060 L120 280 L300 280"/>
+  <text class="small" x="138" y="1042">Yes</text>
+
+  <path class="line" d="M420 1155 L420 1180"/>
+  <ellipse class="shape" cx="420" cy="1215" rx="90" ry="25"/>
+  <text class="label" x="420" y="1221">End</text>
+
+  <text class="small" x="436" y="372">Yes</text>
+  <text class="small" x="436" y="642">No</text>
+</svg>

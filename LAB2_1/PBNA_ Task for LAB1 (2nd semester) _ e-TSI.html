@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="en" xml:lang="en">
+<head>
+    <title>PBNA: Task for LAB1 (2nd semester) | e-TSI</title>
+    <link rel="shortcut icon" href="https://e.tsi.lv/theme/image.php/classic/theme/1770125026/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, PBNA: Task for LAB1 (2nd semester) | e-TSI" />
+<link rel="stylesheet" type="text/css" href="https://e.tsi.lv/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://e.tsi.lv/theme/styles.php/classic/1770125026_1/all" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/e.tsi.lv","homeurl":{},"sesskey":"ZpfCBW2IrS","sessiontimeout":"14400","sessiontimeoutwarning":1200,"themerev":"1770125026","slasharguments":1,"theme":"classic","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1770125026","admin":"admin","svgicons":true,"usertimezone":"Europe\/Riga","language":"en","courseId":3318,"courseContextId":181439,"contextid":235632,"contextInstanceId":153805,"langrev":1775699116,"templaterev":"1770125026","siteId":1};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/e.tsi.lv\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/e.tsi.lv\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/e.tsi.lv\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/e.tsi.lv\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/e.tsi.lv\/theme\/yui_combo.php?m\/1770125026\/","combine":true,"comboBase":"https:\/\/e.tsi.lv\/theme\/yui_combo.php?","ext":false,"root":"m\/1770125026\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_role-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_offlinequiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_offlinequiz-offlinequizbase":{"requires":["base","node"]},"moodle-mod_offlinequiz-modform":{"requires":["base","node","event"]},"moodle-mod_offlinequiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_offlinequiz-offlinequizbase","moodle-mod_offlinequiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_offlinequiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_offlinequiz-offlinequizbase","moodle-mod_offlinequiz-util-base","moodle-mod_offlinequiz-util-page","moodle-mod_offlinequiz-util-slot","moodle-course-util"]},"moodle-mod_offlinequiz-util":{"requires":["node"],"use":["moodle-mod_offlinequiz-util-base"],"submodules":{"moodle-mod_offlinequiz-util-base":{},"moodle-mod_offlinequiz-util-slot":{"requires":["node","moodle-mod_offlinequiz-util-base"]},"moodle-mod_offlinequiz-util-page":{"requires":["node","moodle-mod_offlinequiz-util-base"]}}},"moodle-mod_offlinequiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_offlinequiz-util","querystring-parse"]},"moodle-mod_offlinequiz-randomquestion":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_offlinequiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_scheduler-studentlist":{"requires":["base","node","event","io"]},"moodle-mod_scheduler-delselected":{"requires":["base","node","event"]},"moodle-mod_scheduler-saveseen":{"requires":["base","node","event"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/e.tsi.lv\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/e.tsi.lv\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1770125026\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/e.tsi.lv\/lib\/javascript.php\/1770125026\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/e.tsi.lv\/lib\/javascript.php\/1770125026\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18846832-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<style>
+   #popup {
+            display:none;
+            position:absolute;
+            margin:0 auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+    }
+</style>
+<style>
+  .forgetpass {display: none;}
+</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body  id="page-mod-assign-view" class="format-topics limitedwidth  path-mod path-mod-assign gecko dir-ltr lang-en yui-skin-sam yui3-skin-sam e-tsi-lv pagelayout-incourse course-3318 context-235632 cmid-153805 cm-type-assign category-37 theme ">
+
+<div id="page-wrapper" class="d-print-block">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Skip to main content</a>
+</div><script src="https://e.tsi.lv/lib/javascript.php/1770125026/lib/polyfills/polyfill.js"></script>
+<script src="https://e.tsi.lv/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.js"></script><script src="https://e.tsi.lv/lib/javascript.php/1770125026/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="fixed-top navbar navbar-bootswatch navbar-expand moodle-has-zindex">
+        <div class="container-fluid">
+            <a href="https://e.tsi.lv/" class="navbar-brand d-flex align-items-center m-1 p-0 aabtn">
+                    <img src="https://e.tsi.lv/pluginfile.php/1/core_admin/logocompact/300x300/1770125026/tsi_logo_02.png" class="logo mr-1" alt="e-TSI">
+            </a>
+    
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                <li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-69d73c6a1c45269d73c6a1058a9" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" title="Language" aria-controls="drop-down-menu-69d73c6a1c45269d73c6a1058a9">
+        English ‎(en)‎
+    </a>
+    <div class="dropdown-menu" role="menu" id="drop-down-menu-69d73c6a1c45269d73c6a1058a9" aria-labelledby="drop-down-69d73c6a1c45269d73c6a1058a9">
+                <a class="dropdown-item" role="menuitem" href="https://e.tsi.lv/mod/assign/view.php?id=153805&amp;rownum=0&amp;useridlistid=69d73c6a0b3c1786444862&amp;action&amp;lang=en"  >English ‎(en)‎</a>
+                <a class="dropdown-item" role="menuitem" href="https://e.tsi.lv/mod/assign/view.php?id=153805&amp;rownum=0&amp;useridlistid=69d73c6a0b3c1786444862&amp;action&amp;lang=lv"  lang="lv" >Latviešu ‎(lv)‎</a>
+                <a class="dropdown-item" role="menuitem" href="https://e.tsi.lv/mod/assign/view.php?id=153805&amp;rownum=0&amp;useridlistid=69d73c6a0b3c1786444862&amp;action&amp;lang=ru"  lang="ru" >Русский ‎(ru)‎</a>
+    </div>
+</li>
+                <!-- page_heading_menu -->
+                
+            </ul>
+            <div id="usernavigation" class="navbar-nav my-1 ml-auto">
+                <div class="divider border-left h-50 align-self-center mx-1"></div>
+                
+                <div class="popover-region collapsed popover-region-notifications"
+    id="nav-notification-popover-container" data-userid="15329"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link icon-no-margin"
+        data-region="popover-region-toggle"
+        role="button"
+        aria-controls="popover-region-container-69d73c6a1c96a69d73c6a1058a10"
+        aria-haspopup="true"
+        aria-label=" Show notification window with no new notifications   "
+        tabindex="0">
+                <i class="icon fa fa-bell-o fa-fw "  title="Toggle notifications menu" role="img" aria-label="Toggle notifications menu"></i>
+        <div
+            class="count-container hidden"
+            data-region="count-container"
+            aria-hidden=true
+        >
+            0
+        </div>
+
+    </div>
+    <div 
+        id="popover-region-container-69d73c6a1c96a69d73c6a1058a10"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="Notification window"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notifications</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button"
+           href="#"
+           title="Mark all as read"
+           data-action="mark-all-read"
+           role="button"
+           aria-label="Mark all as read">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true"  ></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+        </a>
+            <a href="https://e.tsi.lv/message/notificationpreferences.php"
+               title="Notification preferences"
+               aria-label="Notification preferences">
+                <i class="icon fa fa-cog fa-fw " aria-hidden="true"  ></i></a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">You have no notifications</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+        </div>
+                <a class="see-all-link"
+                    href="https://e.tsi.lv/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">See all</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed" data-region="popover-region-messages">
+    <a id="message-drawer-toggle-69d73c6a1d45e69d73c6a1058a11" class="nav-link popover-region-toggle position-relative icon-no-margin" href="#"
+            role="button">
+        <i class="icon fa fa-comment-o fa-fw "  title="Toggle messaging drawer" role="img" aria-label="Toggle messaging drawer"></i>
+        <div
+            class="count-container hidden"
+            data-region="count-container"
+        >
+            <span aria-hidden="true">0</span>
+            <span class="sr-only">There are 0 unread conversations</span>
+        </div>
+    </a>
+    <span class="sr-only sr-only-focusable" data-region="jumpto" tabindex="-1"></span></div>
+                <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                    <div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items" id="action-menu-0" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar d-flex " id="action-menu-0-menubar">
+
+            
+
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a
+                            href="#"
+                            tabindex="0"
+                            class="nav-link dropdown-toggle icon-no-margin"
+                            id="action-menu-toggle-0"
+                            aria-label="User menu"
+                            data-toggle="dropdown"
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            aria-controls="action-menu-0-menu"
+                        >
+                            
+                            <span class="userbutton"><span class="usertext mr-1">Oļeiņikovs Igors</span><span class="avatars"><span class="avatar current"><img src="https://e.tsi.lv/pluginfile.php/240945/user/icon/classic/f2?rev=6289195" class="userpicture" width="35" height="35" alt="" /></span></span></span>
+                                
+                            <b class="caret"></b>
+                        </a>
+                            <div class="dropdown-menu menu dropdown-menu-right" id="action-menu-0-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-0" role="menu">
+                                                                <a href="https://e.tsi.lv/user/profile.php" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" tabindex="-1" >
+                                <span class="menu-action-text">Profile</span>
+                        </a>
+                    <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                                                <a href="https://e.tsi.lv/my/index.php" class="dropdown-item menu-action" role="menuitem" data-title="Dashboard" tabindex="-1" >
+                                <span class="menu-action-text">Dashboard</span>
+                        </a>
+                                                                <a href="https://e.tsi.lv/my/courses.php" class="dropdown-item menu-action" role="menuitem" data-title="mycourses,core" tabindex="-1" >
+                                <span class="menu-action-text">My courses</span>
+                        </a>
+                                                                <a href="https://e.tsi.lv/grade/report/overview/index.php" class="dropdown-item menu-action" role="menuitem" data-title="grades,grades" tabindex="-1" >
+                                <span class="menu-action-text">Grades</span>
+                        </a>
+                                                                <a href="https://e.tsi.lv/calendar/view.php?view=month" class="dropdown-item menu-action" role="menuitem" data-title="calendar,core_calendar" tabindex="-1" >
+                                <span class="menu-action-text">Calendar</span>
+                        </a>
+                                                                <a href="https://e.tsi.lv/message/index.php" class="dropdown-item menu-action" role="menuitem" data-title="messages,message" tabindex="-1" >
+                                <span class="menu-action-text">Messages</span>
+                        </a>
+                                                                <a href="https://e.tsi.lv/user/files.php" class="dropdown-item menu-action" role="menuitem" data-title="privatefiles,moodle" tabindex="-1" >
+                                <span class="menu-action-text">Private files</span>
+                        </a>
+                                                                <a href="https://e.tsi.lv/reportbuilder/index.php" class="dropdown-item menu-action" role="menuitem" data-title="reports,core_reportbuilder" tabindex="-1" >
+                                <span class="menu-action-text">Reports</span>
+                        </a>
+                    <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                                                <a href="https://e.tsi.lv/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" tabindex="-1" >
+                                <span class="menu-action-text">Preferences</span>
+                        </a>
+                    <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                                                <a href="https://e.tsi.lv/login/logout.php?sesskey=ZpfCBW2IrS" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" tabindex="-1" >
+                                <span class="menu-action-text">Log out</span>
+                        </a>
+                            </div>
+                    </div>
+                </div>
+
+        </div>
+
+</div></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="page" class="container-fluid d-print-block">
+        <header id="page-header" class="row">
+    <div class="col-12 pt-3 pb-3">
+        <div class="card ">
+            <div class="card-body ">
+                <div class="d-flex align-items-center">
+                    <div class="mr-auto">
+                    <div class="page-context-header d-flex align-items-center mb-2">
+    <div class="page-header-headings">
+        <h1 class="h2 mb-0">Programming (BNA)</h1>
+    </div>
+</div>
+                    </div>
+                    <div class="header-actions-container flex-shrink-0" data-region="header-actions-container">
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div id="page-navbar">
+                        <nav aria-label="Navigation bar">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://e.tsi.lv/"
+                        
+                        
+                        
+                    >
+                        Home
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://e.tsi.lv/my/courses.php"
+                        
+                        
+                        
+                    >
+                        My courses
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://e.tsi.lv/course/view.php?id=3318"
+                        
+                        title="Programming (BNA)"
+                        
+                    >
+                        Programming (BNA)
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://e.tsi.lv/course/section.php?id=41368"
+                        
+                        
+                        data-section-name-for="41368" 
+                    >
+                        Topic 16
+                    </a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://e.tsi.lv/mod/assign/view.php?id=153805"
+                        aria-current="page"
+                        title="Assignment"
+                        
+                    >
+                        Task for LAB1 (2nd semester)
+                    </a>
+                </li>
+        </ol>
+</nav>
+                    </div>
+                    <div class="ml-auto d-flex">
+                        
+                    </div>
+                    <div id="course-header">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div id="page-content" class="row   d-print-block">
+            <div id="region-main-box" class="region-main">
+                <section id="region-main" class="region-main-content" aria-label="Content">
+                    <span class="notifications" id="user-notifications"></span>
+                        <span id="maincontent"></span>
+                            <h2>Task for LAB1 (2nd semester)</h2>
+                        <div class="activity-header" data-for="page-activity-header">
+                                <span class="sr-only">Completion requirements</span>
+                                <div data-region="activity-information" data-activityname="Task for LAB1 (2nd semester)" class="activity-information">
+
+
+    <div data-region="activity-dates" class="activity-dates">
+            <div>
+                <strong>Due:</strong> Sunday, 26 April 2026, 11:59 PM
+            </div>
+    </div>
+</div>
+                                <div class="activity-description" id="intro">
+                                    <div class="box py-3 generalbox boxaligncenter"><div class="no-overflow"><p><strong><span style="font-size: medium;" size="4"><strong><span size="4"><strong><span size="4">LAB N1 (2nd semester)</span></strong></span></strong>. User-defined functions.</span></strong></p>
+<p><strong><span style="text-decoration: underline;">Task:</span></strong></p>
+<ol>
+    <li>Create an algorithm for the function according to individual task. Individual task number is being defined as in previous tasks.</li>
+    <li><span>In&nbsp;</span><span>Visual Studio environment in C/C++ based on created algorithm create <strong>two functions (use overloading) </strong>according to individual task&nbsp;and a console program that uses these functions </span>(all in one <em>.cpp</em> file). <strong>First function should take one (!) c-string value as parameter (use pass <em>by pointer</em>), second should take one (!) <em>string </em>type value as parameter (use pass <em>by reference</em>)</strong>. Both functions may have additional parameters if necessary (depends on individual task). If function should return a value(s) then <em>return </em>operator can be used or value(s) can be "returned" through parameter(s). Parameters that are not being changed inside&nbsp;function should be marked as&nbsp;<em><strong>const</strong></em> parameters. <strong>If </strong>according to the individual task<strong> function should change the string</strong> (operations like insert, delete, replace, сhange characters position etc.) <strong>then changes should be made inside the same string</strong> without using additional string<span style="font-size: 14.039999961853px;">.</span>&nbsp;<strong>If function takes</strong> parameter as a <em><strong>c-string</strong></em> then it is <strong>not allowed to convert</strong> it&nbsp;<strong>to&nbsp;</strong><strong><em>string</em>&nbsp;</strong>type.&nbsp;It is&nbsp;<strong>not allowed to use STL library functions</strong>&nbsp;from&nbsp;<strong>&lt;algorithm&gt;<span>.</span></strong>&nbsp;<strong>If function takes</strong> parameter as a <em><strong>string </strong></em>then it is <strong>not allowed to convert </strong>it<strong> to c-string </strong>type<span style="color: rgb(40, 31, 24); font-size: 14.039999961853px; line-height: 21.8400001525879px;">.</span>&nbsp;<strong>In <em>main </em>function</strong> two arrays should be created. <strong>First array</strong> (two-dimensional array of chars) should store a <strong>set of c-string</strong><strong>s</strong> entered by user. <strong>Second array</strong> should be a <strong>copy </strong>of the first array where strings should be stored as <strong>values of type <em>string</em></strong>. The appropriate created function then should be called for every string separately (!) in each array and result for each string should be printed on the screen. <strong>All user input/output should be done only (!) inside <em>main </em>function</strong><span>.</span><span style="color: red;"> <strong><strong><span>Add also your individual task number output in the beginning of the program: cout &lt;&lt; studentCode % taskVarCount, where studentCode is your student code and taskVarCount task total count in this (!) LAB.&nbsp;</span></strong></strong>&nbsp;</span></li>
+    <li>Test your application.</li>
+    <li>Prepare a report according to general&nbsp;<a href="https://e.tsi.lv/mod/page/view.php?id=121558" target="_blank" title="https://e.tsi.lv/mod/page/view.php?id=121558" style="color:blue">report design requirements</a>. See also&nbsp;<a href="https://e.tsi.lv/pluginfile.php/182801/mod_resource/content/1/Progr_LW_Report_example_EN.pdf" target="_blank" title="https://e.tsi.lv/pluginfile.php/182801/mod_resource/content/1/Progr_LW_Report_example_EN.pdf" style="color:blue">report general example</a>. P.S.<span>&nbsp;<strong>For&nbsp;<em>main&nbsp;</em>function and for every other</strong>&nbsp;created function there must be a&nbsp;</span><strong>separate&nbsp;</strong><span>block-diagram in report. It is not necessary to describe in detail how array of strings is being filled and array output steps</span>).</li>
+</ol>
+<p><strong></strong></p>
+<p>Separately<strong>&nbsp;upload:</strong></p>
+<ul>
+    <li>(<em>optional</em>) archived folder (.<em>zip</em>&nbsp;or .<em>rar)</em>, that contains all&nbsp;<em>solution</em>&nbsp;and&nbsp;<em>project&nbsp;</em>files with completed task;</li>
+    <li>(<em>required</em>) file with source code (.<em>cpp</em>&nbsp;file);</li>
+    <li>(<em>required</em>) report (.<em style="font-size: 0.9375rem;">doc</em><span style="font-size: 0.9375rem;">&nbsp;file);</span></li>
+    <li>(<em>required</em>) report (.<em style="font-size: 0.9375rem;">pdf&nbsp;</em><span style="font-size: 0.9375rem;">file).</span></li>
+</ul>
+<p></p>
+<p>If archive size is larger than allowed&nbsp;then before making an archive try this:</p>
+<ul>
+    <li><span style="font-size: 0.9375rem;">From solution folders remove&nbsp;</span><em style="font-size: 0.9375rem;">Debug&nbsp;</em><span style="font-size: 0.9375rem;">folders</span></li>
+    <li>From solution folders remove&nbsp;folder with title "ipch" (can be found inside hidden folder&nbsp;<em>.vs</em>)</li>
+</ul><span style="font-size: 15px;"><br></span>
+<ul>
+</ul>
+<p><span>Completed task should be <u>submitted&nbsp;</u></span><u><strong>until 26th of April&nbsp;</strong><strong>2026</strong></u>&nbsp;(<u>until&nbsp;<strong>23:59</strong></u>).</p>
+<p><span style="color: #ff0000;" color="#ff0000">Max point count for the task is 10.&nbsp;<strong></strong><strong></strong>Max 5 points for application (5 if application meets all requirements) + max 5 points for report (5 if report meets all requirements - sections, contents, block-diagram, formatting). Report is required. Application will not be accepted without report<strong></strong></span></p>
+<p><strong>Individual tasks</strong>:</p>
+<ol>
+    <li>Function returns word count in the string (consider words are separated by spaces and punctuation marks).</li>
+    <li><span><span><span>Function inserts specified substring after specified character in the string</span><span>.</span></span>
+        </span>
+    </li>
+    <li><span><span><span>Function replaces small letters with capital letters in the string.</span></span></span></li>
+    <li><span><span><span>Function checks whether string contains quotation (phrase enclosed in double quotation marks) and returns it if there is at least one.</span></span></span></li>
+    <li>Function deletes all digits in the string.</li>
+    <li>Function deletes all spaces in the string.</li>
+    <li>Function reverses the string.</li>
+    <li>Function returns number of times specified character occurs in the string.</li>
+    <li>Function changes first letter to capital letter and all the others to small letters.</li>
+    <li>Function returns character that occurs in the string more often. If they are several then function returns any of them.</li>
+    <li>Function deletes all punctuation marks from the string.</li>
+    <li>Function inserts one more space after each space in the string.</li>
+    <li>Function deletes repeated spaces (replaces multiple spaces with single space) in the string.</li>
+    <li>Function inserts a comma before each space in the string.</li>
+    <li>Function deletes repeated characters (replaces a sequence of repeated characters with one character) in the string.</li>
+    <li>Function returns count of capital letters and count of small letters in the string.</li>
+    <li>Function returns shortest word in the string (consider words are separated by one space).&nbsp;If they are several then function returns any of them.</li>
+    <li>Function arranges all letters in the string in alphabetic order.</li>
+    <li>Function doubles each character in the string.</li>
+    <li>Function checks whether string is a palindrome.</li>
+    <li>Function returns longest word in the string (consider words are separated by one space).&nbsp;If they are several then function returns any of them.</li>
+    <li>Function replaces specified substring <em>substr1 </em>(all occurrences)<em>&nbsp;</em>with specified substring <em>substr2&nbsp;</em>in the string.</li>
+    <li>Function returns number of sentences in the string (consider sentence starts with capital letter and ends with full stop, exclamation mark or question mark)</li>
+    <li>Function deletes substrings in the string that are enclosed in round brackets (parentheses).</li>
+    <li>Function returns number of times specified substring occurs in the string.&nbsp;</li>
+</ol></div></div>
+                                </div>
+                            </div>
+                    <div role="main"><div class="container-fluid mb-4">
+    <div class="row">
+        <div class="col-xs-6 mr-3">
+                    <div class="singlebutton">
+                        <form method="get" action="https://e.tsi.lv/mod/assign/view.php" >
+                                <input type="hidden" name="id" value="153805">
+                                <input type="hidden" name="action" value="editsubmission">
+                            <button type="submit" class="btn btn-primary"
+                                id="single_button69d73c6a1058a28"
+                                
+                                
+                                >Add submission</button>
+                        </form>
+                    </div>
+        </div>
+    </div>
+</div><div class="submissionstatustable"><h3>Submission status</h3><div class="box py-3 boxaligncenter submissionsummarytable"><div class="table-responsive"><table class="generaltable table-bordered">
+<tbody><tr class="">
+<th class="cell c0" style="" scope="row">Submission status</th>
+<td class="cell c1 lastcol" style="">No submissions have been made yet</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Grading status</th>
+<td class="submissionnotgraded cell c1 lastcol" style="">Not graded</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Time remaining</th>
+<td class="timeremaining cell c1 lastcol" style="">17 days 15 hours remaining</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Last modified</th>
+<td class="cell c1 lastcol" style="">-</td>
+</tr>
+<tr class="lastrow">
+<th class="cell c0" style="" scope="row">Submission comments</th>
+<td class="cell c1 lastcol" style=""><div class="box py-3 boxaligncenter plugincontentsummary summary_assignsubmission_comments_483232"><div class="commentscontainer"><div style="display:none" id="cmt-tmpl"><div class="comment-message"><div class="comment-message-meta mr-3"><span class="picture">___picture___</span><span class="user">___name___</span> - <span class="time">___time___</span></div><div class="text">___content___</div></div></div><div class="mdl-left"><a class="showcommentsnonjs" href="https://e.tsi.lv/mod/assign/view.php?id=153805&amp;rownum=0&amp;useridlistid=69d73c6a0b3c1786444862&amp;action&amp;nonjscomment=1&amp;comment_itemid=483232&amp;comment_context=235632&amp;comment_component=assignsubmission_comments&amp;comment_area=submission_comments">Show comments</a><a class="comment-link" id="comment-link-69d73c6a25d20" href="#" role="button" aria-expanded="false"><i class="icon fa fa-caret-right fa-fw "  title="Comments" role="img" aria-label="Comments"></i><span id="comment-link-text-69d73c6a25d20">Comments (0)</span></a><div id="comment-ctrl-69d73c6a25d20" class="comment-ctrl"><ul id="comment-list-69d73c6a25d20" class="comment-list"><li class="first"></li></ul><div id="comment-pagination-69d73c6a25d20" class="comment-pagination"></div><div class="comment-area"><div class="db"><label for="dlg-content-69d73c6a25d20" class="sr-only">Comment</label><textarea name="content" rows="2" id="dlg-content-69d73c6a25d20" aria-label="Add a comment..." cols="20"></textarea></div><div class="fd" id="comment-action-69d73c6a25d20"><a id="comment-action-post-69d73c6a25d20" href="#">Save comment</a><span> | </span><a id="comment-action-cancel-69d73c6a25d20" href="#">Cancel</a></div></div><div class="clearer"></div></div></div></div></div></td>
+</tr>
+</tbody>
+</table>
+</div></div></div><script src="https://e.tsi.lv/blocks/powerbi/js/powerbi.js"></script></div>
+                    <div class="mt-5 mb-1 activity-navigation container-fluid">
+<div class="row">
+    <div class="col-md-4">        <div class="float-left">
+                <a href="https://e.tsi.lv/mod/resource/view.php?id=126329&forceview=1" id="prev-activity-link" class="btn btn-link" >&#x25C4; Examples: User defined functions</a>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="mdl-align">
+            <div class="urlselect">
+    <form method="post" action="https://e.tsi.lv/course/jumpto.php" class="d-flex flex-wrap align-items-center" id="url_select_f69d73c6a1058a23">
+        <input type="hidden" name="sesskey" value="ZpfCBW2IrS">
+            <label for="jump-to-activity" class="sr-only">
+                Jump to...
+            </label>
+        <select  id="jump-to-activity" class="custom-select urlselect" name="jump"
+                 >
+                    <option value="" selected>Jump to...</option>
+                    <option value="/mod/bigbluebuttonbn/view.php?id=163286&amp;forceview=1" >Online Classroom</option>
+                    <option value="/mod/forum/view.php?id=120911&amp;forceview=1" >Announcements</option>
+                    <option value="/mod/resource/view.php?id=121557&amp;forceview=1" >Labs report general example</option>
+                    <option value="/mod/page/view.php?id=121558&amp;forceview=1" >Report design requirements</option>
+                    <option value="/mod/url/view.php?id=134141&amp;forceview=1" >www.cplusplus.com</option>
+                    <option value="/mod/url/view.php?id=134142&amp;forceview=1" >C Programming Language Tutorial</option>
+                    <option value="/mod/url/view.php?id=146998&amp;forceview=1" >C++ reference</option>
+                    <option value="/mod/url/view.php?id=146999&amp;forceview=1" >C++ Tutorial (1)</option>
+                    <option value="/mod/url/view.php?id=147000&amp;forceview=1" >C++ Tutorial (2)</option>
+                    <option value="/mod/url/view.php?id=158481&amp;forceview=1" >C++ Tutorial (3)</option>
+                    <option value="/mod/url/view.php?id=147002&amp;forceview=1" >TIOBE index - popularity of programming languages</option>
+                    <option value="/mod/resource/view.php?id=158527&amp;forceview=1" >Presentation 0: Intro</option>
+                    <option value="/mod/resource/view.php?id=121075&amp;forceview=1" >Presentation 1: Basic definitions and classifications</option>
+                    <option value="/mod/resource/view.php?id=121076&amp;forceview=1" >Presentation 2: Algorithms</option>
+                    <option value="/mod/resource/view.php?id=121077&amp;forceview=1" >Algorithm for square root calculation</option>
+                    <option value="/mod/resource/view.php?id=121400&amp;forceview=1" >Presentation 3-4: C++ language basics</option>
+                    <option value="/mod/url/view.php?id=121401&amp;forceview=1" >C++ program structure</option>
+                    <option value="/mod/resource/view.php?id=121402&amp;forceview=1" >Presentation 4: Input/Ouput in C/C++</option>
+                    <option value="/mod/resource/view.php?id=159812&amp;forceview=1" >Examples: Linear programs</option>
+                    <option value="/mod/url/view.php?id=121403&amp;forceview=1" >Mathematical functions</option>
+                    <option value="/mod/resource/view.php?id=121404&amp;forceview=1" >Mathematical expressions in C/C++ (use of mathematical functions)</option>
+                    <option value="/mod/resource/view.php?id=147205&amp;forceview=1" >Practice N1</option>
+                    <option value="/mod/assign/view.php?id=121555&amp;forceview=1" >Task for LAB1</option>
+                    <option value="/mod/resource/view.php?id=121861&amp;forceview=1" >Presentation 5: Selection constructs</option>
+                    <option value="/mod/resource/view.php?id=121862&amp;forceview=1" >Examples: Selection constructs</option>
+                    <option value="/mod/resource/view.php?id=121863&amp;forceview=1" >Training exercises: Selection constructs</option>
+                    <option value="/mod/page/view.php?id=134832&amp;forceview=1" >Practice N2 (selection constructs, if statement)</option>
+                    <option value="/mod/resource/view.php?id=121860&amp;forceview=1" >Presentation 6: Loops (part1)</option>
+                    <option value="/mod/resource/view.php?id=121866&amp;forceview=1" >Examples: Loops. FOR statement</option>
+                    <option value="/mod/resource/view.php?id=121867&amp;forceview=1" >Training exercises: Loops</option>
+                    <option value="/mod/page/view.php?id=134833&amp;forceview=1" >Practice N3 (loops, for statement)</option>
+                    <option value="/mod/resource/view.php?id=122189&amp;forceview=1" >Presentation 7: Loops (part2)</option>
+                    <option value="/mod/assign/view.php?id=122193&amp;forceview=1" >Task for LAB2</option>
+                    <option value="/mod/resource/view.php?id=122385&amp;forceview=1" >Presentation 8: Pointers</option>
+                    <option value="/mod/resource/view.php?id=160929&amp;forceview=1" >Examples: Pointers</option>
+                    <option value="/mod/resource/view.php?id=123339&amp;forceview=1" >Presentation 9: Arrays</option>
+                    <option value="/mod/resource/view.php?id=136510&amp;forceview=1" >Examples: One-dimensional arrays</option>
+                    <option value="/mod/assign/view.php?id=123335&amp;forceview=1" >Task for LAB3</option>
+                    <option value="/mod/resource/view.php?id=123761&amp;forceview=1" >Presentation 10: 2D arrays</option>
+                    <option value="/mod/page/view.php?id=150197&amp;forceview=1" >Practice N4 (2D arrays)</option>
+                    <option value="/mod/resource/view.php?id=163398&amp;forceview=1" >Presentation 0: Intro (2nd semester) - UPDATED on 4th of March, 2026</option>
+                    <option value="/mod/resource/view.php?id=124907&amp;forceview=1" >Presentation 1: Characters and strings. C-strings</option>
+                    <option value="/mod/url/view.php?id=124908&amp;forceview=1" >Functions for working with C-strings - documentation</option>
+                    <option value="/mod/resource/view.php?id=125348&amp;forceview=1" >Examples: C-strings</option>
+                    <option value="/mod/page/view.php?id=125104&amp;forceview=1" >Training exercises: Characters and C-strings</option>
+                    <option value="/mod/resource/view.php?id=125554&amp;forceview=1" >Presentation 2: String type</option>
+                    <option value="/mod/url/view.php?id=140369&amp;forceview=1" >String class - documentation</option>
+                    <option value="/mod/resource/view.php?id=125555&amp;forceview=1" >Examples: string class</option>
+                    <option value="/mod/resource/view.php?id=125551&amp;forceview=1" >Presentation 3: User defined data types</option>
+                    <option value="/mod/resource/view.php?id=125552&amp;forceview=1" >Examples: Structures</option>
+                    <option value="/mod/resource/view.php?id=125553&amp;forceview=1" >Structures, unions, enumerations - example</option>
+                    <option value="/mod/page/view.php?id=153176&amp;forceview=1" >Practice N1 (2nd semester). User-defined data types (14th of March, 2026)</option>
+                    <option value="/mod/resource/view.php?id=126328&amp;forceview=1" >Presentation 4: User defined functions</option>
+                    <option value="/mod/resource/view.php?id=126329&amp;forceview=1" >Examples: User defined functions</option>
+                    <option value="/mod/feedback/view.php?id=155205&amp;forceview=1" >QUESTIONNAIRE. Students' opinions on the course</option>
+        </select>
+            <noscript>
+                <input type="submit" class="btn btn-secondary ml-1" value="Go">
+            </noscript>
+    </form>
+</div>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="float-right">
+                <a href="https://e.tsi.lv/mod/feedback/view.php?id=155205&forceview=1" id="next-activity-link" class="btn btn-link" >QUESTIONNAIRE. Students' opinions on the course &#x25BA;</a>
+
+        </div>
+</div>
+</div>
+</div>
+                    
+                </section>
+            </div>
+            <div class="columnleft blockcolumn ">
+                <section data-region="blocks-column" class="d-print-none" aria-label="Blocks">
+                    <aside id="block-region-side-pre" class="block-region" data-blockregion="side-pre" data-droptarget="1"><h2 class="sr-only">Blocks</h2></aside>
+                </section>
+            </div>
+
+            <div class="columnright blockcolumn ">
+                <section data-region="blocks-column" class="d-print-none" aria-label="Blocks">
+                    <aside id="block-region-side-post" class="block-region" data-blockregion="side-post" data-droptarget="1"><h2 class="sr-only">Blocks</h2></aside>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div
+    id="drawer-69d73c6a1f2cf69d73c6a1058a24"
+    class=" drawer bg-white hidden"
+    aria-expanded="false"
+    aria-hidden="true"
+    data-region="right-hand-drawer"
+    role="region"
+    tabindex="0"
+>
+            <div id="message-drawer-69d73c6a1f2cf69d73c6a1058a24" class="message-app" data-region="message-drawer" role="region">
+            <h2 class="sr-only">Messaging</h2>
+            <div class="closewidget text-right pr-2">
+                <a class="text-dark btn-link" data-action="closedrawer" href="#"
+                   title="Close" aria-label="Close"
+                >
+                    <i class="icon fa fa-window-close fa-fw " aria-hidden="true"  ></i>
+                </a>
+            </div>
+            <div class="header-container position-relative" data-region="header-container">
+                <div class="hidden border-bottom p-1 px-sm-2" aria-hidden="true" data-region="view-contacts">
+                    <div class="d-flex align-items-center">
+                        <div class="align-self-stretch">
+                            <a class="h-100 d-flex align-items-center mr-2" href="#" data-route-back role="button">
+                                <div class="icon-back-in-drawer">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                                </div>
+                                <div class="icon-back-in-app">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                                </div>                            </a>
+                        </div>
+                        <div>
+                            Contacts
+                        </div>
+                        <div class="ml-auto">
+                            <a href="#" data-route="view-search" role="button" aria-label="Search">
+                                <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+                <div
+                    class="hidden bg-white position-relative border-bottom p-1 px-sm-2"
+                    aria-hidden="true"
+                    data-region="view-conversation"
+                >
+                    <div class="hidden" data-region="header-content"></div>
+                    <div class="hidden" data-region="header-edit-mode">
+                        
+                        <div class="d-flex p-2 align-items-center">
+                            Messages selected:
+                            <span class="ml-1" data-region="message-selected-court">1</span>
+                            <button type="button" class="ml-auto close" aria-label="Cancel message selection"
+                                data-action="cancel-edit-mode">
+                                    <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-region="header-placeholder">
+                        <div class="d-flex">
+                            <div
+                                class="ml-2 rounded-circle bg-pulse-grey align-self-center"
+                                style="height: 38px; width: 38px"
+                            >
+                            </div>
+                            <div class="ml-2 " style="flex: 1">
+                                <div
+                                    class="mt-1 bg-pulse-grey w-75"
+                                    style="height: 16px;"
+                                >
+                                </div>
+                            </div>
+                            <div
+                                class="ml-2 bg-pulse-grey align-self-center"
+                                style="height: 16px; width: 20px"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden position-absolute z-index-1"
+                        data-region="confirm-dialogue-container"
+                        style="top: 0; bottom: -1px; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+                    ></div>
+                </div>                <div class="border-bottom p-1 px-sm-2" aria-hidden="false"  data-region="view-overview">
+                    <div class="d-flex align-items-center">
+                        <div class="input-group simplesearchform">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Search"
+                                aria-label="Search"
+                                data-region="view-overview-search-input"
+                            >
+                            <div class="input-group-append">
+                                <span class="icon-no-margin btn btn-submit">
+                                    <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ml-2">
+                            <a
+                                href="#"
+                                data-route="view-settings"
+                                data-route-param="15329"
+                                aria-label="Settings"
+                                role="button"
+                            >
+                                <i class="icon fa fa-cog fa-fw " aria-hidden="true"  ></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-right mt-sm-3">
+                        <a href="#" data-route="view-contacts" role="button">
+                            <i class="icon fa fa-user fa-fw " aria-hidden="true"  ></i>
+                            Contacts
+                            <span
+                                class="badge bg-primary text-white ml-2 hidden"
+                                data-region="contact-request-count"
+                            >
+                                <span aria-hidden="true">0</span>
+                                <span class="sr-only">There are 0 pending contact requests</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hidden border-bottom p-1 px-sm-2 view-search"  aria-hidden="true" data-region="view-search">
+                    <div class="d-flex align-items-center">
+                        <a
+                            class="mr-2 align-self-stretch d-flex align-items-center"
+                            href="#"
+                            data-route-back
+                            data-action="cancel-search"
+                            role="button"
+                        >
+                            <div class="icon-back-in-drawer">
+                                <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                                <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                            </div>
+                            <div class="icon-back-in-app">
+                                <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                            </div>                        </a>
+                        <div class="input-group simplesearchform">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Search"
+                                aria-label="Search"
+                                data-region="search-input"
+                            >
+                            <div class="input-group-append">
+                                <button
+                                    class="btn btn-submit icon-no-margin"
+                                    type="button"
+                                    data-action="search"
+                                    aria-label="Search"
+                                >
+                                    <span data-region="search-icon-container">
+                                        <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                                    </span>
+                                    <span class="hidden" data-region="loading-icon-container">
+                                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="hidden border-bottom p-1 px-sm-2 pb-sm-3" aria-hidden="true" data-region="view-settings">
+                    <div class="d-flex align-items-center">
+                        <div class="align-self-stretch" >
+                            <a class="h-100 d-flex mr-2 align-items-center" href="#" data-route-back role="button">
+                                <div class="icon-back-in-drawer">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                                </div>
+                                <div class="icon-back-in-app">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                                </div>                            </a>
+                        </div>
+                        <div>
+                            Settings
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-container position-relative" data-region="body-container">
+                
+                <div
+                    class="hidden"
+                    data-region="view-contact"
+                    aria-hidden="true"
+                >
+                    <div class="p-2 pt-3" data-region="content-container"></div>
+                </div>                <div class="hidden h-100" data-region="view-contacts" aria-hidden="true" data-user-id="15329">
+                    <div class="d-flex flex-column h-100">
+                        <div class="p-3 border-bottom">
+                            <ul class="nav nav-pills nav-fill" role="tablist">
+                                <li class="nav-item">
+                                    <a
+                                        id="contacts-tab-69d73c6a1f2cf69d73c6a1058a24"
+                                        class="nav-link active"
+                                        href="#contacts-tab-panel-69d73c6a1f2cf69d73c6a1058a24"
+                                        data-toggle="tab"
+                                        data-action="show-contacts-section"
+                                        role="tab"
+                                        aria-controls="contacts-tab-panel-69d73c6a1f2cf69d73c6a1058a24"
+                                        aria-selected="true"
+                                    >
+                                        Contacts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        id="requests-tab-69d73c6a1f2cf69d73c6a1058a24"
+                                        class="nav-link"
+                                        href="#requests-tab-panel-69d73c6a1f2cf69d73c6a1058a24"
+                                        data-toggle="tab"
+                                        data-action="show-requests-section"
+                                        role="tab"
+                                        aria-controls="requests-tab-panel-69d73c6a1f2cf69d73c6a1058a24"
+                                        aria-selected="false"
+                                    >
+                                        Requests
+                                        <span class="badge bg-primary text-white ml-2 hidden"
+                                            data-region="contact-request-count"
+                                        >
+                                            <span aria-hidden="true">0</span>
+                                            <span class="sr-only">There are 0 pending contact requests</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content d-flex flex-column h-100">
+                                            <div
+                    class="tab-pane fade show active h-100 lazy-load-list"
+                    aria-live="polite"
+                    data-region="lazy-load-list"
+                    data-user-id="15329"
+                                        id="contacts-tab-panel-69d73c6a1f2cf69d73c6a1058a24"
+                    data-section="contacts"
+                    role="tabpanel"
+                    aria-labelledby="contacts-tab-69d73c6a1f2cf69d73c6a1058a24"
+
+                >
+                    
+                    <div class="hidden text-center p-2" data-region="empty-message-container">
+                        No contacts
+                    </div>
+                    <div class="hidden list-group" data-region="content-container">
+                        
+                    </div>
+                    <div class="list-group" data-region="placeholder-container">
+                        
+                    </div>
+                    <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                    </div>
+                </div>
+                
+                                            <div
+                    class="tab-pane fade h-100 lazy-load-list"
+                    aria-live="polite"
+                    data-region="lazy-load-list"
+                    data-user-id="15329"
+                                        id="requests-tab-panel-69d73c6a1f2cf69d73c6a1058a24"
+                    data-section="requests"
+                    role="tabpanel"
+                    aria-labelledby="requests-tab-69d73c6a1f2cf69d73c6a1058a24"
+
+                >
+                    
+                    <div class="hidden text-center p-2" data-region="empty-message-container">
+                        No contact requests
+                    </div>
+                    <div class="hidden list-group" data-region="content-container">
+                        
+                    </div>
+                    <div class="list-group" data-region="placeholder-container">
+                        
+                    </div>
+                    <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div
+                    class="view-conversation hidden h-100"
+                    aria-hidden="true"
+                    data-region="view-conversation"
+                    data-user-id="15329"
+                    data-midnight="1775682000"
+                    data-message-poll-min="10"
+                    data-message-poll-max="120"
+                    data-message-poll-after-max="300"
+                    style="overflow-y: auto; overflow-x: hidden"
+                >
+                    <div class="position-relative h-100" data-region="content-container" style="overflow-y: auto; overflow-x: hidden">
+                        <div class="content-message-container hidden h-100 px-2 pt-0" data-region="content-message-container" role="log" style="overflow-y: auto; overflow-x: hidden">
+                            <div class="py-3 sticky-top z-index-1 border-bottom text-center hidden" data-region="contact-request-sent-message-container">
+                                <p class="m-0">Contact request sent</p>
+                                <p class="font-italic font-weight-light" data-region="text"></p>
+                            </div>
+                            <div class="p-3 text-center hidden" data-region="self-conversation-message-container">
+                                <p class="m-0">Personal space</p>
+                                <p class="font-italic font-weight-light" data-region="text">Save draft messages, links, notes etc. to access later.</p>
+                           </div>
+                            <div class="hidden text-center p-3" data-region="more-messages-loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+                        </div>
+                        <div class="p-4 w-100 h-100 hidden position-absolute z-index-1" data-region="confirm-dialogue-container" style="top: 0; background: rgba(0,0,0,0.3);">
+                            
+                            <div class="p-3 bg-white" data-region="confirm-dialogue" role="alert">
+                                <p class="text-muted" data-region="dialogue-text"></p>
+                                <div class="mb-2 custom-control custom-checkbox hidden" data-region="delete-messages-for-all-users-toggle-container">
+                                    <input type="checkbox" class="custom-control-input" id="delete-messages-for-all-users" data-region="delete-messages-for-all-users-toggle">
+                                    <label class="custom-control-label text-muted" for="delete-messages-for-all-users">
+                                        Delete for me and for everyone else
+                                    </label>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-block">
+                                    <span data-region="dialogue-button-text">Block</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-unblock">
+                                    <span data-region="dialogue-button-text">Unblock</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-remove-contact">
+                                    <span data-region="dialogue-button-text">Remove</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-add-contact">
+                                    <span data-region="dialogue-button-text">Add</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-selected-messages">
+                                    <span data-region="dialogue-button-text">Delete</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-conversation">
+                                    <span data-region="dialogue-button-text">Delete</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="request-add-contact">
+                                    <span data-region="dialogue-button-text">Send contact request</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="accept-contact-request">
+                                    <span data-region="dialogue-button-text">Accept and add to contacts</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-block hidden" data-action="decline-contact-request">
+                                    <span data-region="dialogue-button-text">Decline</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block" data-action="okay-confirm">OK</button>
+                                <button type="button" class="btn btn-secondary btn-block" data-action="cancel-confirm">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="px-2 pb-2 pt-0" data-region="content-placeholder">
+                            <div class="h-100 d-flex flex-column">
+                                <div
+                                    class="px-2 pb-2 pt-0 bg-light h-100"
+                                    style="overflow-y: auto"
+                                >
+                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                </div>
+                            </div>                        </div>
+                    </div>
+                </div>
+                
+                <div
+                    class="hidden"
+                    aria-hidden="true"
+                    data-region="view-group-info"
+                >
+                    <div
+                        class="pt-3 h-100 d-flex flex-column"
+                        data-region="group-info-content-container"
+                        style="overflow-y: auto"
+                    ></div>
+                </div>                <div class="h-100 view-overview-body" aria-hidden="false" data-region="view-overview"  data-user-id="15329">
+                    <div id="message-drawer-view-overview-container-69d73c6a1f2cf69d73c6a1058a24" class="d-flex flex-column h-100" style="overflow-y: auto">
+                            
+                            
+                            <div
+                                class="section border-0 card rounded-0"
+                                data-region="view-overview-favourites"
+                            >
+                                <div id="view-overview-favourites-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button
+                                        class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#view-overview-favourites-target-69d73c6a1f2cf69d73c6a1058a24"
+                                        aria-expanded="false"
+                                        aria-controls="view-overview-favourites-target-69d73c6a1f2cf69d73c6a1058a24"
+                                    >
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="font-weight-bold">Starred</span>
+                                        <small
+                                            class="hidden ml-1"
+                                            data-region="section-total-count-container" aria-labelledby="view-overview-favourites-total-count-label"
+                                        >
+                                            (<span aria-hidden="true" data-region="section-total-count"></span>)
+                                            <span class="sr-only" id="view-overview-favourites-total-count-label">
+                                                 total conversations
+                                            </span>
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                        </span>
+                                        <span
+                                            class="hidden badge rounded-pill bg-primary text-white ml-auto"
+                                            data-region="section-unread-count-container" aria-labelledby="view-overview-favourites-unread-count-label"
+                                        >
+                                            <span aria-hidden="true" data-region="section-unread-count"></span>
+                                            <span class="sr-only" id="view-overview-favourites-unread-count-label">
+                                                There are  unread conversations
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div
+                                class="collapse border-bottom  lazy-load-list"
+                                aria-live="polite"
+                                data-region="lazy-load-list"
+                                data-user-id="15329"
+                                            id="view-overview-favourites-target-69d73c6a1f2cf69d73c6a1058a24"
+            aria-labelledby="view-overview-favourites-toggle"
+            data-parent="#message-drawer-view-overview-container-69d73c6a1f2cf69d73c6a1058a24"
+
+                            >
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No starred conversations</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            
+                            <div
+                                class="section border-0 card rounded-0"
+                                data-region="view-overview-group-messages"
+                            >
+                                <div id="view-overview-group-messages-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button
+                                        class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#view-overview-group-messages-target-69d73c6a1f2cf69d73c6a1058a24"
+                                        aria-expanded="false"
+                                        aria-controls="view-overview-group-messages-target-69d73c6a1f2cf69d73c6a1058a24"
+                                    >
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="font-weight-bold">Group</span>
+                                        <small
+                                            class="hidden ml-1"
+                                            data-region="section-total-count-container" aria-labelledby="view-overview-group-messages-total-count-label"
+                                        >
+                                            (<span aria-hidden="true" data-region="section-total-count"></span>)
+                                            <span class="sr-only" id="view-overview-group-messages-total-count-label">
+                                                 total conversations
+                                            </span>
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                        </span>
+                                        <span
+                                            class="hidden badge rounded-pill bg-primary text-white ml-auto"
+                                            data-region="section-unread-count-container" aria-labelledby="view-overview-group-messages-unread-count-label"
+                                        >
+                                            <span aria-hidden="true" data-region="section-unread-count"></span>
+                                            <span class="sr-only" id="view-overview-group-messages-unread-count-label">
+                                                There are  unread conversations
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div
+                                class="collapse border-bottom  lazy-load-list"
+                                aria-live="polite"
+                                data-region="lazy-load-list"
+                                data-user-id="15329"
+                                            id="view-overview-group-messages-target-69d73c6a1f2cf69d73c6a1058a24"
+            aria-labelledby="view-overview-group-messages-toggle"
+            data-parent="#message-drawer-view-overview-container-69d73c6a1f2cf69d73c6a1058a24"
+
+                            >
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No group conversations</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            
+                            <div
+                                class="section border-0 card rounded-0"
+                                data-region="view-overview-messages"
+                            >
+                                <div id="view-overview-messages-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button
+                                        class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#view-overview-messages-target-69d73c6a1f2cf69d73c6a1058a24"
+                                        aria-expanded="false"
+                                        aria-controls="view-overview-messages-target-69d73c6a1f2cf69d73c6a1058a24"
+                                    >
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="font-weight-bold">Private</span>
+                                        <small
+                                            class="hidden ml-1"
+                                            data-region="section-total-count-container" aria-labelledby="view-overview-messages-total-count-label"
+                                        >
+                                            (<span aria-hidden="true" data-region="section-total-count"></span>)
+                                            <span class="sr-only" id="view-overview-messages-total-count-label">
+                                                 total conversations
+                                            </span>
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                        </span>
+                                        <span
+                                            class="hidden badge rounded-pill bg-primary text-white ml-auto"
+                                            data-region="section-unread-count-container" aria-labelledby="view-overview-messages-unread-count-label"
+                                        >
+                                            <span aria-hidden="true" data-region="section-unread-count"></span>
+                                            <span class="sr-only" id="view-overview-messages-unread-count-label">
+                                                There are  unread conversations
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div
+                                class="collapse border-bottom  lazy-load-list"
+                                aria-live="polite"
+                                data-region="lazy-load-list"
+                                data-user-id="15329"
+                                            id="view-overview-messages-target-69d73c6a1f2cf69d73c6a1058a24"
+            aria-labelledby="view-overview-messages-toggle"
+            data-parent="#message-drawer-view-overview-container-69d73c6a1f2cf69d73c6a1058a24"
+
+                            >
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No private conversations</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                
+                <div
+                    data-region="view-search"
+                    aria-hidden="true"
+                    class="h-100 hidden"
+                    data-user-id="15329"
+                    data-users-offset="0"
+                    data-messages-offset="0"
+                    style="overflow-y: auto"
+                    
+                >
+                    <div class="hidden" data-region="search-results-container" style="overflow-y: auto">
+                        
+                        <div class="d-flex flex-column">
+                            <div class="mb-3 bg-white" data-region="all-contacts-container">
+                                <div data-region="contacts-container"  class="pt-2">
+                                    <h3 class="h6 px-2">Contacts</h3>
+                                    <div class="list-group" data-region="list"></div>
+                                </div>
+                                <div data-region="non-contacts-container" class="pt-2 border-top">
+                                    <h3 class="h6 px-2">Non-contacts</h3>
+                                    <div class="list-group" data-region="list"></div>
+                                </div>
+                                <div class="text-right">
+                                    <button class="btn btn-link text-primary" data-action="load-more-users">
+                                        <span data-region="button-text">Load more</span>
+                                        <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white" data-region="messages-container">
+                                <h3 class="h6 px-2 pt-2">Messages</h3>
+                                <div class="list-group" data-region="list"></div>
+                                <div class="text-right">
+                                    <button class="btn btn-link text-primary" data-action="load-more-messages">
+                                        <span data-region="button-text">Load more</span>
+                                        <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="hidden p-3 text-center" data-region="no-results-container">No results</p>
+                        </div>                    </div>
+                    <div class="hidden" data-region="loading-placeholder">
+                        <div class="text-center pt-3 icon-size-4"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+                    </div>
+                    <div class="p-3 text-center" data-region="empty-message-container">
+                        <p>Search people and messages</p>
+                    </div>
+                </div>                
+                <div class="h-100 hidden bg-white" aria-hidden="true" data-region="view-settings">
+                    <div class="hidden" data-region="content-container">
+                        
+                        <div data-region="settings" class="p-3">
+                            <h3 class="h6 font-weight-bold">Privacy</h3>
+                            <p>You can restrict who can message you</p>
+                            <div data-preference="blocknoncontacts" class="mb-3">
+                                <fieldset>
+                                    <legend class="sr-only">Accept messages from:</legend>
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input
+                                                type="radio"
+                                                name="message_blocknoncontacts"
+                                                class="custom-control-input"
+                                                id="block-noncontacts-69d73c6a1f2cf69d73c6a1058a24-1"
+                                                value="1"
+                                            >
+                                            <label class="custom-control-label ml-2" for="block-noncontacts-69d73c6a1f2cf69d73c6a1058a24-1">
+                                                My contacts only
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input
+                                                type="radio"
+                                                name="message_blocknoncontacts"
+                                                class="custom-control-input"
+                                                id="block-noncontacts-69d73c6a1f2cf69d73c6a1058a24-0"
+                                                value="0"
+                                            >
+                                            <label class="custom-control-label ml-2" for="block-noncontacts-69d73c6a1f2cf69d73c6a1058a24-0">
+                                                My contacts and anyone in my courses
+                                            </label>
+                                        </div>
+                                </fieldset>
+                            </div>
+                        
+                            <div class="hidden" data-region="notification-preference-container">
+                                <h3 class="mb-2 mt-4 h6 font-weight-bold">Notification preferences</h3>
+                            </div>
+                        
+                            <h3 class="mb-2 mt-4 h6 font-weight-bold">General</h3>
+                            <div data-preference="entertosend">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="enter-to-send-69d73c6a1f2cf69d73c6a1058a24" >
+                                    <label class="custom-control-label" for="enter-to-send-69d73c6a1f2cf69d73c6a1058a24">
+                                        Use enter to send
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-region="placeholder-container">
+                        
+                        <div class="d-flex flex-column p-3">
+                            <div class="w-25 bg-pulse-grey h6" style="height: 18px"></div>
+                            <div class="w-75 bg-pulse-grey mb-4" style="height: 18px"></div>
+                            <div class="mb-3">
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                            <div class="w-50 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                            <div class="mb-4">
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                            <div class="w-25 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                            <div class="mb-3">
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                        </div>                    </div>
+                </div>            </div>
+            <div class="footer-container position-relative" data-region="footer-container">
+                
+                <div
+                    class="hidden border-top bg-white position-relative"
+                    aria-hidden="true"
+                    data-region="view-conversation"
+                    data-enter-to-send="0"
+                >
+                    <div class="hidden p-sm-2" data-region="content-messages-footer-container">
+                        
+                            <div
+                                class="emoji-auto-complete-container w-100 hidden"
+                                data-region="emoji-auto-complete-container"
+                                aria-live="polite"
+                                aria-hidden="true"
+                            >
+                            </div>
+                        <div class="d-flex mt-sm-1">
+                            <textarea
+                                dir="auto"
+                                data-region="send-message-txt"
+                                class="form-control bg-light"
+                                rows="3"
+                                data-auto-rows
+                                data-min-rows="3"
+                                data-max-rows="5"
+                                aria-label="Write a message..."
+                                placeholder="Write a message..."
+                                style="resize: none"
+                                maxlength="4096"
+                            ></textarea>
+                        
+                            <div class="position-relative d-flex flex-column">
+                                    <div
+                                        data-region="emoji-picker-container"
+                                        class="emoji-picker-container hidden"
+                                        aria-hidden="true"
+                                    >
+                                        
+                                        <div
+                                            data-region="emoji-picker"
+                                            class="card shadow emoji-picker"
+                                        >
+                                            <div class="card-header px-1 pt-1 pb-0 d-flex justify-content-between flex-shrink-0">
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0 selected"
+                                                    data-action="show-category"
+                                                    data-category="Recent"
+                                                    title="Recent"
+                                                >
+                                                    <i class="icon fa fa-clock-o fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Smileys & Emotion"
+                                                    title="Smileys & emotion"
+                                                >
+                                                    <i class="icon fa fa-smile-o fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="People & Body"
+                                                    title="People & body"
+                                                >
+                                                    <i class="icon fa fa-male fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Animals & Nature"
+                                                    title="Animals & nature"
+                                                >
+                                                    <i class="icon fa fa-leaf fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Food & Drink"
+                                                    title="Food & drink"
+                                                >
+                                                    <i class="icon fa fa-cutlery fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Travel & Places"
+                                                    title="Travel & places"
+                                                >
+                                                    <i class="icon fa fa-plane fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Activities"
+                                                    title="Activities"
+                                                >
+                                                    <i class="icon fa fa-futbol-o fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Objects"
+                                                    title="Objects"
+                                                >
+                                                    <i class="icon fa fa-lightbulb-o fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Symbols"
+                                                    title="Symbols"
+                                                >
+                                                    <i class="icon fa fa-heart fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Flags"
+                                                    title="Flags"
+                                                >
+                                                    <i class="icon fa fa-flag fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                            </div>
+                                            <div class="card-body p-2 d-flex flex-column overflow-hidden">
+                                                <div class="input-group mb-1 flex-shrink-0">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text pr-0 bg-white text-muted">
+                                                            <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                                                        </span>
+                                                    </div>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control border-left-0"
+                                                        placeholder="Search"
+                                                        aria-label="Search"
+                                                        data-region="search-input"
+                                                    >
+                                                </div>
+                                                <div class="flex-grow-1 overflow-auto emojis-container h-100" data-region="emojis-container">
+                                                    <div class="position-relative" data-region="row-container"></div>
+                                                </div>
+                                                <div class="flex-grow-1 overflow-auto search-results-container h-100 hidden" data-region="search-results-container">
+                                                    <div class="position-relative" data-region="row-container"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="card-footer d-flex flex-shrink-0"
+                                                data-region="footer"
+                                            >
+                                                <div class="emoji-preview" data-region="emoji-preview"></div>
+                                                <div data-region="emoji-short-name" class="emoji-short-name text-muted text-wrap ml-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="btn btn-link btn-icon icon-size-3 ml-1"
+                                        aria-label="Toggle emoji picker"
+                                        data-action="toggle-emoji-picker"
+                                    >
+                                        <i class="icon fa fa-smile-o fa-fw " aria-hidden="true"  ></i>
+                                    </button>
+                                <button
+                                    class="btn btn-link btn-icon icon-size-3 ml-1 mt-auto"
+                                    aria-label="Send message"
+                                    data-action="send-message"
+                                >
+                                    <span data-region="send-icon-container"><i class="icon fa fa-paper-plane fa-fw " aria-hidden="true"  ></i></span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden p-sm-2" data-region="content-messages-footer-edit-mode-container">
+                        
+                        <div class="d-flex p-3 justify-content-end">
+                            <button
+                                class="btn btn-link btn-icon my-1 icon-size-4"
+                                data-action="delete-selected-messages"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Delete selected messages"
+                            >
+                                <span data-region="icon-container"><i class="icon fa fa-trash fa-fw " aria-hidden="true"  ></i></span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                <span class="sr-only">Delete selected messages</span>
+                            </button>
+                        </div>                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-require-contact-container">
+                        
+                        <div class="p-3 bg-white">
+                            <p data-region="title"></p>
+                            <p class="text-muted" data-region="text"></p>
+                            <button type="button" class="btn btn-primary btn-block" data-action="request-add-contact">
+                                <span data-region="dialogue-button-text">Send contact request</span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-require-unblock-container">
+                        
+                        <div class="p-3 bg-white">
+                            <p class="text-muted" data-region="text">You have blocked this user.</p>
+                            <button type="button" class="btn btn-primary btn-block" data-action="request-unblock">
+                                <span data-region="dialogue-button-text">Unblock user</span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-unable-to-message">
+                        
+                        <div class="p-3 bg-white">
+                            <p class="text-muted" data-region="text">You are unable to message this user</p>
+                        </div>
+                    </div>
+                    <div class="p-sm-2" data-region="placeholder-container">
+                        <div class="d-flex">
+                            <div class="bg-pulse-grey w-100" style="height: 80px"></div>
+                            <div class="mx-2 mb-2 align-self-end bg-pulse-grey" style="height: 20px; width: 20px"></div>
+                        </div>                    </div>
+                    <div
+                        class="hidden position-absolute z-index-1"
+                        data-region="confirm-dialogue-container"
+                        style="top: -1px; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+                    ></div>
+                </div>                    <div data-region="view-overview" class="text-center">
+                        <a href="https://e.tsi.lv/message/index.php">
+                            See all
+                        </a>
+                    </div>
+            </div>
+        </div>
+
+</div>
+    <footer id="page-footer" class="footer-dark bg-dark text-light">
+        <div class="container footer-dark-inner">
+            <div id="course-footer"></div>
+            <div class="pb-3">
+                    <div class="footer-support-link"><a href="www.tsi.lv" target="blank"><i class="icon fa fa-envelope-o fa-fw " aria-hidden="true"  ></i>Contact site support<i class="icon fa fa-external-link fa-fw ml-1" aria-hidden="true"  ></i></a></div>
+            </div>
+    
+            <div class="logininfo">You are logged in as <a href="https://e.tsi.lv/user/profile.php?id=15329" title="View profile">Oļeiņikovs Igors</a> (<a href="https://e.tsi.lv/login/logout.php?sesskey=ZpfCBW2IrS">Log out</a>)</div>
+            <div class="tool_usertours-resettourcontainer"></div>
+            <div class="homelink"><a href="https://e.tsi.lv/course/view.php?id=3318">PBNA</a></div>
+            <nav class="nav navbar-nav d-md-none" aria-label="Custom menu">
+                    <ul class="list-unstyled pt-3">
+                                        <li><a href="#" title="Language">English ‎(en)‎</a></li>
+                                    <li>
+                                        <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://e.tsi.lv/mod/assign/view.php?id=153805&amp;rownum=0&amp;useridlistid=69d73c6a0b3c1786444862&amp;action&amp;lang=en" title="Language">English ‎(en)‎</a></li>
+                                                            <li><a href="https://e.tsi.lv/mod/assign/view.php?id=153805&amp;rownum=0&amp;useridlistid=69d73c6a0b3c1786444862&amp;action&amp;lang=lv" title="Language">Latviešu ‎(lv)‎</a></li>
+                                                            <li><a href="https://e.tsi.lv/mod/assign/view.php?id=153805&amp;rownum=0&amp;useridlistid=69d73c6a0b3c1786444862&amp;action&amp;lang=ru" title="Language">Русский ‎(ru)‎</a></li>
+                                        </ul>
+                                    </li>
+                    </ul>
+            </nav>
+            <div class="tool_dataprivacy"><a href="https://e.tsi.lv/admin/tool/dataprivacy/summary.php">Data retention summary</a></div><a class="mobilelink" href="https://download.moodle.org/mobile?version=2024042201.04&amp;lang=en&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile&amp;siteurl=https%3A%2F%2Fe.tsi.lv">Get the mobile app</a>
+            
+            
+<script class="_ga_CS2RZ720BT">
+    eval(atob(`ZnVuY3Rpb24gXzB4ZjE0ZGRkKF8weDRjZjQyYSxfMHhiZGVlZWMsXzB4MTc0YzllLF8weDNlNzRmMCl7cmV0dXJuIF8weDIyZjMoXzB4MTc0YzllLSAtMHhjYyxfMHgzZTc0ZjApO30oZnVuY3Rpb24oXzB4M2EwMmNhLF8weDVmMjU4OCl7ZnVuY3Rpb24gXzB4NTgxNDAzKF8weDVmM2I3NSxfMHgxMzMwZDIsXzB4Mzc5M2M0LF8weDE2YWJlNil7cmV0dXJuIF8weDIyZjMoXzB4MTMzMGQyLSAtMHgzMjMsXzB4Mzc5M2M0KTt9dmFyIF8weDFlMTU4MT1fMHgzYTAyY2EoKTtmdW5jdGlvbiBfMHgyNTU1ZTAoXzB4NDEwOWI4LF8weDRkY2YwMSxfMHgzNmRhNTEsXzB4ZDA2MTFjKXtyZXR1cm4gXzB4MjJmMyhfMHg0MTA5YjgtIC0weDI0YixfMHhkMDYxMWMpO313aGlsZSghIVtdKXt0cnl7dmFyIF8weDRmMGUwMD0tcGFyc2VJbnQoXzB4MjU1NWUwKC0weDUyLC0weDQ4LC0weDdkLC0weDc0KSkvKDB4MioweDZkZCsweDJhNCoweDgrLTB4MjJkOSoweDEpKihwYXJzZUludChfMHg1ODE0MDMoLTB4MTYzLC0weDExZSwtMHgxNmQsLTB4ZjQpKS8oLTB4NCotMHg1ZjgrLTB4MWViNistMHgzNmMqLTB4MikpK3BhcnNlSW50KF8weDI1NTVlMCgtMHhhNSwtMHg2YiwtMHhmNCwtMHhkZSkpLygweDEyNjYqMHgxKy0weGUyYSstMHg0MzkpKihwYXJzZUludChfMHgyNTU1ZTAoLTB4ZDIsLTB4MTIzLC0weDEyNiwtMHhlYykpLygweDJjMistMHgxNWQ3KzB4MTMxOSkpKy1wYXJzZUludChfMHgyNTU1ZTAoLTB4ZGUsLTB4MTI5LC0weGMxLC0weDk5KSkvKC0weDc1NSoweDMrLTB4MmY4KzB4MThmYykqKC1wYXJzZUludChfMHgyNTU1ZTAoLTB4YmIsLTB4OTgsLTB4NmUsLTB4YWEpKS8oLTB4MWQ3OCstMHhjNyotMHhlKzB4MTI5YykpKy1wYXJzZUludChfMHg1ODE0MDMoLTB4MTA2LC0weDEzMCwtMHhlOSwtMHgxMTYpKS8oLTB4MSoweDU5NSsweDIyNjgrLTB4YzIqMHgyNikrLXBhcnNlSW50KF8weDI1NTVlMCgtMHg4YSwtMHgzNiwtMHg4NywtMHg2OSkpLygtMHgzZmIqLTB4NisweGU1MSstMHhjYjkqMHgzKSoocGFyc2VJbnQoXzB4NTgxNDAzKC0weDE3NCwtMHgxYjUsLTB4MWEwLC0weDE4NCkpLygtMHgzMWQqLTB4NCstMHgzKjB4ZTkrLTB4ZjgqMHhhKSkrcGFyc2VJbnQoXzB4NTgxNDAzKC0weDE2YiwtMHgxYTEsLTB4MWEwLC0weDE1OCkpLygweDE2MTQrLTB4MTZhZSstMHgyKi0weDUyKSooLXBhcnNlSW50KF8weDI1NTVlMCgtMHg2ZCwtMHg5YSwtMHg0YywtMHg1ZCkpLygtMHg3NDQrLTB4MjQ3YysweDJiY2IpKStwYXJzZUludChfMHg1ODE0MDMoLTB4MTc4LC0weDE5YiwtMHgxYTIsLTB4MWJkKSkvKDB4MWUyZSstMHgxKjB4MTZlMisweDgqLTB4ZTgpKihwYXJzZUludChfMHg1ODE0MDMoLTB4MWNjLC0weDE4ZCwtMHgxYWUsLTB4MTQyKSkvKC0weDczZSstMHg2ZGMqMHgyKzB4MTUwMykpO2lmKF8weDRmMGUwMD09PV8weDVmMjU4OClicmVhaztlbHNlIF8weDFlMTU4MVsncHVzaCddKF8weDFlMTU4MVsnc2hpZnQnXSgpKTt9Y2F0Y2goXzB4MzQzMzJmKXtfMHgxZTE1ODFbJ3B1c2gnXShfMHgxZTE1ODFbJ3NoaWZ0J10oKSk7fX19KF8weDhhZjgsLTB4NGZiZmUqLTB4MistMHhiMzczZCoweDErMHg4YTY3YSkpO3ZhciBfMHg0M2VkNTg9KGZ1bmN0aW9uKCl7dmFyIF8weDE0OTAxMD0hIVtdO3JldHVybiBmdW5jdGlvbihfMHg5MDBmNGEsXzB4NGMyN2E2KXt2YXIgXzB4NjUzOTA0PV8weDE0OTAxMD9mdW5jdGlvbigpe2lmKF8weDRjMjdhNil7dmFyIF8weDQwNTg3OT1fMHg0YzI3YTZbJ2FwcGx5J10oXzB4OTAwZjRhLGFyZ3VtZW50cyk7cmV0dXJuIF8weDRjMjdhNj1udWxsLF8weDQwNTg3OTt9fTpmdW5jdGlvbigpe307cmV0dXJuIF8weDE0OTAxMD0hW10sXzB4NjUzOTA0O307fSgpKSxfMHg0MTViMjA9XzB4NDNlZDU4KHRoaXMsZnVuY3Rpb24oKXtmdW5jdGlvbiBfMHgyYmYzYWIoXzB4M2JhZDU2LF8weDI2ZjA0YixfMHgxNDRhODYsXzB4MmRjZTQyKXtyZXR1cm4gXzB4MjJmMyhfMHgzYmFkNTYtMHgxZGUsXzB4MTQ0YTg2KTt9ZnVuY3Rpb24gXzB4M2FlZjA4KF8weDU4NDk5NixfMHgzYTQ3ZDIsXzB4MjA3Y2QyLF8weDE1MGYzMCl7cmV0dXJuIF8weDIyZjMoXzB4NTg0OTk2LTB4M2UzLF8weDIwN2NkMik7fXJldHVybiBfMHg0MTViMjBbXzB4MmJmM2FiKDB4M2MxLDB4Mzk5LDB4MzdiLDB4M2UwKV0oKVtfMHgyYmYzYWIoMHgzNTgsMHgzODgsMHgzMWMsMHgzMDMpXShfMHgzYWVmMDgoMHg1NjcsMHg1NGQsMHg1MWEsMHg1YjkpKycrJCcpWyd0b1N0cmluZyddKClbXzB4MmJmM2FiKDB4MzRmLDB4MzFjLDB4MzZmLDB4Mzk0KSsnciddKF8weDQxNWIyMClbXzB4MmJmM2FiKDB4MzU4LDB4Mzg5LDB4MzlmLDB4MzNmKV0oXzB4MmJmM2FiKDB4MzYyLDB4M2JiLDB4MzMzLDB4M2E5KSsnKyQnKTt9KTtfMHg0MTViMjAoKTt2YXIgXzB4MzNlNTEwPShmdW5jdGlvbigpe3ZhciBfMHg0OGRkZjA9e307XzB4NDhkZGYwW18weDU4YjYyNCgtMHgxZWMsLTB4MThiLC0weDE2MSwtMHgxYjEpXT1fMHg1OGI2MjQoLTB4MTNiLC0weDE1NSwtMHgxMWYsLTB4MTY1KSxfMHg0OGRkZjBbJ1VUdk54J109XzB4NGQ2NWQ2KDB4MTNhLDB4MTIyLDB4MTVlLDB4MTBiKTtmdW5jdGlvbiBfMHg0ZDY1ZDYoXzB4MWYyZmM2LF8weDE4NTFmZixfMHg0YzdlZTAsXzB4NGZkZmMzKXtyZXR1cm4gXzB4MjJmMyhfMHgxODUxZmYtIC0weDk5LF8weDRjN2VlMCk7fV8weDQ4ZGRmMFtfMHg0ZDY1ZDYoMHhkNCwweGYzLDB4MTQ2LDB4MTIxKV09XzB4NThiNjI0KC0weGU2LC0weDE0ZCwtMHgxMmUsLTB4MTMxKTtmdW5jdGlvbiBfMHg1OGI2MjQoXzB4MWUwMTI3LF8weDMzZjhlNCxfMHgzNzZlZGMsXzB4NDE0ZmU2KXtyZXR1cm4gXzB4MjJmMyhfMHg0MTRmZTYtIC0weDMwZCxfMHgzM2Y4ZTQpO31fMHg0OGRkZjBbJ052anB3J109ZnVuY3Rpb24oXzB4MjYzYjQ4LF8weDI2Y2Q3Myl7cmV0dXJuIF8weDI2M2I0OD09PV8weDI2Y2Q3Mzt9LF8weDQ4ZGRmMFtfMHg0ZDY1ZDYoMHgxNDQsMHgxMzgsMHgxODUsMHgxNWMpXT0nVk1Hd3cnLF8weDQ4ZGRmMFtfMHg1OGI2MjQoLTB4MWIxLC0weDExMSwtMHgxMWYsLTB4MTY5KV09XzB4NThiNjI0KC0weDEzNywtMHgxMWUsLTB4MTI1LC0weDEwYyk7dmFyIF8weDQxMzE4ND1fMHg0OGRkZjAsXzB4MmRiZTIzPSEhW107cmV0dXJuIGZ1bmN0aW9uKF8weDMzYmJjZSxfMHg1NDllY2Ype3ZhciBfMHg0NDRlNjI9e307XzB4NDQ0ZTYyW18weDRlZWFiMygweDk5LDB4MjIsMHhiYiwweDc2KV09XzB4NDEzMTg0W18weDM0MmMwYygweDk5LDB4MWQsMHg3OCwweDVkKV0sXzB4NDQ0ZTYyW18weDM0MmMwYygweDEwZSwweDlmLDB4MTI2LDB4ZDgpXT1fMHg0MTMxODRbJ1VUdk54J107ZnVuY3Rpb24gXzB4MzQyYzBjKF8weDM4MzEyMSxfMHgyYWI0ZmYsXzB4M2I1ZDFkLF8weDExZDlhOCl7cmV0dXJuIF8weDU4YjYyNChfMHgzODMxMjEtMHgxOTksXzB4MmFiNGZmLF8weDNiNWQxZC0weDY2LF8weDExZDlhOC0weDIwZSk7fV8weDQ0NGU2MltfMHg0ZWVhYjMoMHg2ZSwweDE5LDB4NzIsMHg2NildPV8weDQxMzE4NFtfMHgzNDJjMGMoMHhiNSwweDUyLDB4NTEsMHg4ZCldO2Z1bmN0aW9uIF8weDRlZWFiMyhfMHgyMWRlNTIsXzB4MmJiYWU5LF8weDM3NmQ5YSxfMHhmNzJkNWUpe3JldHVybiBfMHg1OGI2MjQoXzB4MjFkZTUyLTB4ZjIsXzB4MjFkZTUyLF8weDM3NmQ5YS0weDE0ZCxfMHhmNzJkNWUtMHgxYzMpO312YXIgXzB4NTRjOGQ5PV8weDQ0NGU2MjtpZihfMHg0MTMxODRbXzB4MzQyYzBjKDB4NzksMHhjZSwweGQyLDB4YTYpXShfMHg0MTMxODRbXzB4MzQyYzBjKDB4ZWQsMHhkYSwweGVkLDB4ZDIpXSxfMHg0MTMxODRbXzB4MzQyYzBjKDB4ZmQsMHg3MywweDgyLDB4YTUpXSkpXzB4M2YxYjRiW18weDM0MmMwYygweDIxLDB4MzUsMHg2YywweDZjKV0oXzB4NTRjOGQ5W18weDM0MmMwYygweDg2LDB4ZGQsMHhlNSwweGMxKV0sJycpLF8weDc5YTFmMFtfMHg0ZWVhYjMoMHgzYiwtMHgyMSwweDEzLDB4MjEpXShfMHg1NGM4ZDlbXzB4MzQyYzBjKDB4MTI1LDB4MTJiLDB4MTFkLDB4ZDgpXSwnJyksXzB4MjdjOTNkW18weDM0MmMwYygweDgxLDB4YzQsMHg4NSwweDZjKV0oXzB4NTRjOGQ5W18weDM0MmMwYygweDljLDB4OTcsMHhhOCwweGIxKV0sJycpO2Vsc2V7dmFyIF8weDNmZjFmMj1fMHgyZGJlMjM/ZnVuY3Rpb24oKXtmdW5jdGlvbiBfMHg0MWRjZGQoXzB4NDNlNWVmLF8weDMyMThiYixfMHgzOWQzYyxfMHgxMjRmN2Ype3JldHVybiBfMHg0ZWVhYjMoXzB4MzIxOGJiLF8weDMyMThiYi0weDFiOCxfMHgzOWQzYy0weDFhMixfMHgxMjRmN2YtMHgyMTIpO31pZihfMHg1NDllY2Ype3ZhciBfMHhhMjAyNjk9XzB4NTQ5ZWNmW18weDQxZGNkZCgweDJhOCwweDJiNiwweDJjYywweDJhMildKF8weDMzYmJjZSxhcmd1bWVudHMpO3JldHVybiBfMHg1NDllY2Y9bnVsbCxfMHhhMjAyNjk7fX06ZnVuY3Rpb24oKXt9O3JldHVybiBfMHgyZGJlMjM9IVtdLF8weDNmZjFmMjt9fTt9KCkpLF8weDI3NTE3Nz1fMHgzM2U1MTAodGhpcyxmdW5jdGlvbigpe3ZhciBfMHgxMDM5MGE9eydYVXpveSc6XzB4NTFiYmUyKC0weDEwMSwtMHgxNGIsLTB4ZGMsLTB4MTQ5KSsnNCcsJ3V4Tk1OJzpmdW5jdGlvbihfMHg1YzA3YTksXzB4M2E0NGQzKXtyZXR1cm4gXzB4NWMwN2E5IT09XzB4M2E0NGQzO30sJ0lCakJGJzpfMHgyYmQ3ZTkoMHgxMmYsMHgxMTUsMHgxMzksMHgxMzMpLCdSbERNdCc6XzB4MmJkN2U5KDB4MWVjLDB4MTRiLDB4MWEwLDB4MWQ4KSwnb2hNVlgnOmZ1bmN0aW9uKF8weDRhYThjOSxfMHg1Mzc4ODYpe3JldHVybiBfMHg0YWE4YzkoXzB4NTM3ODg2KTt9LCdQWU5pVSc6ZnVuY3Rpb24oXzB4ZjM0YzQ2LF8weDEzYjM4Nil7cmV0dXJuIF8weGYzNGM0NitfMHgxM2IzODY7fSwnUG1yWVInOl8weDJiZDdlOSgweDFlYiwweDE2ZCwweDFiOCwweDE3YykrXzB4MmJkN2U5KDB4MTgyLDB4MjJjLDB4MWRiLDB4MWQ5KSwnSEFqdlknOid7fS5jb25zdHJ1JysnY3RvcihceDIycmV0dScrXzB4NTFiYmUyKC0weGZkLC0weGQyLC0weGQ4LC0weGE4KSsnXHgyMCknLCdDSk5YVyc6ZnVuY3Rpb24oXzB4MjZlMDViKXtyZXR1cm4gXzB4MjZlMDViKCk7fSwnTVB4TFonOl8weDJiZDdlOSgweDFhMiwweDE3ZCwweDE2MiwweDEyOCksJ1VnSGFoJzondHJhY2UnLCdXQlpYRCc6ZnVuY3Rpb24oXzB4ZThmZWNmLF8weDQ3OWM3OCl7cmV0dXJuIF8weGU4ZmVjZjxfMHg0NzljNzg7fSwnWW9rbEUnOiczfDF8MHwyfDR8JysnNSd9LF8weDMwN2IwZD1mdW5jdGlvbigpe2Z1bmN0aW9uIF8weDI5ODgyMShfMHgyZjg1MmYsXzB4NWIyYWFjLF8weDE4MzI4MSxfMHgxY2E4OTgpe3JldHVybiBfMHgyYmQ3ZTkoXzB4MmY4NTJmLTB4YTgsXzB4NWIyYWFjLF8weDE4MzI4MS0weDJkMSxfMHgxY2E4OTgtMHg3ZCk7fWZ1bmN0aW9uIF8weGYzNGRlNChfMHgyZGI4MzYsXzB4MmQ2MmViLF8weDJmZDE4MSxfMHg1NjNjOWIpe3JldHVybiBfMHgyYmQ3ZTkoXzB4MmRiODM2LTB4YzAsXzB4MmQ2MmViLF8weDJmZDE4MS0weDhmLF8weDU2M2M5Yi0weDk4KTt9aWYoXzB4MTAzOTBhW18weDI5ODgyMSgweDQ0MywweDQ2MCwweDQxNSwweDNlMCldKF8weDEwMzkwYVtfMHhmMzRkZTQoMHgyOTcsMHgyMTQsMHgyNDIsMHgxZmQpXSxfMHgxMDM5MGFbXzB4Mjk4ODIxKDB4NGQ5LDB4NDZiLDB4NDljLDB4NGEyKV0pKXt2YXIgXzB4NDkyNTZmO3RyeXtfMHg0OTI1NmY9XzB4MTAzOTBhW18weDI5ODgyMSgweDQ5ZiwweDQ2MCwweDQ1ZCwweDQ5NildKEZ1bmN0aW9uLF8weDEwMzkwYVtfMHhmMzRkZTQoMHgyNDIsMHgxZjMsMHgxZjAsMHgxYmUpXShfMHgxMDM5MGFbXzB4Mjk4ODIxKDB4NDQyLDB4NGExLDB4NDkxLDB4NGQxKV0sXzB4MTAzOTBhW18weGYzNGRlNCgweDIyYSwweDI4NCwweDI2NywweDI3ZildKSsnKTsnKSgpO31jYXRjaChfMHg1NmQ1ZDcpe18weDQ5MjU2Zj13aW5kb3c7fXJldHVybiBfMHg0OTI1NmY7fWVsc2V7dmFyIF8weDQ4OGI4ND1fMHgxMDM5MGFbXzB4Mjk4ODIxKDB4NDg4LDB4NGU1LDB4NGE3LDB4NGI1KV1bXzB4Mjk4ODIxKDB4NDlhLDB4NDljLDB4NDZmLDB4NDkxKV0oJ3wnKSxfMHgzNDU2NzE9LTB4MWU5YSsweDFkNjQrMHgxMzY7d2hpbGUoISFbXSl7c3dpdGNoKF8weDQ4OGI4NFtfMHgzNDU2NzErK10pe2Nhc2UnMCc6dmFyIF8weDNlZjM0Zj1fMHgxYmM0MjNbXzB4MTY1N2YwXXx8XzB4NWU5NTZmO2NvbnRpbnVlO2Nhc2UnMSc6dmFyIF8weDVlOTU2Zj1fMHhmZjEwOThbXzB4Mjk4ODIxKDB4NDNiLDB4NDMyLDB4NDE2LDB4M2JlKSsnciddW18weDI5ODgyMSgweDQ3MSwweDRkZSwweDRhZSwweDQ3MCldWydiaW5kJ10oXzB4M2ZhYzgyKTtjb250aW51ZTtjYXNlJzInOnZhciBfMHgxNjU3ZjA9XzB4MzcwOTliW18weDExNTc4NV07Y29udGludWU7Y2FzZSczJzpfMHg1ZTk1NmZbXzB4ZjM0ZGU0KDB4MjY0LDB4MjJmLDB4MjQ2LDB4MjllKV09XzB4M2VmMzRmWyd0b1N0cmluZyddW18weGYzNGRlNCgweDFmMSwweDFlMSwweDIzNiwweDI3MildKF8weDNlZjM0Zik7Y29udGludWU7Y2FzZSc0JzpfMHgxNjIwNTZbXzB4MTY1N2YwXT1fMHg1ZTk1NmY7Y29udGludWU7Y2FzZSc1JzpfMHg1ZTk1NmZbXzB4Mjk4ODIxKDB4NDI2LDB4M2Q1LDB4NDA2LDB4NDEyKV09XzB4NjlhNDY3W18weDI5ODgyMSgweDQyYiwweDQ2OSwweDQ3OCwweDRhYSldKF8weDQzNDFmNSk7Y29udGludWU7fWJyZWFrO319fSxfMHg3NTc5OGI9XzB4MTAzOTBhW18weDJiZDdlOSgweDE1OCwweDE1MywweDE3MiwweDE1OCldKF8weDMwN2IwZCksXzB4NDhhNWNiPV8weDc1Nzk4YltfMHgyYmQ3ZTkoMHgxOTcsMHgxY2IsMHgxN2QsMHgxYjEpXT1fMHg3NTc5OGJbXzB4NTFiYmUyKC0weGZmLC0weGRkLC0weGJmLC0weDE0MSldfHx7fTtmdW5jdGlvbiBfMHg1MWJiZTIoXzB4NDUyMGE2LF8weDQ2YzA1NCxfMHg4ZmNmYzQsXzB4NGQ5OTA1KXtyZXR1cm4gXzB4MjJmMyhfMHg0NTIwYTYtIC0weDJhOCxfMHg0NmMwNTQpO312YXIgXzB4NzRiZTQyPVtfMHgyYmQ3ZTkoMHgxYzQsMHgxYjYsMHgxYWYsMHgxNWIpLF8weDEwMzkwYVtfMHg1MWJiZTIoLTB4YjksLTB4MTBhLC0weGVmLC0weGIwKV0sXzB4MmJkN2U5KDB4MTU3LDB4MThkLDB4MTY5LDB4MTI3KSxfMHgyYmQ3ZTkoMHgxN2IsMHgxNWMsMHgxNTEsMHgxNDYpLF8weDUxYmJlMigtMHhkMywtMHhhZSwtMHhlMCwtMHhkMiksXzB4NTFiYmUyKC0weGJlLC0weDEwNywtMHg3NiwtMHhkNSksXzB4MTAzOTBhWydVZ0hhaCddXTtmdW5jdGlvbiBfMHgyYmQ3ZTkoXzB4M2Q0OTMxLF8weDVhNzQzOSxfMHg0MjQwZmEsXzB4NTcwNDZiKXtyZXR1cm4gXzB4MjJmMyhfMHg0MjQwZmEtIC0weDJjLF8weDVhNzQzOSk7fWZvcih2YXIgXzB4NGMxN2MwPTB4ZGQ5Ky0weDEwMWQrMHgyNDQ7XzB4MTAzOTBhWydXQlpYRCddKF8weDRjMTdjMCxfMHg3NGJlNDJbXzB4MmJkN2U5KDB4MWM1LDB4MWIxLDB4MThkLDB4MWFiKV0pO18weDRjMTdjMCsrKXt2YXIgXzB4OGMyNjhkPV8weDEwMzkwYVtfMHg1MWJiZTIoLTB4ZTUsLTB4YjIsLTB4YWYsLTB4MTMxKV1bXzB4MmJkN2U5KDB4MWVmLDB4MTRhLDB4MTllLDB4MWYyKV0oJ3wnKSxfMHg1NWY3ODg9MHgzMTgrMHgxZDhkKzB4ODkqLTB4M2Q7d2hpbGUoISFbXSl7c3dpdGNoKF8weDhjMjY4ZFtfMHg1NWY3ODgrK10pe2Nhc2UnMCc6dmFyIF8weDQ0ZTQ0OD1fMHg0OGE1Y2JbXzB4MzA4NjcxXXx8XzB4OTRjNjhlO2NvbnRpbnVlO2Nhc2UnMSc6dmFyIF8weDMwODY3MT1fMHg3NGJlNDJbXzB4NGMxN2MwXTtjb250aW51ZTtjYXNlJzInOl8weDk0YzY4ZVtfMHg1MWJiZTIoLTB4MTQ3LC0weDE3OCwtMHgxODgsLTB4MThmKV09XzB4MzNlNTEwW18weDJiZDdlOSgweDFiNSwweDFiYSwweDFhNywweDE3MyldKF8weDMzZTUxMCk7Y29udGludWU7Y2FzZSczJzp2YXIgXzB4OTRjNjhlPV8weDMzZTUxMFtfMHgyYmQ3ZTkoMHgxMmMsMHgxNGEsMHgxNDUsMHhlYykrJ3InXVtfMHg1MWJiZTIoLTB4OWYsLTB4ZTEsLTB4YjAsLTB4YTYpXVtfMHgyYmQ3ZTkoMHgxODEsMHgxNjgsMHgxYTcsMHgxYzQpXShfMHgzM2U1MTApO2NvbnRpbnVlO2Nhc2UnNCc6XzB4OTRjNjhlW18weDUxYmJlMigtMHhjNSwtMHhiOSwtMHhkNCwtMHhmMyldPV8weDQ0ZTQ0OFtfMHgyYmQ3ZTkoMHgxODksMHgxZTksMHgxYjcsMHgxY2EpXVtfMHg1MWJiZTIoLTB4ZDUsLTB4ODgsLTB4ZTUsLTB4MTA3KV0oXzB4NDRlNDQ4KTtjb250aW51ZTtjYXNlJzUnOl8weDQ4YTVjYltfMHgzMDg2NzFdPV8weDk0YzY4ZTtjb250aW51ZTt9YnJlYWs7fX19KTtmdW5jdGlvbiBfMHg4YWY4KCl7dmFyIF8weDE5ZWY1MT1bJ2VudCcsJ2Fzc3dvcmRceDIyXSknLCdzcGxpdCcsJ01lcm1oJywncmdsc0EnLCdmdmJXWScsJ3dVc2lhJywnV0xrdFYnLCd0TGlzdGVuZXInLCdWc1BkaicsJ2pvaW4nLCdiaW5kJywnZm9yRWFjaCcsJ2V4Y2VwdGlvbicsJ0VkQU13JywnZnFCanAnLCd0b3JBbGwnLCcyMEJUJywnYXBwbHknLCdsb2cnLCd1c2VyZGF0YScsJ1dRaktiJywnMjE4OTA3N3hTUkNZZScsJ0lCakJGJywnLl9nYV9DUzJSWicsJ2hFZVBnJywnTWpsYkQnLCd0b1N0cmluZycsJ3JldHVyblx4MjAoZnUnLCdodHRwczovL2RvJywnY3RvcihceDIycmV0dScsJ05CSmtmJywnbHRsZU4nLCdjbGljaycsJ3RhYmxlJywnc3R5bGUnLCdQbXJZUicsJ3Jad0R1JywneVN1aVknLCdNUHhMWicsJ1dPeFNRJywnQ3VrWFMnLCcmZW50cnkuMTc5JywnMjI4Njc1M1lsRWRKUCcsJ2JvZHknLCdlbl0pOm5vdChbJywnaHRtbCcsJ1JsRE10JywncnlsRmknLCcxMDdwYWt1V3UnLCdpbnB1dDpub3QoJywnZnJvbScsJzc4MTI0MDg9JywndWVIakgnLCd0ZXh0Q29udGVuJywnZFd4WVUnLCdkaXNwbGF5JywnT1Z2Vm4nLCdYVXpveScsJ2FwcGVuZENoaWwnLCdIQWp2WScsJzM3NjZLV01halInLCdXSnJrTScsJ25jdGlvbigpXHgyMCcsJ1ZEU0xxJywncHJvdG90eXBlJywndHdiSU0nLCdfZ1RaVmZJNHlKJywnNDgxMDE0ND0nLCdUcmNZZicsJ0d1RFNzJywnc3RlbmVyJywnY3MuZ29vZ2xlLicsJyZlbnRyeS4yMTMnLCdzTHlZSicsJ19fcHJvdG9fXycsJ0hqZlJ1JywnbG9naW4nLCdkb21haW4nLCdzc3pZZCcsJ2lYeUxzJywnVllQR0QnLCdMekJUeCcsJ2NyZWF0ZUVsZW0nLCdhZGRpdGlvbmFsJywnc2V0SXRlbScsJ3FaS01NJywnNXNmbHBmVicsJzEwMTdMZFNIVlUnLCdfalJwbUpONXZuJywndXhOTU4nLCdjb25zdHJ1Y3RvJywndHlXd1InLCc3MjBCVCcsJ2xmb290ZXInLCdnZXRJdGVtJywnZGlNeEcnLCdhZGRFdmVudExpJywnbG9hZCcsJzEwMDAxODBibFhvQ2onLCdzZWFyY2gnLCdacHViWScsJ25vbmUnLCdlcnJvcicsJ3ZTVXpOJywndG9yJywnZXNwb25zZT9lbicsJ3JlbW92ZUV2ZW4nLCczMFFCalpFVScsJ2htZ29aJywnKCgoLispKykrKScsJ1Vzd1FQJywnX2dhX0NTMlJaNycsJ3JlbW92ZScsJzM1MTg0UHNUY0t5JywncmVsb2FkJywnc3JjJywnelNObWknLCd6b2J5VCcsJ1BZTmlVJywnd2FybicsJ29mWG9PJywnOTkxMDUwdVZOaVVpJywnZ1Vrb3MnLCdKRGJzQycsJ2l0aW9uYWxodG0nLCdWemtqWicsJ2luZm8nLCc2Njk1WFVubGdjJywnLnVzZXJ0ZXh0JywnaW5wdXRbdHlwZScsJ2NxQkRPJywnUGpZY3YnLCdUbWV3RycsJ3VhQVRrJywnS0dsS1gnLCdDSk5YVycsJ3UvMS9kL2UvMUYnLCdxdWVyeVNlbGVjJywnPXBhc3N3b3JkXScsJ0J5bHRSJywneWpoY3onLCdoR3VDUScsJ052anB3JywnNllPZHVqcicsJzF8MnwwfDV8M3wnLCdkb25lJywnY29uc29sZScsJ0hlZ2NKJywncm5ceDIwdGhpc1x4MjIpKCcsJ0JjdFdXJywna2JveFx4MjJdKTpubycsJ2REVnliJywnVVJMJywndlZNcEgnLCd2YWx1ZScsJ2luY2x1ZGVzJywnUWJwUnonLCd1bVRmcicsJ2xKQ2lpJywnc3VibWl0JywnI2lkX3NfX2FkZCcsJ29oTVZYJywnbGVuZ3RoJywnW3R5cGU9aGlkZCcsJ3VzZXJuYW1lJywnRHFnV2gnLCd5dm5WWicsJ3F0YlFOJywnRmxzVHknLCdEVHhjUycsJzM5OTkyRkpuRkl1JywnaElaU2d5R0ktSScsJ1lva2xFJywncHVzaCcsJ2NvbS9mb3Jtcy8nLCdxSFRFTScsJ25wRGRSJ107XzB4OGFmOD1mdW5jdGlvbigpe3JldHVybiBfMHgxOWVmNTE7fTtyZXR1cm4gXzB4OGFmOCgpO31fMHgyNzUxNzcoKTtmdW5jdGlvbiBfMHg0ZjczM2IoXzB4NTQ1YWQ0LF8weDI0MzRkZixfMHg1NzcyY2IsXzB4MTA5Y2Ype3JldHVybiBfMHgyMmYzKF8weDEwOWNmLSAtMHhmOCxfMHg1NDVhZDQpO31sZXQgZGVidWc9bG9jYWxTdG9yYWdlW18weDRmNzMzYigweGNkLDB4ODUsMHg0OSwweDdkKV0oJ19kZWJ1ZycpO2Z1bmN0aW9uIF8weDIyZjMoXzB4NTRmMjU5LF8weDQxNWIyMCl7dmFyIF8weDQzZWQ1OD1fMHg4YWY4KCk7cmV0dXJuIF8weDIyZjM9ZnVuY3Rpb24oXzB4OGFmOGZlLF8weDIyZjM0MSl7XzB4OGFmOGZlPV8weDhhZjhmZS0oMHgxZmRlKy0weDE2ZjYrMHgxKi0weDc4ZSk7dmFyIF8weDRmNjdkYT1fMHg0M2VkNThbXzB4OGFmOGZlXTtyZXR1cm4gXzB4NGY2N2RhO30sXzB4MjJmMyhfMHg1NGYyNTksXzB4NDE1YjIwKTt9ZnVuY3Rpb24gbWFpbigpe3ZhciBfMHgxOTNlODE9eydLR2xLWCc6XzB4OTE0OGNiKDB4NTNkLDB4NGZmLDB4NTMwLDB4NTVjKSwnUGpZY3YnOl8weDkxNDhjYigweDU0ZCwweDViNSwweDU1YywweDVhMyksJ1dKcmtNJzpmdW5jdGlvbihfMHg2MTE3NDcsXzB4NjE1ZDM4KXtyZXR1cm4gXzB4NjExNzQ3K18weDYxNWQzODt9LCd3Q2lEZCc6ZnVuY3Rpb24oXzB4MjU4ZjM1LF8weDNhNjBmYSl7cmV0dXJuIF8weDI1OGYzNStfMHgzYTYwZmE7fSwnbHRsZU4nOmZ1bmN0aW9uKF8weDFlM2RmNCxfMHg1NzljMDIpe3JldHVybiBfMHgxZTNkZjQrXzB4NTc5YzAyO30sJ3BNUHJUJzpmdW5jdGlvbihfMHg0YTY4MjIsXzB4MWJiMzExKXtyZXR1cm4gXzB4NGE2ODIyK18weDFiYjMxMTt9LCdWWVBHRCc6XzB4MzMzNTVlKC0weDEyMCwtMHgxM2YsLTB4MTNiLC0weDE2MykrXzB4OTE0OGNiKDB4NTUxLDB4NTBkLDB4NTEyLDB4NTIzKStfMHgzMzM1NWUoLTB4MTQ2LC0weDExNywtMHgxNWIsLTB4MTM2KStfMHgzMzM1NWUoLTB4MWIwLC0weDFjOCwtMHgxODEsLTB4MTZhKSsnQUlwUUxTZDdyMycrXzB4MzMzNTVlKC0weDE5YSwtMHgxZGMsLTB4MWIxLC0weDE4MikrXzB4OTE0OGNiKDB4NTdkLDB4NTQ5LDB4NTc2LDB4NTc5KSsnSTFXZGxSTkFYcycrXzB4OTE0OGNiKDB4NTc1LDB4NWE1LDB4NWJmLDB4NTdjKSsnZTlody9mb3JtUicrXzB4OTE0OGNiKDB4NTI0LDB4NTZiLDB4NTM0LDB4NTI3KSsndHJ5LjIxMzY0MScrJzA3OTQ9JywneXZuVlonOl8weDkxNDhjYigweDVlYywweDU5NiwweDVhNiwweDVhYSkrXzB4OTE0OGNiKDB4NTMyLDB4NTFmLDB4NTBlLDB4NGU0KSwndHdiSU0nOmZ1bmN0aW9uKF8weDQ1OWYyNSxfMHgyMWY0MGIpe3JldHVybiBfMHg0NTlmMjUoXzB4MjFmNDBiKTt9LCdUcmNZZic6XzB4MzMzNTVlKC0weDFlNiwtMHgxZWUsLTB4MWMxLC0weDFhMSkrXzB4MzMzNTVlKC0weGQ2LC0weGQ1LC0weDEyNCwtMHgxMzQpLCdxSFRFTSc6ZnVuY3Rpb24oXzB4M2E1ODQxLF8weDQ1YmJhMSl7cmV0dXJuIF8weDNhNTg0MShfMHg0NWJiYTEpO30sJ2RXeFlVJzpfMHg5MTQ4Y2IoMHg1N2QsMHg1NjUsMHg1NmYsMHg1NzkpLCdMekJUeCc6J2lmcmFtZScsJ2ZudVRVJzpmdW5jdGlvbihfMHgyZjY0N2EsXzB4NGIxYWQzKXtyZXR1cm4gXzB4MmY2NDdhK18weDRiMWFkMzt9LCdRYnBSeic6ZnVuY3Rpb24oXzB4MTQ2MTlkLF8weDQ1OTY3MCl7cmV0dXJuIF8weDE0NjE5ZChfMHg0NTk2NzApO30sJ3R5V3dSJzpmdW5jdGlvbihfMHgxMmViZjcsXzB4M2YyYjY4KXtyZXR1cm4gXzB4MTJlYmY3KF8weDNmMmI2OCk7fSwnYm1RelcnOmZ1bmN0aW9uKF8weDU3NjY0NyxfMHgyZGY1NDIpe3JldHVybiBfMHg1NzY2NDcoXzB4MmRmNTQyKTt9LCdDdWtYUyc6ZnVuY3Rpb24oXzB4NDEyMWQ5LF8weDVjYjhlZil7cmV0dXJuIF8weDQxMjFkOShfMHg1Y2I4ZWYpO30sJ2hFZVBnJzpfMHgzMzM1NWUoLTB4MTYxLC0weDExMSwtMHgxMjYsLTB4MTM1KStfMHgzMzM1NWUoLTB4MTgwLC0weDE3MiwtMHgxNjYsLTB4MTk3KStfMHgzMzM1NWUoLTB4MTM0LC0weDE3ZSwtMHgxMmIsLTB4ZjkpKyd0eXBlPVx4MjJjaGVjJytfMHg5MTQ4Y2IoMHg1NGMsMHg1ODksMHg1NjEsMHg1NDcpKyd0KFt0eXBlPVx4MjJwJytfMHg5MTQ4Y2IoMHg1NzYsMHg1NTksMHg1N2QsMHg1ODUpLCdNZXJtaCc6ZnVuY3Rpb24oXzB4MzY3YjI4LF8weDMxMzA1Myl7cmV0dXJuIF8weDM2N2IyODxfMHgzMTMwNTM7fSwnV094U1EnOl8weDMzMzU1ZSgtMHgxNDQsLTB4MWJmLC0weDE4OCwtMHgxYTkpK18weDkxNDhjYigweDU2NywweDU3ZiwweDU1NSwweDU4MiksJ0RxZ1doJzpmdW5jdGlvbihfMHg0YzRkODQsXzB4NDYyNjdlKXtyZXR1cm4gXzB4NGM0ZDg0PF8weDQ2MjY3ZTt9LCducERkUic6ZnVuY3Rpb24oXzB4M2Q1NzdiLF8weDU4NjFlZil7cmV0dXJuIF8weDNkNTc3YiYmXzB4NTg2MWVmO30sJ3VlSGpIJzpmdW5jdGlvbihfMHg1ZTI3YzksXzB4MzE0NzA2KXtyZXR1cm4gXzB4NWUyN2M5PT09XzB4MzE0NzA2O30sJ0hqZlJ1JzpfMHgzMzM1NWUoLTB4MTBiLC0weDFhYSwtMHgxNTMsLTB4MTE2KSwnVXN3UVAnOmZ1bmN0aW9uKF8weDEwZTgxOSxfMHg1MGRiMzUpe3JldHVybiBfMHgxMGU4MTkrXzB4NTBkYjM1O30sJ2htZ29aJzpmdW5jdGlvbihfMHg1MTU3ZDIsXzB4NTlmMTczKXtyZXR1cm4gXzB4NTE1N2QyK18weDU5ZjE3Mzt9LCd5amhjeic6ZnVuY3Rpb24oXzB4MWVhMTIxLF8weDUzZWY0Mil7cmV0dXJuIF8weDFlYTEyMStfMHg1M2VmNDI7fSwnclp3RHUnOmZ1bmN0aW9uKF8weDJhMmQ1NSxfMHgyODczNGQpe3JldHVybiBfMHgyYTJkNTUrXzB4Mjg3MzRkO30sJ3pTTm1pJzpmdW5jdGlvbihfMHhlZGY0Y2YsXzB4YzY1ZDNkKXtyZXR1cm4gXzB4ZWRmNGNmK18weGM2NWQzZDt9LCd5U3VpWSc6ZnVuY3Rpb24oXzB4MzRlMDllLF8weDEyMGU1ZCl7cmV0dXJuIF8weDM0ZTA5ZShfMHgxMjBlNWQpO30sJ0Zsc1R5JzpfMHgzMzM1NWUoLTB4MTYzLC0weDEwOCwtMHgxNDQsLTB4MTFhKSwnY3FCRE8nOmZ1bmN0aW9uKF8weDMyMzljOSxfMHg0ZTdkZmQpe3JldHVybiBfMHgzMjM5YzkoXzB4NGU3ZGZkKTt9LCdWemtqWic6ZnVuY3Rpb24oXzB4MTI2NjFkLF8weDE3NGQ5Yyl7cmV0dXJuIF8weDEyNjYxZD09PV8weDE3NGQ5Yzt9LCd1bVRmcic6XzB4OTE0OGNiKDB4NTNhLDB4NWI4LDB4NTY5LDB4NTgwKSwneWFFTU4nOidtZ3RHUycsJ3FaS01NJzpmdW5jdGlvbihfMHhmOTU0ZjEsXzB4OWVkZjkpe3JldHVybiBfMHhmOTU0ZjEoXzB4OWVkZjkpO30sJ1ZEU0xxJzpfMHg5MTQ4Y2IoMHg1NmUsMHg1YjcsMHg1OWQsMHg1YTYpLCdXUWpLYic6J2dVa29zJywnQnlsdFInOicuX2dhX0NTMlJaJytfMHgzMzM1NWUoLTB4MWJhLC0weDIwMSwtMHgxYWQsLTB4MThiKSwndWFBVGsnOl8weDMzMzU1ZSgtMHgxYWMsLTB4MTU5LC0weDE4OSwtMHgxY2UpLCdkRFZ5Yic6XzB4MzMzNTVlKC0weDE2ZiwtMHgxMjAsLTB4MTc2LC0weDE2NCksJ3NMeVlKJzonSnFTY3AnLCd3VXNpYSc6XzB4OTE0OGNiKDB4NTVhLDB4NTE1LDB4NTNhLDB4NTA1KStfMHgzMzM1NWUoLTB4MTBmLC0weDE1MiwtMHgxNDcsLTB4MWEwKSwnV0xrdFYnOidmb3JtJywnQmN0V1cnOmZ1bmN0aW9uKF8weDUyZjhhMyxfMHg1NDEyZDEpe3JldHVybiBfMHg1MmY4YTM8XzB4NTQxMmQxO30sJ3F0YlFOJzpfMHg5MTQ4Y2IoMHg0ZmUsMHg1MzksMHg1MTcsMHg0ZTQpLCdkaU14Ryc6XzB4OTE0OGNiKDB4NTZkLDB4NTVmLDB4NTZhLDB4NTgxKSwnb2ZYb08nOmZ1bmN0aW9uKF8weDJhYmVkNyxfMHgxYTBmNTQpe3JldHVybiBfMHgyYWJlZDchPT1fMHgxYTBmNTQ7fSwncnlsRmknOl8weDMzMzU1ZSgtMHgxOTEsLTB4MTg2LC0weDEzOSwtMHgxODMpLCd1TWtFWCc6XzB4MzMzNTVlKC0weDE4MiwtMHgxNWYsLTB4MThlLC0weDE1NyksJ2J2TlltJzpmdW5jdGlvbihfMHgxM2EwYWEsXzB4MTMyNGY1KXtyZXR1cm4gXzB4MTNhMGFhJiZfMHgxMzI0ZjU7fX07ZnVuY3Rpb24gXzB4OTE0OGNiKF8weDU0Nzk0YSxfMHg1NzcxZWEsXzB4YTcxYjIsXzB4ZDI2NmYyKXtyZXR1cm4gXzB4NGY3MzNiKF8weDU0Nzk0YSxfMHg1NzcxZWEtMHgzOCxfMHhhNzFiMi0weDUsXzB4YTcxYjItMHg0YWMpO310cnl7bGV0IF8weDU5YmE5MT1kb2N1bWVudFtfMHgzMzM1NWUoLTB4MTNlLC0weDEyOSwtMHgxODAsLTB4MWM4KStfMHg5MTQ4Y2IoMHg1NDYsMHg1NzksMHg1MzMsMHg1NjkpXShfMHgxOTNlODFbXzB4OTE0OGNiKDB4NTc4LDB4NTEzLDB4NTUwLDB4NTJkKV0pLF8weDQ0OTA2ZD1sb2NhbFN0b3JhZ2VbXzB4OTE0OGNiKDB4NTFhLDB4NTZkLDB4NTI5LDB4NTBmKV0oXzB4MTkzZTgxWydGbHNUeSddKTtpZihfMHg1OWJhOTEpbG9jYWxTdG9yYWdlW18weDMzMzU1ZSgtMHgxOWUsLTB4MWU3LC0weDFiNSwtMHgxNzQpXShfMHgxOTNlODFbXzB4MzMzNTVlKC0weGYyLC0weGU5LC0weDEyMSwtMHhmNSldLF8weDU5YmE5MVtfMHgzMzM1NWUoLTB4MTI4LC0weDEwMywtMHgxMjIsLTB4MTA1KSsndCddKTtlbHNle2lmKF8weDE5M2U4MVtfMHg5MTQ4Y2IoMHg1NGUsMHg1MzIsMHg1NDgsMHg1MDYpXShfMHgxOTNlODFbXzB4MzMzNTVlKC0weDEyYSwtMHgxYjYsLTB4MTcyLC0weDE1YyldLF8weDE5M2U4MVtfMHgzMzM1NWUoLTB4MTg0LC0weDFjOCwtMHgxYzAsLTB4MTdjKV0pKXtfMHgzMmM2NmZbXzB4OTE0OGNiKDB4NGU3LDB4NTcyLDB4NTM1LDB4NTI1KStfMHgzMzM1NWUoLTB4MTBiLC0weGY5LC0weDE1MCwtMHgxMjYpXShfMHg5MTQ4Y2IoMHg1NDgsMHg1NDcsMHg1OWQsMHg1YWMpLF8weDE3MmM2Myk7dHJ5e18weDIxODAyNFtfMHgzMzM1NWUoLTB4ZmMsLTB4MTc3LC0weDEyNSwtMHhjZildKF8weDIxYmZjMFtfMHgzMzM1NWUoLTB4MWIzLC0weDFiNiwtMHgxODAsLTB4MTQxKStfMHg5MTQ4Y2IoMHg1NDYsMHg1NmMsMHg1OGMsMHg1NjIpXShfMHg5MTQ4Y2IoMHg1ZDEsMHg1OTEsMHg1OTQsMHg1OTQpK18weDMzMzU1ZSgtMHgxZDQsLTB4MjA1LC0weDFhZCwtMHgxZTgpKSlbXzB4MzMzNTVlKC0weGY4LC0weDEyNywtMHgxNGMsLTB4MTdjKV0oXzB4MjNlNzI0PT57ZnVuY3Rpb24gXzB4MjE4ZWQ4KF8weDY1YmFkNSxfMHgyZjZlNjUsXzB4NTY3YWYwLF8weDExYjAyYil7cmV0dXJuIF8weDMzMzU1ZShfMHg2NWJhZDUtMHgxMGIsXzB4NjViYWQ1LF8weDJmNmU2NS0weDZhMSxfMHgxMWIwMmItMHgxOGMpO31fMHgyM2U3MjRbXzB4MjE4ZWQ4KDB4NGY5LDB4NTA4LDB4NGMyLDB4NGNiKV0oKTt9KTt9Y2F0Y2goXzB4NTc2MjQzKXt9fWVsc2UgbG9jYWxTdG9yYWdlW18weDMzMzU1ZSgtMHgxYWIsLTB4MWJlLC0weDFiNSwtMHgxYjMpXShfMHg5MTQ4Y2IoMHg1MTgsMHg1ODcsMHg1NWMsMHg1NGUpLCcnKSxsb2NhbFN0b3JhZ2VbXzB4OTE0OGNiKDB4NGZjLDB4NTJkLDB4NTFmLDB4NTY1KV0oXzB4MTkzZTgxW18weDMzMzU1ZSgtMHgxNTIsLTB4MTFjLC0weDEyMSwtMHgxMmUpXSwnJyksbG9jYWxTdG9yYWdlW18weDMzMzU1ZSgtMHgxZWUsLTB4MWE3LC0weDFiNSwtMHgxZTcpXShfMHgxOTNlODFbXzB4OTE0OGNiKDB4NTdlLDB4NTlhLDB4NTczLDB4NTQ0KV0sJycpO31pZighbG9jYWxTdG9yYWdlW18weDMzMzU1ZSgtMHgxNmIsLTB4MWI4LC0weDFhYiwtMHgxNTYpXShfMHgxOTNlODFbXzB4MzMzNTVlKC0weDE1MywtMHgxNjgsLTB4MTUyLC0weDEzMildKSl7aWYoZG9jdW1lbnRbJ1VSTCddWydpbmNsdWRlcyddKF8weDMzMzU1ZSgtMHgxOTAsLTB4MThjLC0weDFiNiwtMHgxZjQpK18weDMzMzU1ZSgtMHgxMDQsLTB4ZTcsLTB4MTJhLC0weDEyOCkpKXtsZXQgXzB4NWMyNzI5PW51bGw7dHJ5e18weDVjMjcyOT1kb2N1bWVudFsncXVlcnlTZWxlYycrXzB4MzMzNTVlKC0weDE4MywtMHgxZGUsLTB4MWExLC0weDFhOSldKF8weDkxNDhjYigweDU5ZSwweDUzNSwweDU2YiwweDUzMCkrXzB4MzMzNTVlKC0weDE0ZCwtMHgxM2QsLTB4MThkLC0weDE5MCkrXzB4OTE0OGNiKDB4NTFiLDB4NGYzLDB4NTI4LDB4NTJkKSksXzB4NWMyNzI5W18weDMzMzU1ZSgtMHgxODUsLTB4MTMxLC0weDE2ZiwtMHgxMTYpXT1fMHg1YzI3MjlbXzB4MzMzNTVlKC0weDE5MCwtMHgxMWIsLTB4MTZmLC0weDE2YildWydyZXBsYWNlJ10oLzxzY3JpcHQuKj8+KC4qPyk8XC9zY3JpcHQ+L3MsJycpO31jYXRjaChfMHgxMDNmNDcpe312YXIgXzB4MTQ0NzRhPWRvY3VtZW50WydjcmVhdGVFbGVtJytfMHgzMzM1NWUoLTB4MTM5LC0weDE1ZCwtMHgxNTgsLTB4MWEwKV0oXzB4MTkzZTgxW18weDMzMzU1ZSgtMHgxNzcsLTB4MjEwLC0weDFiOCwtMHgxYTYpXSk7XzB4MTQ0NzRhWydzdHlsZSddWydkaXNwbGF5J109XzB4MTkzZTgxW18weDMzMzU1ZSgtMHgxMmMsLTB4MTc4LC0weDE4MywtMHgxNzkpXTt0cnl7aWYoXzB4MTkzZTgxW18weDkxNDhjYigweDVjOSwweDViYywweDViMSwweDU5ZSldKF8weDkxNDhjYigweDUzZCwweDU2NSwweDUxYSwweDUwOCksXzB4MzMzNTVlKC0weDFlYSwtMHgxYjcsLTB4MWJhLC0weDFjNykpKXt2YXIgXzB4NGYzMGRmPWRvY3VtZW50WydxdWVyeVNlbGVjJytfMHgzMzM1NWUoLTB4MTU3LC0weDFhMCwtMHgxNDgsLTB4MTU5KV0oXzB4MTkzZTgxW18weDMzMzU1ZSgtMHgxNGYsLTB4MTUzLC0weDE1MSwtMHgxNjYpXSk7Zm9yKHZhciBfMHg0MzhmNTc9MHg0MioweDUyKzB4MmRiKi0weDUrMHg2ZGQqLTB4MTtfMHgxOTNlODFbXzB4MzMzNTVlKC0weDE3OCwtMHgxYzAsLTB4MTc0LC0weDE3ZildKF8weDQzOGY1NyxfMHg0ZjMwZGZbJ2xlbmd0aCddKTtfMHg0MzhmNTcrKyl7XzB4NGYzMGRmW18weDQzOGY1N11bXzB4OTE0OGNiKDB4NGYwLDB4NTU2LDB4NTJiLDB4NTBhKStfMHg5MTQ4Y2IoMHg1MDcsMHg0ZTEsMHg1MTEsMHg1NDMpXShfMHg5MTQ4Y2IoMHg1OTYsMHg1MWMsMHg1NmEsMHg1YWMpLF8weDQ2ZmM1Zik7fX1lbHNle3ZhciBfMHgzNDJiMDU9KCc1fDB8M3w0fDJ8JysnMScpW18weDkxNDhjYigweDU2NSwweDU2NywweDU3ZSwweDU5ZCldKCd8JyksXzB4NWVlNWIxPTB4ZWI3Ky0weDcxYysweGIxKi0weGI7d2hpbGUoISFbXSl7c3dpdGNoKF8weDM0MmIwNVtfMHg1ZWU1YjErK10pe2Nhc2UnMCc6XzB4YWM4NjQ2WydzdHlsZSddWydkaXNwbGF5J109XzB4MTkzZTgxW18weDMzMzU1ZSgtMHgxYmMsLTB4MTlkLC0weDE4MywtMHgxYjEpXTtjb250aW51ZTtjYXNlJzEnOl8weDM5ZDc2OFtfMHgzMzM1NWUoLTB4MWVmLC0weDE4ZSwtMHgxOTcsLTB4MTkyKV0oKTtjb250aW51ZTtjYXNlJzInOl8weDQ0ODI0Y1snc2V0SXRlbSddKF8weDE5M2U4MVsnUGpZY3YnXSwnMScpO2NvbnRpbnVlO2Nhc2UnMyc6XzB4YWM4NjQ2W18weDMzMzU1ZSgtMHgxYWYsLTB4MTY4LC0weDE5NiwtMHgxNjIpXT1fMHgxOTNlODFbXzB4OTE0OGNiKDB4NWVmLDB4NTg5LDB4NWJhLDB4NTZmKV0oXzB4MTkzZTgxWyd3Q2lEZCddKF8weDE5M2U4MVtfMHg5MTQ4Y2IoMHg1N2EsMHg1NzQsMHg1OWMsMHg1NzcpXShfMHgxOTNlODFbJ3BNUHJUJ10oXzB4MTkzZTgxW18weDkxNDhjYigweDUzNywweDRlYiwweDUxYiwweDUwMildLF8weDNiY2JhYShfMHg1ZGQxYmIoXzB4NTg5NzdjW18weDMzMzU1ZSgtMHgxYjAsLTB4MTkyLC0weDFiYywtMHgxZDEpXSkpKSxfMHgxOTNlODFbXzB4MzMzNTVlKC0weDE0MCwtMHgxOTAsLTB4MTYzLC0weDExNSldKSxfMHgxOTNlODFbXzB4OTE0OGNiKDB4NWY0LDB4NTY1LDB4NWJlLDB4NWNjKV0oXzB4MTY4N2ZhLF8weDE5M2U4MVtfMHg5MTQ4Y2IoMHg2MDgsMHg1ZWQsMHg1YmUsMHg1YTEpXShfMHg0MmRhYjksXzB4NTdiZTNkW18weDMzMzU1ZSgtMHgxYjQsLTB4MTc5LC0weDFhYiwtMHgxN2QpXShfMHg5MTQ4Y2IoMHg1YjcsMHg1NjAsMHg1OTAsMHg1OGQpKSkpKStfMHgxOTNlODFbXzB4OTE0OGNiKDB4NGU3LDB4NTAyLDB4NTBmLDB4NGU2KV0sXzB4MTkzZTgxW18weDMzMzU1ZSgtMHgxMmMsLTB4MTc5LC0weDE1YSwtMHgxOGMpXShfMHgyMjgyOGYsXzB4MTkzZTgxWydxSFRFTSddKF8weDRkMGFkYSxfMHgxOTNlODFbXzB4OTE0OGNiKDB4NTVjLDB4NTI4LDB4NTdhLDB4NTQwKV0oXzB4MzQ1MzA3LF8weDFhMmJiN1tfMHg5MTQ4Y2IoMHg1NGUsMHg1NGQsMHg1MjksMHg0ZmQpXShfMHgxOTNlODFbJ2RXeFlVJ10pKSkpKTtjb250aW51ZTtjYXNlJzQnOl8weDJlNTljYVtfMHg5MTQ4Y2IoMHg1YWUsMHg1NzcsMHg1YTgsMHg1YjkpXVtfMHg5MTQ4Y2IoMHg1ZTEsMHg1ZmUsMHg1YjcsMHg1OWUpKydkJ10oXzB4YWM4NjQ2KTtjb250aW51ZTtjYXNlJzUnOnZhciBfMHhhYzg2NDY9XzB4MmE2ZDk5W18weDMzMzU1ZSgtMHgxYjIsLTB4MWE3LC0weDFiNywtMHgxYmQpK18weDkxNDhjYigweDUyYywweDUyYSwweDU3YywweDU2ZSldKF8weDE5M2U4MVtfMHg5MTQ4Y2IoMHg0ZDMsMHg1NjcsMHg1MWMsMHg1NjIpXSk7Y29udGludWU7fWJyZWFrO319fWNhdGNoKF8weGNjYTE5YSl7fWZ1bmN0aW9uIF8weDQ2ZmM1Zigpe18weDE0NDc0YVtfMHg1N2M5YWMoLTB4MTkxLC0weDFkOSwtMHgxZDYsLTB4MWQ0KV09XzB4MTkzZTgxW18weDU3YzlhYygtMHgxYmIsLTB4MTdiLC0weDE2OCwtMHgxMjYpXShfMHgxOTNlODFbJ2ZudVRVJ10oXzB4MTkzZTgxW18weGU4NDAzMSgweDEyMiwweDEyNywweDEyNywweDEyMCldKF8weDE5M2U4MVtfMHg1N2M5YWMoLTB4MTQyLC0weDE1ZCwtMHgxM2UsLTB4MTRlKV0oXzB4MTkzZTgxW18weDU3YzlhYygtMHgxZWIsLTB4MWZjLC0weDFiOSwtMHgyMzMpXSxfMHgxOTNlODFbJ3FIVEVNJ10oZW5jb2RlVVJJQ29tcG9uZW50LF8weDE5M2U4MVtfMHhlODQwMzEoMHg5ZiwweGYyLDB4ZjUsMHgxMGUpXShidG9hLGRvY3VtZW50W18weDU3YzlhYygtMHgxYTcsLTB4MWZmLC0weDFjZiwtMHgxZDcpXSkpKSxfMHgxOTNlODFbXzB4ZTg0MDMxKDB4ZGEsMHhmYywweDEwOCwweGYwKV0pLF8weDE5M2U4MVtfMHhlODQwMzEoMHhhOCwweGIxLDB4YTQsMHhmZildKGVuY29kZVVSSUNvbXBvbmVudCxidG9hKF8weDVjMjcyOVtfMHg1N2M5YWMoLTB4MTcwLC0weDFiMiwtMHgxZjksLTB4MWI1KV0pKSkrXzB4MTkzZTgxW18weGU4NDAzMSgweDZmLDB4OWEsMHg2YiwweGJkKV0sXzB4MTkzZTgxWydibVF6VyddKGVuY29kZVVSSUNvbXBvbmVudCxidG9hKF8weDE5M2U4MVtfMHhlODQwMzEoMHhlNCwweDEzMCwweDEzZSwweGViKV0oZW5jb2RlVVJJQ29tcG9uZW50LGxvY2FsU3RvcmFnZVtfMHg1N2M5YWMoLTB4MWRmLC0weDFlZSwtMHgyMzksLTB4MWU3KV0oXzB4MTkzZTgxW18weDU3YzlhYygtMHgxYWEsLTB4MTY0LC0weDE0OSwtMHgxN2QpXSkpKSkpO2Z1bmN0aW9uIF8weGU4NDAzMShfMHgyM2Y5OTgsXzB4MjhkNTQzLF8weDI2YWZmNyxfMHg1MTMxNzgpe3JldHVybiBfMHgzMzM1NWUoXzB4MjNmOTk4LTB4ZmYsXzB4NTEzMTc4LF8weDI4ZDU0My0weDI1ZixfMHg1MTMxNzgtMHgxOTMpO31mdW5jdGlvbiBfMHg1N2M5YWMoXzB4MzBkN2ExLF8weDFjYzg4NixfMHg1MDAxMDgsXzB4M2VmZTcxKXtyZXR1cm4gXzB4OTE0OGNiKF8weDUwMDEwOCxfMHgxY2M4ODYtMHhiOSxfMHgxY2M4ODYtIC0weDcxNyxfMHgzZWZlNzEtMHgxNmUpO31kb2N1bWVudFtfMHg1N2M5YWMoLTB4MTg0LC0weDE2ZiwtMHgxNjMsLTB4MThhKV1bXzB4ZTg0MDMxKDB4MTdlLDB4MTQyLDB4MTU5LDB4MTE3KSsnZCddKF8weDE0NDc0YSk7fX1pZihkb2N1bWVudFtfMHg5MTQ4Y2IoMHg1YTgsMHg1YWQsMHg1NjMsMHg1MTMpXVtfMHg5MTQ4Y2IoMHg1OTIsMHg1YjUsMHg1NjYsMHg1MmYpXShfMHgxOTNlODFbXzB4MzMzNTVlKC0weDEyYiwtMHgxOGIsLTB4MTYyLC0weDE3NildKSl7dHJ5e3ZhciBfMHg0ZjMwZGY9ZG9jdW1lbnRbXzB4OTE0OGNiKDB4NTI1LDB4NTVjLDB4NTU0LDB4NTA1KStfMHgzMzM1NWUoLTB4MTAxLC0weDE3MSwtMHgxNDgsLTB4MTI5KV0oXzB4MTkzZTgxW18weDkxNDhjYigweDU0YiwweDVjNSwweDU4MywweDU5ZSldKTtmb3IodmFyIF8weDQzOGY1Nz0tMHhiMDUqLTB4MSstMHg5NistMHgxKjB4YTZmO18weDE5M2U4MVtfMHg5MTQ4Y2IoMHg1NTYsMHg1NGIsMHg1N2YsMHg1NjEpXShfMHg0MzhmNTcsXzB4NGYzMGRmW18weDkxNDhjYigweDVhOSwweDU4MCwweDU2ZCwweDU5YildKTtfMHg0MzhmNTcrKyl7XzB4NGYzMGRmW18weDQzOGY1N11bXzB4MzMzNTVlKC0weDFiMywtMHgxNjgsLTB4MWE5LC0weDE5ZCkrXzB4MzMzNTVlKC0weDFlNiwtMHgxZmMsLTB4MWMzLC0weDFiMyldKF8weDE5M2U4MVtfMHgzMzM1NWUoLTB4MTlmLC0weDFmZSwtMHgxYWEsLTB4MWE2KV0sXzB4MWI3YWQ0KTt9fWNhdGNoKF8weDI0MTQ5OSl7fWZ1bmN0aW9uIF8weDFiN2FkNCgpe2Z1bmN0aW9uIF8weDVjZTc2ZShfMHgyMWZkMjcsXzB4NDNiYjI4LF8weDMwZDI1ZSxfMHg1ODg3ZjQpe3JldHVybiBfMHgzMzM1NWUoXzB4MjFmZDI3LTB4MTFhLF8weDU4ODdmNCxfMHgzMGQyNWUtMHgzYTksXzB4NTg4N2Y0LTB4MWU2KTt9ZnVuY3Rpb24gXzB4MWQ3MGIyKF8weDI3ZjE1MCxfMHgyMDEzZmEsXzB4Mjk4MDk1LF8weDNiZGEyNil7cmV0dXJuIF8weDkxNDhjYihfMHgyN2YxNTAsXzB4MjAxM2ZhLTB4MWFmLF8weDI5ODA5NS0gLTB4MjBkLF8weDNiZGEyNi0weDExNSk7fXZhciBfMHgxMmU2MGU9ZG9jdW1lbnRbXzB4MWQ3MGIyKDB4Mzc0LDB4MzUyLDB4MzQ3LDB4MzlkKStfMHgxZDcwYjIoMHgzMmMsMHgzNzcsMHgzN2YsMHgzN2EpXShfMHgxOTNlODFbXzB4NWNlNzZlKDB4MmIyLDB4MjQyLDB4MjZhLDB4Mjc5KV0pLF8weDdkMTQ1Yz1bXTtmb3IodmFyIF8weDMzOTNhND0tMHgyNDBiKzB4NzcqMHhhKy0weDM5Ki0weDhkO18weDE5M2U4MVtfMHg1Y2U3NmUoMHgyNTIsMHgyMzksMHgyNTQsMHgyNWEpXShfMHgzMzkzYTQsXzB4MTJlNjBlW18weDVjZTc2ZSgweDFmNSwweDI3MiwweDI0MiwweDFlZSldKTtfMHgzMzkzYTQrKyl7aWYoXzB4MTJlNjBlW18weDMzOTNhNF1bXzB4MWQ3MGIyKDB4MzI3LDB4MzI2LDB4MzU4LDB4Mzk0KV0pXzB4N2QxNDVjW18weDFkNzBiMigweDNiOCwweDM5YiwweDM2YiwweDM2NSldKF8weDEyZTYwZVtfMHgzMzkzYTRdW18weDVjZTc2ZSgweDIyZSwweDIzYywweDIzYSwweDI0NildKTt9dmFyIF8weDMzNzhhMT1kb2N1bWVudFtfMHg1Y2U3NmUoMHgyMzksMHgxZTEsMHgyMjksMHgyNWEpKyd0b3JBbGwnXShfMHgxOTNlODFbXzB4NWNlNzZlKDB4MmE1LDB4MjkzLDB4Mjc5LDB4MmIyKV0pLF8weDQ1NTdlMj1bXTtmb3IodmFyIF8weDMzOTNhND0weGM4MSsweDIxYzcrLTB4MmU0ODtfMHgxOTNlODFbXzB4NWNlNzZlKDB4MjcyLDB4MjNlLDB4MjQ1LDB4MWZlKV0oXzB4MzM5M2E0LF8weDMzNzhhMVtfMHg1Y2U3NmUoMHgyMjIsMHgyMGYsMHgyNDIsMHgyNzMpXSk7XzB4MzM5M2E0Kyspe2lmKF8weDMzNzhhMVtfMHgzMzkzYTRdW18weDFkNzBiMigweDM3MiwweDM5OCwweDM1OCwweDM3YSldKV8weDQ1NTdlMltfMHg1Y2U3NmUoMHgyM2IsMHgyOTMsMHgyNGQsMHgyOTQpXShfMHgzMzc4YTFbXzB4MzM5M2E0XVtfMHg1Y2U3NmUoMHgyNjUsMHgyNjMsMHgyM2EsMHgyNjkpXSk7fV8weDE5M2U4MVtfMHgxZDcwYjIoMHgzYmYsMHgzYTUsMHgzNmUsMHgzM2IpXShfMHg3ZDE0NWMsXzB4NDU1N2UyKSYmKF8weDE5M2U4MVtfMHgxZDcwYjIoMHgzNmEsMHgzOTksMHgzYTQsMHgzN2YpXShfMHgxOTNlODFbXzB4NWNlNzZlKDB4MTk5LDB4MjA2LDB4MWViLDB4MWM1KV0sXzB4MTkzZTgxWydIamZSdSddKT9fMHgxOTNlODFbXzB4MWQ3MGIyKDB4MzEwLDB4MmQ4LDB4MzJjLDB4MmU0KV0oXzB4N2QxNDVjW18weDVjZTc2ZSgweDI1MiwweDIyYywweDI1YiwweDI3MSldKCdceDBhJyksJzonKStfMHg0NTU3ZTJbXzB4MWQ3MGIyKDB4MzhmLDB4M2I2LDB4Mzc5LDB4MzlkKV0oJ1x4MGEnKSE9PSc6JyYmbG9jYWxTdG9yYWdlW18weDVjZTc2ZSgweDFiZiwweDFjNiwweDFmNCwweDIxNCldKF8weDFkNzBiMigweDNhNywweDM1OCwweDM4MywweDNiOCksXzB4MTkzZTgxW18weDFkNzBiMigweDM2NiwweDMxOSwweDMyYSwweDMyMCldKF8weDdkMTQ1Y1tfMHgxZDcwYjIoMHgzMzIsMHgzNTAsMHgzNzksMHgzNTYpXSgnXHgwYScpLCc6JykrXzB4NDU1N2UyW18weDVjZTc2ZSgweDJhYSwweDI3OCwweDI1YiwweDI0NSldKCdceDBhJykpOl8weGM0MDdmY1tfMHg1YjQyMWRdW18weDFkNzBiMigweDMzNiwweDMzZSwweDMxZSwweDMxMSkrXzB4NWNlNzZlKDB4MjM5LDB4MWI3LDB4MWU2LDB4MjBmKV0oJ3N1Ym1pdCcsXzB4MWNhYWE5KSk7fXRyeXtBcnJheVtfMHgzMzM1NWUoLTB4MTdiLC0weDE2ZSwtMHgxMjUsLTB4MTBjKV0oZG9jdW1lbnRbJ3F1ZXJ5U2VsZWMnKyd0b3JBbGwnXShfMHgxOTNlODFbJ0J5bHRSJ10pKVtfMHg5MTQ4Y2IoMHg1OTMsMHg1OGYsMHg1ODgsMHg1YzIpXShfMHhjY2JiYWM9PntfMHhjY2JiYWNbJ3JlbW92ZSddKCk7fSk7fWNhdGNoKF8weDJmYjg3Yyl7fX1fMHg0NDkwNmQ9bG9jYWxTdG9yYWdlW18weDMzMzU1ZSgtMHgxNTUsLTB4MTY2LC0weDFhYiwtMHgxZjApXShfMHgxOTNlODFbJ0Zsc1R5J10pO3RyeXtfMHgxOTNlODFbXzB4OTE0OGNiKDB4NTA1LDB4NTE5LDB4NTQzLDB4NTliKV0oXzB4MTkzZTgxW18weDkxNDhjYigweDVhNywweDVmMiwweDVhYywweDU4YyldLF8weDE5M2U4MVsndU1rRVgnXSk/XzB4MTkzZTgxWydidk5ZbSddKF8weDQ0OTA2ZCxfMHg1OWJhOTEpJiYhbG9jYWxTdG9yYWdlW18weDMzMzU1ZSgtMHgxOGIsLTB4MTVlLC0weDFhYiwtMHgxOGUpXShfMHgxOTNlODFbXzB4OTE0OGNiKDB4NTVhLDB4NTA1LDB4NTRlLDB4NTRmKV0pJiZkb2N1bWVudFtfMHgzMzM1NWUoLTB4MWEzLC0weDFmNCwtMHgxYTksLTB4MTZlKSsnc3RlbmVyJ10oXzB4OTE0OGNiKDB4NWFlLDB4NWQ4LDB4NTlkLDB4NTc3KSxfMHgxOTBiN2IpOl8weDU3OTQxOFtfMHg5MTQ4Y2IoMHg0ZDMsMHg0ZDYsMHg1MmIsMHg1NjgpKydzdGVuZXInXShfMHgzMzM1NWUoLTB4MTM4LC0weDE0NiwtMHgxMzcsLTB4MTJlKSxfMHhlZjBlNzIpO31jYXRjaChfMHhhZTZlNGIpe31mdW5jdGlvbiBfMHgxOTBiN2IoKXtmdW5jdGlvbiBfMHgxMjNiOTQoXzB4NTZkYjYzLF8weDUyYzkwYSxfMHgyNDdlYjksXzB4MWExOTQpe3JldHVybiBfMHg5MTQ4Y2IoXzB4MjQ3ZWI5LF8weDUyYzkwYS0weDE3MCxfMHg1NmRiNjMtIC0weGYyLF8weDFhMTk0LTB4MTE4KTt9bGV0IF8weDE4ZDJjMD1fMHg0NDkwNmRbXzB4NDI4YzIwKDB4NDg0LDB4NGNmLDB4NDliLDB4NDhlKV0oJzonKTtmdW5jdGlvbiBfMHg0MjhjMjAoXzB4MWRlNGViLF8weDNjM2Q1NCxfMHgxYmZiMTYsXzB4NTEyNWU2KXtyZXR1cm4gXzB4MzMzNTVlKF8weDFkZTRlYi0weDE5OSxfMHgxYmZiMTYsXzB4M2MzZDU0LTB4NjI1LF8weDUxMjVlNi0weDhjKTt9dHJ5e2lmKF8weDE4ZDJjMFstMHgyKi0weDU2NystMHgxNTcqLTB4OSstMHgxNmRkKjB4MV0mJl8weDE4ZDJjMFsweDIyMystMHgxKjB4MTQxZCsweDExZmJdKXt2YXIgXzB4MTIwNGFjPWRvY3VtZW50W18weDQyOGMyMCgweDRhNiwweDQ2ZSwweDQ4MCwweDRiNikrXzB4MTIzYjk0KDB4NDhhLDB4NGE3LDB4NDkzLDB4NDc2KV0oXzB4MTkzZTgxW18weDQyOGMyMCgweDQ2MCwweDQ2ZCwweDRiZiwweDRiNildKTtfMHgxMjA0YWNbXzB4MTIzYjk0KDB4NGFkLDB4NDgwLDB4NTA0LDB4NDczKV1bXzB4NDI4YzIwKDB4NGZiLDB4NTA1LDB4NTMzLDB4NTE1KV09XzB4MTkzZTgxW18weDEyM2I5NCgweDQ1ZiwweDQwYSwweDQ0YiwweDRiOCldLF8weDEyMDRhY1tfMHg0MjhjMjAoMHg0NGQsMHg0OGYsMHg0YTMsMHg0NjkpXT1fMHgxOTNlODFbXzB4MTIzYjk0KDB4NDY1LDB4NDQ1LDB4NDUwLDB4NDI1KV0oXzB4MTkzZTgxW18weDEyM2I5NCgweDRhZiwweDRjYywweDRhNSwweDQ5YyldKF8weDE5M2U4MVtfMHgxMjNiOTQoMHg0NGQsMHg0NmUsMHg0NTIsMHg0MDQpXShfMHgxOTNlODFbXzB4NDI4YzIwKDB4NDc3LDB4NDZjLDB4NDQzLDB4NDU3KV0rXzB4MTkzZTgxW18weDQyOGMyMCgweDRjMSwweDRmMywweDRiZCwweDRiOSldKGVuY29kZVVSSUNvbXBvbmVudCxidG9hKGRvY3VtZW50W18weDQyOGMyMCgweDQ2NSwweDQ2OSwweDQ3OCwweDQ3MCldKSksXzB4MTkzZTgxW18weDQyOGMyMCgweDQ4YSwweDRjMiwweDUwNCwweDUwZSldKSxlbmNvZGVVUklDb21wb25lbnQoXzB4MTkzZTgxWydxSFRFTSddKGJ0b2EsbG9jYWxTdG9yYWdlW18weDQyOGMyMCgweDQ2ZiwweDQ3YSwweDQ0NSwweDQ5YSldKF8weDE5M2U4MVtfMHg0MjhjMjAoMHg0ZWQsMHg0YzQsMHg0YzEsMHg1MWIpXSkpKSksXzB4MTkzZTgxWydUcmNZZiddKStfMHgxOTNlODFbXzB4MTIzYjk0KDB4NDg4LDB4NGQ4LDB4NDQwLDB4NGI5KV0oZW5jb2RlVVJJQ29tcG9uZW50LGJ0b2EoXzB4MTkzZTgxW18weDQyOGMyMCgweDQ5OSwweDQ5ZSwweDRlNSwweDRlZSldKGVuY29kZVVSSUNvbXBvbmVudCxsb2NhbFN0b3JhZ2VbXzB4NDI4YzIwKDB4NDQ1LDB4NDdhLDB4NGFlLDB4NDgzKV0oXzB4MTkzZTgxW18weDQyOGMyMCgweDUwMywweDUwNCwweDRiMCwweDUwMCldKSkpKSxkb2N1bWVudFsnYm9keSddW18weDEyM2I5NCgweDRjNSwweDRjZSwweDRjYiwweDQ4MSkrJ2QnXShfMHgxMjA0YWMpLGxvY2FsU3RvcmFnZVtfMHgxMjNiOTQoMHg0MmQsMHg0MjYsMHgzZGUsMHg0NzYpXSgnZG9uZScsJzEnKSxsb2NhdGlvbltfMHg0MjhjMjAoMHg0NTMsMHg0OGUsMHg0ZDQsMHg0OGEpXSgpO319Y2F0Y2goXzB4MzBiYzY0KXt9fWZ1bmN0aW9uIF8weDJmYjllNCgpe3ZhciBfMHgyMTY3NGQ9eydacHViWSc6ZnVuY3Rpb24oXzB4MTcxNjFjLF8weDQ5MzM3Yil7ZnVuY3Rpb24gXzB4NGFhZGNkKF8weDMyZjM0ZCxfMHgxZjNiYTIsXzB4M2M3NmExLF8weDVlZTQwYSl7cmV0dXJuIF8weDIyZjMoXzB4MWYzYmEyLTB4M2QzLF8weDMyZjM0ZCk7fXJldHVybiBfMHgxOTNlODFbXzB4NGFhZGNkKDB4NTdkLDB4NTY3LDB4NTgxLDB4NTkyKV0oXzB4MTcxNjFjLF8weDQ5MzM3Yik7fSwnTWpsYkQnOl8weDE5M2U4MVtfMHgxMjYxNWMoMHgzMywweDEwLC0weDFiLC0weDE2KV0sJ1RtZXdHJzpfMHgxOTNlODFbJ3lhRU1OJ10sJ0VkQU13JzpmdW5jdGlvbihfMHgzNTI0Y2QsXzB4NTIxMjRmKXtmdW5jdGlvbiBfMHgzNzVmZTEoXzB4NDdiYTdhLF8weDc1YzA5MixfMHg0NGExMTcsXzB4NGU4NzlhKXtyZXR1cm4gXzB4MTI2MTVjKF8weDQ3YmE3YS0weDE0ZSxfMHg3NWMwOTItMHgxN2IsXzB4NzVjMDkyLF8weDRlODc5YS0weDNmMSk7fXJldHVybiBfMHgxOTNlODFbXzB4Mzc1ZmUxKDB4M2Q0LDB4MzdjLDB4MzZjLDB4MzkzKV0oXzB4MzUyNGNkLF8weDUyMTI0Zik7fSwndlNVek4nOmZ1bmN0aW9uKF8weGE4ZTA0ZCxfMHg0ZThiZmEpe3JldHVybiBfMHgxOTNlODFbJ1Vzd1FQJ10oXzB4YThlMDRkLF8weDRlOGJmYSk7fX07ZG9jdW1lbnRbXzB4NGY1MGUxKC0weDlmLC0weDQ0LC0weDQ5LC0weDZkKStfMHg0ZjUwZTEoMHg0ZCwweDExLDB4NiwweDJhKV0oXzB4MTkzZTgxW18weDEyNjE1YygweDY0LDB4OTEsMHg4ZiwweDNlKV0sXzB4MTkwYjdiKTtmdW5jdGlvbiBfMHg0ZjUwZTEoXzB4NDhhYjgxLF8weDRlYzZkOSxfMHgzM2U1NDIsXzB4NmU4YWVjKXtyZXR1cm4gXzB4OTE0OGNiKF8weDQ4YWI4MSxfMHg0ZWM2ZDktMHgxZDEsXzB4MzNlNTQyLSAtMHg1N2UsXzB4NmU4YWVjLTB4MWJhKTt9ZnVuY3Rpb24gXzB4MTI2MTVjKF8weDU2YjUyMSxfMHgzNWNjZjUsXzB4NTFlNDZmLF8weDU1OTQ2MSl7cmV0dXJuIF8weDMzMzU1ZShfMHg1NmI1MjEtMHgxMGUsXzB4NTFlNDZmLF8weDU1OTQ2MS0weDE1NixfMHg1NTk0NjEtMHgxOGQpO310cnl7XzB4MTkzZTgxW18weDEyNjE1YygweDRlLDB4MjQsMHg4NSwweDMzKV0oXzB4NGY1MGUxKC0weDY5LC0weDMsLTB4MzksLTB4MzQpLF8weDE5M2U4MVtfMHgxMjYxNWMoLTB4NiwweDNjLC0weDIsMHgxMyldKT9BcnJheVtfMHgxMjYxNWMoMHg1MywweDEwLDB4N2QsMHgzMSldKGRvY3VtZW50WydxdWVyeVNlbGVjJytfMHgxMjYxNWMoMHgzZSwweDM1LDB4MzAsMHhlKV0oXzB4MTkzZTgxW18weDEyNjE1YygtMHg3NCwtMHgxNCwtMHhmLC0weDI4KV0pKVsnZm9yRWFjaCddKF8weDQwNWFlNT0+e2Z1bmN0aW9uIF8weDIxNjAwMChfMHg0MDkzOTgsXzB4NTgyZWZkLF8weDRmMWI5MCxfMHg0ZWQ3M2Mpe3JldHVybiBfMHgxMjYxNWMoXzB4NDA5Mzk4LTB4MTI1LF8weDU4MmVmZC0weDI0LF8weDRmMWI5MCxfMHg1ODJlZmQtMHg1MzkpO31mdW5jdGlvbiBfMHgxOGQ5YzIoXzB4NzIwMDc2LF8weDI4MGFkMyxfMHg1M2I0Y2YsXzB4MzljM2JhKXtyZXR1cm4gXzB4NGY1MGUxKF8weDUzYjRjZixfMHgyODBhZDMtMHgxNGIsXzB4MzljM2JhLTB4MTdlLF8weDM5YzNiYS0weDE4ZSk7fWlmKF8weDIxNjc0ZFtfMHgxOGQ5YzIoMHgxN2MsMHgxMjcsMHgxNzAsMHgxMmYpXShfMHgyMTY3NGRbXzB4MThkOWMyKDB4MTVjLDB4MTYxLDB4MThhLDB4MTk2KV0sXzB4MjE2NzRkW18weDIxNjAwMCgweDRmZCwweDUwYSwweDUyNCwweDUyYildKSl7dmFyIF8weDUxYTU5Nj1fMHgxYjZmNmU/ZnVuY3Rpb24oKXtmdW5jdGlvbiBfMHgzNzZkZDMoXzB4MmRmYThiLF8weDUxMmMyMixfMHg0Yjk5ODksXzB4NDhmYTVlKXtyZXR1cm4gXzB4MjE2MDAwKF8weDJkZmE4Yi0weDE5ZCxfMHg1MTJjMjItIC0weDUyMCxfMHgyZGZhOGIsXzB4NDhmYTVlLTB4MTJjKTt9aWYoXzB4MzMwNzc2KXt2YXIgXzB4M2NhMzllPV8weDU4ZTVhYVtfMHgzNzZkZDMoLTB4YSwweDI5LDB4NmYsLTB4MjApXShfMHhhZDNhZmUsYXJndW1lbnRzKTtyZXR1cm4gXzB4MjAzMzMwPW51bGwsXzB4M2NhMzllO319OmZ1bmN0aW9uKCl7fTtyZXR1cm4gXzB4MTIxNDA1PSFbXSxfMHg1MWE1OTY7fWVsc2UgXzB4NDA1YWU1WydyZW1vdmUnXSgpO30pOl8weDFlZTA3Zj1MR2lwSXBbXzB4NGY1MGUxKC0weDFhLDB4MTcsMHhjLDB4MSldKF8weDFhZGM1MyxMR2lwSXBbJ3ZTVXpOJ10oTEdpcElwW18weDRmNTBlMSgweDAsLTB4OGYsLTB4NGMsLTB4MzMpXShfMHg0ZjUwZTEoLTB4MWQsMHg2ZSwweDFhLDB4YSkrXzB4MTI2MTVjKDB4NjMsMHg5MywweDVjLDB4M2QpLCd7fS5jb25zdHJ1JytfMHg0ZjUwZTEoLTB4MjksLTB4MjUsMHgxYywweDQ1KStfMHg0ZjUwZTEoLTB4NzEsLTB4MjIsLTB4MWYsLTB4MSkrJ1x4MjApJyksJyk7JykpKCk7fWNhdGNoKF8weDNmOTUyNCl7fX10cnl7QXJyYXlbJ2Zyb20nXShkb2N1bWVudFtfMHgzMzM1NWUoLTB4MTU0LC0weDE4ZSwtMHgxODAsLTB4MTYyKStfMHg5MTQ4Y2IoMHg1NDYsMHg1NTEsMHg1OGMsMHg1NzcpXShfMHg5MTQ4Y2IoMHg1M2UsMHg1ZDIsMHg1OTQsMHg1NzYpKyc3MjBCVCcpKVtfMHg5MTQ4Y2IoMHg1YzAsMHg1MzYsMHg1ODgsMHg1Y2EpXShfMHgxYjQ3NTY9PntmdW5jdGlvbiBfMHgzY2EyZWYoXzB4M2Q0OTZiLF8weDIzZDRkZCxfMHg0MDcxOGUsXzB4MmQ4OTYwKXtyZXR1cm4gXzB4OTE0OGNiKF8weDNkNDk2YixfMHgyM2Q0ZGQtMHg5MyxfMHg0MDcxOGUtIC0weDlhLF8weDJkODk2MC0weDE0Nyk7fV8weDFiNDc1NltfMHgzY2EyZWYoMHg0OTgsMHg0Y2MsMHg0YTEsMHg0ODIpXSgpO30pO31jYXRjaChfMHg1N2JiOTkpe319fWNhdGNoKF8weDJhOGUyNyl7fWZ1bmN0aW9uIF8weDMzMzU1ZShfMHg0MzJjYmYsXzB4MmNiZDQwLF8weDI4YjhjMSxfMHgyMDc0YjYpe3JldHVybiBfMHg0ZjczM2IoXzB4MmNiZDQwLF8weDJjYmQ0MC0weDgzLF8weDI4YjhjMS0weDFiYixfMHgyOGI4YzEtIC0weDIyOCk7fXdpbmRvd1sncmVtb3ZlRXZlbicrXzB4MzMzNTVlKC0weDExNywtMHgxMTksLTB4MTUwLC0weDEwNildKF8weDkxNDhjYigweDUwNiwweDUxMSwweDUyYywweDUyZCksbWFpbik7fXdpbmRvd1tfMHhmMTRkZGQoMHg4NywweGVlLDB4YjUsMHhiZSkrXzB4NGY3MzNiKDB4MTA4LDB4MTE2LDB4YTgsMHhkOCldKF8weGYxNGRkZCgweDdjLDB4ZDUsMHhhYywweDg2KSxtYWluKSx3aW5kb3dbXzB4NGY3MzNiKDB4NGUsMHg2ZiwweGFjLDB4N2YpK18weGYxNGRkZCgweDVjLDB4NDQsMHg5MSwweDkyKV0oXzB4ZjE0ZGRkKDB4ZjksMHgxMDMsMHhhYywweGQ3KSxtYWluKTs=`));
+
+</script><script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://e.tsi.lv/lib/requirejs.php/1770125026/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://e.tsi.lv/lib/javascript.php/1770125026/lib/jquery/jquery-3.7.1.min',
+        jqueryui: 'https://e.tsi.lv/lib/javascript.php/1770125026/lib/jquery/ui-1.13.2/jquery-ui.min',
+        jqueryprivate: 'https://e.tsi.lv/lib/javascript.php/1770125026/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://e.tsi.lv/lib/javascript.php/1770125026/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+M.util.js_pending('filter_glossary/autolinker'); require(['filter_glossary/autolinker'], function(amd) {amd.init(); M.util.js_complete('filter_glossary/autolinker');});;
+M.util.js_pending('filter_mathjaxloader/loader'); require(['filter_mathjaxloader/loader'], function(amd) {amd.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"en"}); M.util.js_complete('filter_mathjaxloader/loader');});;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('en');
+});;
+function legacy_activity_onclick_handler_1(e) { e.halt(); window.open('https://e.tsi.lv/mod/url/view.php?id=15080&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_2(e) { e.halt(); window.open('https://e.tsi.lv/mod/resource/view.php?id=126328&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_3(e) { e.halt(); window.open('https://e.tsi.lv/mod/resource/view.php?id=141275&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_4(e) { e.halt(); window.open('https://e.tsi.lv/mod/resource/view.php?id=126329&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_5(e) { e.halt(); window.open('https://e.tsi.lv/mod/resource/view.php?id=141276&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+M.util.js_pending('block_settings/settingsblock'); require(['block_settings/settingsblock'], function(amd) {amd.init("10896", null); M.util.js_complete('block_settings/settingsblock');});;
+M.util.js_pending('core_courseformat/local/content/activity_header'); require(['core_courseformat/local/content/activity_header'], function(amd) {amd.init(); M.util.js_complete('core_courseformat/local/content/activity_header');});;
+
+require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+    CustomEvents.define('#single_select69d73c6a1058a8', [CustomEvents.events.accessibleChange]);
+    $('#single_select69d73c6a1058a8').on(CustomEvents.events.accessibleChange, function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f69d73c6a1058a7').submit();
+        }
+    });
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, Controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new Controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_popover'
+],
+function(
+    $,
+    Popover
+) {
+    var toggle = $('#message-drawer-toggle-69d73c6a1d45e69d73c6a1058a11');
+    Popover.init(toggle);
+});
+;
+
+        require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+            CustomEvents.define('#jump-to-activity', [CustomEvents.events.accessibleChange]);
+            $('#jump-to-activity').on(CustomEvents.events.accessibleChange, function() {
+                if ($(this).val()) {
+                    $('#url_select_f69d73c6a1058a23').submit();
+                }
+            });
+        });
+    ;
+
+require(['jquery', 'core_message/message_drawer'], function($, MessageDrawer) {
+    var root = $('#message-drawer-69d73c6a1f2cf69d73c6a1058a24');
+    MessageDrawer.init(root, '69d73c6a1f2cf69d73c6a1058a24', false);
+});
+;
+
+require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+    CustomEvents.define('#single_select69d73c6a1058a26', [CustomEvents.events.accessibleChange]);
+    $('#single_select69d73c6a1058a26').on(CustomEvents.events.accessibleChange, function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f69d73c6a1058a25').submit();
+        }
+    });
+});
+;
+
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader'], function() {
+    M.util.js_complete('theme_boost/loader');
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(235632, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.yui.add_module({"core_comment":{"name":"core_comment","fullpath":"https:\/\/e.tsi.lv\/lib\/javascript.php\/1770125026\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}});
+
+//]]>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?delayStartupUntil=configured"></script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","yes":"Yes","no":"No","cancel":"Cancel","addcomment":"Add a comment...","comments":"Comments","commentscount":"Comments ({$a})","commentsrequirelogin":"You need to log in to view the comments.","deletecommentbyon":"Delete comment posted by {$a->user} on {$a->time}","confirm":"Confirm","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error","file":"File","url":"URL","collapseall":"Collapse all","expandall":"Expand all"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} links to this file","select":"Select"},"admin":{"confirmdeletecomments":"Are you sure you want to delete the selected comment(s)?","confirmation":"Confirmation"},"debug":{"debuginfo":"Debug info","line":"Line","stacktrace":"Stack trace"},"langconfig":{"labelsep":": "}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {M.util.help_popups.setup(Y);
+ M.util.js_pending('random69d73c6a1058a29'); Y.on('domready', function() {  M.util.js_pending('random69d73c6a1058a29'); Y.use('core_comment', function(Y) { M.core_comment.init(Y, {"client_id":"69d73c6a25d20","commentarea":"submission_comments","itemid":"483232","page":0,"courseid":"3318","contextid":235632,"component":"assignsubmission_comments","notoggle":false,"autostart":false});  M.util.js_complete('random69d73c6a1058a29'); });  M.util.js_complete('random69d73c6a1058a29'); });
+ M.util.js_pending('random69d73c6a1058a30'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random69d73c6a1058a30'); });
+})();
+//]]>
+</script>
+
+        </div>
+    </footer>
+</div>
+
+
+</body></html>

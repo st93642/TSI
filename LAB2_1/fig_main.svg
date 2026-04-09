@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="980" viewBox="0 0 840 980">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+    </marker>
+    <style>
+      .shape { fill: #fff; stroke: #000; stroke-width: 2; }
+      .line { fill: none; stroke: #000; stroke-width: 2; marker-end: url(#arrow); }
+      .label { font-family: 'Times New Roman', serif; font-size: 18px; text-anchor: middle; }
+      .small { font-family: 'Times New Roman', serif; font-size: 16px; }
+    </style>
+  </defs>
+
+  <ellipse class="shape" cx="420" cy="45" rx="90" ry="25"/>
+  <text class="label" x="420" y="51">Begin</text>
+
+  <rect class="shape" x="225" y="110" width="390" height="90"/>
+  <text class="label" x="420" y="140">Print task number</text>
+  <text class="label" x="420" y="165">Read n and validate numeric input</text>
+  <text class="label" x="420" y="190">Ignore rest of the first line</text>
+
+  <polygon class="shape" points="420,245 560,310 420,375 280,310"/>
+  <text class="label" x="420" y="305">1 &lt;= n &lt;= 10 ?</text>
+
+  <rect class="shape" x="575" y="280" width="180" height="65"/>
+  <text class="label" x="665" y="310">Print &quot;Invalid count&quot;</text>
+  <text class="label" x="665" y="335">and return 1</text>
+
+  <rect class="shape" x="210" y="425" width="420" height="95"/>
+  <text class="label" x="420" y="455">For each i from 0 to n - 1:</text>
+  <text class="label" x="420" y="480">read c_arr[i] with getline</text>
+  <text class="label" x="420" y="505">copy c_arr[i] to s_arr[i]</text>
+
+  <rect class="shape" x="220" y="575" width="400" height="80"/>
+  <text class="label" x="420" y="605">For each c_arr[i]:</text>
+  <text class="label" x="420" y="630">call c-string overload and print result</text>
+
+  <rect class="shape" x="220" y="710" width="400" height="80"/>
+  <text class="label" x="420" y="740">For each s_arr[i]:</text>
+  <text class="label" x="420" y="765">call string overload and print result</text>
+
+  <ellipse class="shape" cx="420" cy="890" rx="90" ry="25"/>
+  <text class="label" x="420" y="896">End</text>
+
+  <path class="line" d="M420 70 L420 110"/>
+  <path class="line" d="M420 200 L420 245"/>
+  <path class="line" d="M420 375 L420 425"/>
+  <path class="line" d="M420 520 L420 575"/>
+  <path class="line" d="M420 655 L420 710"/>
+  <path class="line" d="M420 790 L420 865"/>
+  <path class="line" d="M560 310 L575 310"/>
+  <path class="line" d="M665 345 L665 890 L510 890"/>
+
+  <text class="small" x="445" y="405">Yes</text>
+  <text class="small" x="568" y="295">No</text>
+</svg>
