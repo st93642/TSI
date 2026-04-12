@@ -4,8 +4,8 @@
 /*                                                          TT    SS      II */
 /*  By: st93642@students.tsi.lv                             TT    SSSSSSS II */
 /*                                                          TT         SS II */
-/*  Created: Apr 09 2026 12:00 st93642                      TT    SSSSSSS II */
-/*  Updated: Apr 09 2026 12:00 st93642                                       */
+/*  Created: Apr 12 2026 15:25 st93642                      TT    SSSSSSS II */
+/*  Updated: Apr 12 2026 15:42 st93642                                       */
 /*                                                                           */
 /*   Transport and Telecommunication Institute - Riga, Latvia                */
 /*                       https://tsi.lv                                      */
@@ -24,13 +24,11 @@ void	shortestWord(const char *str, char *result)
 
 	while (str[i])
 	{
-		while (str[i] == ' ')
-			i++;
+		while (str[i] == ' ') i++;
 		if (!str[i])
 			break;
 		size_t word_start = i;
-		while (str[i] && str[i] != ' ')
-			i++;
+		while (str[i] && str[i] != ' ') i++;
 		size_t len = i - word_start;
 		if (!found || len < best_len)
 		{
@@ -59,13 +57,11 @@ void	shortestWord(const std::string &str, std::string &result)
 
 	while (i < len)
 	{
-		while (i < len && str[i] == ' ')
-			i++;
+		while (i < len && str[i] == ' ') i++;
 		if (i >= len)
 			break;
 		size_t word_start = i;
-		while (i < len && str[i] != ' ')
-			i++;
+		while (i < len && str[i] != ' ') i++;
 		size_t word_len = i - word_start;
 		if (!found || word_len < best_len)
 		{
@@ -80,7 +76,7 @@ void	shortestWord(const std::string &str, std::string &result)
 		result = "";
 }
 
-int	main(void)
+int		main(void)
 {
 	const int	MAX_STRINGS = 10;
 	const int	MAX_LEN = 256;
@@ -106,8 +102,8 @@ int	main(void)
 		return (1);
 	}
 
-	i = 0;
-	while (i < n)
+	i = -1;
+	while (++i < n)
 	{
 		std::cout << "Enter string " << i + 1 << ": ";
 		if (!std::cin.getline(c_arr[i], MAX_LEN))
@@ -116,27 +112,24 @@ int	main(void)
 			return (1);
 		}
 		s_arr[i] = c_arr[i];
-		i++;
 	}
 
 	std::cout << std::endl << "Results (c-string version):" << std::endl;
-	i = 0;
-	while (i < n)
+	i = -1;
+	while (++i < n)
 	{
 		shortestWord(c_arr[i], result_c);
 		std::cout << "\"" << c_arr[i] << "\" -> \""
 			<< result_c << "\"" << std::endl;
-		i++;
 	}
 
 	std::cout << std::endl << "Results (string version):" << std::endl;
-	i = 0;
-	while (i < n)
+	i = -1;
+	while (++i < n)
 	{
 		shortestWord(s_arr[i], result_s);
 		std::cout << "\"" << s_arr[i] << "\" -> \""
 			<< result_s << "\"" << std::endl;
-		i++;
 	}
 
 	return (0);
