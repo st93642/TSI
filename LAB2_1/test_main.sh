@@ -1,4 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+#*****************************************************************************#
+#                                                                             #
+#  test_main.sh                                           TTTTTTTT SSSSSSS II #
+#                                                            TT    SS      II #
+#  By: st93642@students.tsi.lv                               TT    SSSSSSS II #
+#                                                            TT         SS II #
+#  Created: Apr 12 2026 12:50 st93642                        TT    SSSSSSS II #
+#  Updated: Apr 12 2026 17:55 st93642                                         #
+#                                                                             #
+#   Transport and Telecommunication Institute - Riga, Latvia                  #
+#                       https://tsi.lv                                        #
+#*****************************************************************************#
 
 PROGRAM="./main"
 
@@ -9,40 +22,40 @@ pass=0
 fail=0
 
 run_test() {
-    local name="$1"
-    local input="$2"
-    local expected_c="$3"
-    local expected_s="$4"
+    name="$1"
+    input="$2"
+    expected_c="$3"
+    expected_s="$4"
 
     echo "Test: $name"
-    output=$(echo -e "$input" | $PROGRAM 2>&1)
+    output=$(printf '%b\n' "$input" | "$PROGRAM" 2>&1)
     echo "$output"
 
     if echo "$output" | grep -q "$expected_c" && echo "$output" | grep -q "$expected_s"; then
         echo "PASS"
-        ((pass++))
+        pass=$((pass + 1))
     else
         echo "FAIL (expected c-string: '$expected_c', string: '$expected_s')"
-        ((fail++))
+        fail=$((fail + 1))
     fi
     echo "---"
 }
 
 run_error_test() {
-    local name="$1"
-    local input="$2"
-    local expected="$3"
+    name="$1"
+    input="$2"
+    expected="$3"
 
     echo "Test: $name"
-    output=$(echo -e "$input" | $PROGRAM 2>&1)
+    output=$(printf '%b\n' "$input" | "$PROGRAM" 2>&1)
     echo "$output"
 
     if echo "$output" | grep -q "$expected"; then
         echo "PASS"
-        ((pass++))
+        pass=$((pass + 1))
     else
         echo "FAIL (expected: '$expected')"
-        ((fail++))
+        fail=$((fail + 1))
     fi
     echo "---"
 }
