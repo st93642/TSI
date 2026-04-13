@@ -400,7 +400,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="main" id="lab2-1-page-3">
-    <mxGraphModel dx="873" dy="589" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1050" math="0" shadow="0">
+    <mxGraphModel dx="891" dy="490" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1050" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -415,9 +415,6 @@
         </mxCell>
         <mxCell id="p3d1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="std::cin &gt;&gt; n ?" vertex="1">
           <mxGeometry height="54" width="108" x="346" y="282" as="geometry" />
-        </mxCell>
-        <mxCell id="p3b3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Print Invalid count&lt;br&gt;return 1" vertex="1">
-          <mxGeometry height="39" width="146" x="627" y="289.5" as="geometry" />
         </mxCell>
         <mxCell id="p3b4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Ignore rest of input line" vertex="1">
           <mxGeometry height="27" width="167" x="316.5" y="374" as="geometry" />
@@ -467,8 +464,10 @@
         <mxCell id="p3l3" edge="1" parent="1" source="p3b2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p3d1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p3l4" edge="1" parent="1" source="p3d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p3b3" value="NO">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="p3l4" edge="1" parent="1" source="p3d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="NO">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="627" y="309" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="p3l5" edge="1" parent="1" source="p3d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p3b4" value="YES">
           <mxGeometry relative="1" as="geometry" />
@@ -476,11 +475,12 @@
         <mxCell id="p3l6" edge="1" parent="1" source="p3b4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p3d2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p3l7" edge="1" parent="1" source="p3d2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p3b3" value="NO">
+        <mxCell id="p3l7" edge="1" parent="1" source="p3d2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="NO">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="700" y="466" />
             </Array>
+            <mxPoint x="700.0434782608697" y="328.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="p3l8" edge="1" parent="1" source="p3d2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p3b5" value="YES">
@@ -524,12 +524,14 @@
         <mxCell id="p3l24" edge="1" parent="1" source="p3b13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p3e">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p3l25" edge="1" parent="1" source="p3b3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p3e">
+        <mxCell id="p3l25" edge="1" parent="1" source="0meZGQXGNhYwGKh9MM0u-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="p3e">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
+              <mxPoint x="726" y="309" />
               <mxPoint x="800" y="309" />
               <mxPoint x="800" y="955" />
             </Array>
+            <mxPoint x="773" y="309.0434782608696" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Uy7ChfHedO39yJ_0mSO0-3" edge="1" parent="1" source="Uy7ChfHedO39yJ_0mSO0-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="p3d4">
@@ -553,6 +555,9 @@
         </mxCell>
         <mxCell id="Uy7ChfHedO39yJ_0mSO0-4" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;c_arr[i]&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;result_c&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="94" x="143" y="875" as="geometry" />
+        </mxCell>
+        <mxCell id="0meZGQXGNhYwGKh9MM0u-1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Output&lt;div&gt;&quot;Invalid count&quot;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="34" width="120" x="616" y="294" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
