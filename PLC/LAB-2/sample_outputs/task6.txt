@@ -1,2 +1,0 @@
-3665
-Enter the number of seconds: 3665 second(s) = 1 hour(s), 1 minute(s), 5 second(s).

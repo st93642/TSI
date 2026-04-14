@@ -1,4 +1,0 @@
-12
-5
-Enter the first integer: Enter the second integer: Product: 60
-Integer quotient (DIV): 2

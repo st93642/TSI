@@ -1,2 +1,0 @@
-17
-Enter the number of days: 17 day(s) = 2 week(s) and 3 day(s).

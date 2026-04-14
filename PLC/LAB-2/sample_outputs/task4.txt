@@ -1,2 +1,0 @@
-19
-Enter your age in years: On your next birthday you will be 20 years old.

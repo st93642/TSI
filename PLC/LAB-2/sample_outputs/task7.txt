@@ -1,2 +1,0 @@
-90
-Enter the speed in km/h: 90.00 km/h = 55.92 mph
