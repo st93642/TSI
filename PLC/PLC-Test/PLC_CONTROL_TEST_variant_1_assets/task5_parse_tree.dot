@@ -1,0 +1,36 @@
+digraph G {
+  graph [rankdir=TB, ordering=out, nodesep=0.18, ranksep=0.24, pad=0.08, dpi=200, splines=false, ratio=compress];
+  node [shape=plaintext, fontname="Times-Roman", fontsize=14, margin="0.01,0.01"];
+  edge [color="#000000", penwidth=1.0, dir=none];
+  n0 [label="<S>", color="#000000", fontcolor="#000000"];
+  n1 [label="while <expression> do", color="#000000", fontcolor="#000000"];
+  n0 -> n1;
+  n2 [label="<S>", color="#000000", fontcolor="#000000"];
+  n3 [label="begin", color="#000000", fontcolor="#000000"];
+  n2 -> n3;
+  n4 [label="<SL>", color="#000000", fontcolor="#000000"];
+  n5 [label="<S>", color="#000000", fontcolor="#000000"];
+  n6 [label="<id>", color="#000000", fontcolor="#000000"];
+  n5 -> n6;
+  n7 [label=":=", color="#000000", fontcolor="#000000"];
+  n5 -> n7;
+  n8 [label="<expression>", color="#000000", fontcolor="#000000"];
+  n5 -> n8;
+  n4 -> n5;
+  n9 [label=";", color="#000000", fontcolor="#000000"];
+  n4 -> n9;
+  n10 [label="<SL>", color="#000000", fontcolor="#000000"];
+  n11 [label="<S>", color="#000000", fontcolor="#000000"];
+  n12 [label="<id>", color="#000000", fontcolor="#000000"];
+  n11 -> n12;
+  n13 [label=":=", color="#000000", fontcolor="#000000"];
+  n11 -> n13;
+  n14 [label="<expression>", color="#000000", fontcolor="#000000"];
+  n11 -> n14;
+  n10 -> n11;
+  n4 -> n10;
+  n2 -> n4;
+  n15 [label="end", color="#000000", fontcolor="#000000"];
+  n2 -> n15;
+  n0 -> n2;
+}

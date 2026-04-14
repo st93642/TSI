@@ -1,0 +1,1 @@
+Enter the temperature value: Convert from C to F or from F to C? Enter 'C' or 'F': 25.00 C = 77.00 F

@@ -1,0 +1,2 @@
+Enter the first real number: Enter the second real number: Choose result type ('rounded' or 'truncated'): Exact product: 40.8000
+Rounded product: 41

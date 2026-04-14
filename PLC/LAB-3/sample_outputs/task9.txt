@@ -1,0 +1,2 @@
+Enter password: Password is correct.
+Security note: passwords should be stored as salted hashes and entered without displaying them on screen.

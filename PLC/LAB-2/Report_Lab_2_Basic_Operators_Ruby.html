@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAB 2 - Basic Operators in Programming Language (Ruby)</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --paper: #ececec;
+      --ink: #161616;
+      --muted: #555555;
+      --line: #c8c8c8;
+      --surface: #f8f8f8;
+      --code-bg: #f3f3f3;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Times New Roman", Times, serif;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(980px, calc(100vw - 32px));
+      margin: 24px auto 48px;
+    }
+
+    .page {
+      background: var(--page);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 32px 38px 36px;
+    }
+
+    .page + .page {
+      margin-top: 22px;
+    }
+
+    .title-page {
+      min-height: calc(100vh - 96px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .title-block {
+      margin-top: 24px;
+    }
+
+    .title-top p,
+    .footer-place p,
+    .student-box p {
+      margin: 4px 0;
+    }
+
+    .title-top {
+      font-size: 1.02rem;
+    }
+
+    .title-main {
+      margin-top: 110px;
+    }
+
+    .title-main h1 {
+      margin: 18px 0;
+      font-size: 1.7rem;
+      line-height: 1.25;
+    }
+
+    .title-main h2 {
+      margin: 0;
+      font-size: 1.18rem;
+      font-weight: 400;
+    }
+
+    .student-box {
+      width: min(440px, 100%);
+      margin: 120px 0 0 auto;
+      text-align: left;
+    }
+
+    .footer-place {
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    h2.section-title {
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      font-size: 1.28rem;
+    }
+
+    h3.task-title {
+      margin: 18px 0 10px;
+      font-size: 1.08rem;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    section + section {
+      margin-top: 28px;
+    }
+
+    .contents {
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    .contents li + li,
+    ul li + li,
+    ol li + li {
+      margin-top: 6px;
+    }
+
+    .task-box,
+    .note-box {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 14px 16px;
+    }
+
+    pre {
+      margin: 10px 0 0;
+      padding: 14px 16px;
+      overflow-x: auto;
+      background: var(--code-bg);
+      border: 1px solid #dddddd;
+      font: 15px/1.45 "JetBrains Mono", Consolas, monospace;
+      white-space: pre-wrap;
+    }
+
+    code {
+      font-family: "JetBrains Mono", Consolas, monospace;
+    }
+
+    figure {
+      margin: 14px 0 0;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+    }
+
+    figcaption {
+      margin-top: 8px;
+      text-align: center;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .page-break {
+      break-after: page;
+      page-break-after: always;
+    }
+
+    @media (max-width: 920px) {
+      .container {
+        width: min(100vw - 16px, 980px);
+        margin: 8px auto 18px;
+      }
+
+      .page {
+        padding: 20px 18px 24px;
+      }
+
+      .title-page {
+        min-height: auto;
+      }
+
+      .student-box {
+        margin-left: 0;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 1.3cm;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .container {
+        width: 100%;
+        margin: 0;
+      }
+
+      .page {
+        box-shadow: none;
+        border: 0;
+        padding: 0;
+      }
+
+      .page + .page {
+        margin-top: 0;
+      }
+
+      figure,
+      .task-box,
+      .note-box,
+      pre {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="page title-page page-break">
+      <div class="title-block">
+        <div class="title-top">
+          <p>Programming Languages Concepts</p>
+          <p>LAB #2 / PART 1</p>
+        </div>
+
+        <div class="title-main">
+          <h1>Basic Operators in Programming Language</h1>
+          <h2>Chosen implementation language: Ruby</h2>
+        </div>
+
+        <div class="student-box">
+          <p><strong>Student name:</strong> Igors</p>
+          <p><strong>Student surname:</strong> Oļeiņikovs</p>
+          <p><strong>St. code:</strong> 93642</p>
+          <p><strong>Group:</strong> 4501BTA</p>
+          <p><strong>Lecturer:</strong> Karina Kostjkina</p>
+        </div>
+      </div>
+
+      <div class="footer-place">
+        <p>RIGA</p>
+        <p>2026</p>
+      </div>
+    </article>
+
+    <article class="page page-break">
+      <section>
+        <h2 class="section-title">Table of Contents</h2>
+        <ol class="contents">
+          <li>Purpose &amp; Task</li>
+          <li>Program Code &amp; Results</li>
+          <li>Conclusions</li>
+          <li>Literature List</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="section-title">1. Purpose &amp; Task</h2>
+        <p>
+          The purpose of this laboratory work is to study basic arithmetic and conversion operators in a programming language and to compare the chosen language with other programming languages known by the student. Ruby was selected for implementation because it has concise syntax, expressive built-in numeric operations, and readable string interpolation.
+        </p>
+        <div class="task-box">
+          <p><strong>Tasks completed in this report:</strong></p>
+          <ol>
+            <li>Read two integers and output their product and integer quotient.</li>
+            <li>Read three real numbers, compute their sum, and output the result with two decimal places.</li>
+            <li>Calculate the volume of a room in cubic metres and cubic centimetres.</li>
+            <li>Ask the user for age in years and output the age on the next birthday.</li>
+            <li>Express a number of days in weeks and days.</li>
+            <li>Express a number of seconds in hours, minutes, and seconds.</li>
+            <li>Convert kilometres per hour to miles per hour using 1 km = 0.62137 mile.</li>
+          </ol>
+        </div>
+      </section>
+    </article>
+
+    <article class="page page-break">
+      <section>
+        <h2 class="section-title">2. Program Code &amp; Results</h2>
+
+        <h3 class="task-title">2.1. Task 1</h3>
+        <p>Write a program which reads two integers and displays their product and the integer quotient when the first is divided by the second.</p>
+        <p><strong>Program Code:</strong></p>
+        <pre><code>#!/usr/bin/env ruby
+
+def read_integer(prompt)
+  loop do
+    print prompt
+    input = gets&amp;.strip
+    exit if input.nil?
+
+    value = Integer(input, exception: false)
+    return value unless value.nil?
+
+    puts 'Please enter a valid integer.'
+  end
+end
+
+first_number = read_integer('Enter the first integer: ')
+second_number = read_integer('Enter the second integer: ')
+
+product = first_number * second_number
+
+puts "Product: #{product}"
+
+if second_number.zero?
+  puts 'Integer quotient: undefined (division by zero).'
+else
+  quotient = first_number.div(second_number)
+  puts "Integer quotient (DIV): #{quotient}"
+end</code></pre>
+        <figure>
+          <img src="screenshots/task1.png" alt="Task 1 result screenshot">
+          <figcaption>Fig. 1 Task 1 result</figcaption>
+        </figure>
+
+        <h3 class="task-title">2.2. Task 2</h3>
+        <p>Write a program which accepts three real numbers, computes their sum, and outputs the result. Amend the program so that the result is output to 2 decimal places.</p>
+        <p><strong>Program Code:</strong></p>
+        <pre><code>#!/usr/bin/env ruby
+
+def read_float(prompt)
+  loop do
+    print prompt
+    input = gets&amp;.strip
+    exit if input.nil?
+
+    value = Float(input, exception: false)
+    return value unless value.nil?
+
+    puts 'Please enter a valid real number.'
+  end
+end
+
+first_number = read_float('Enter the first real number: ')
+second_number = read_float('Enter the second real number: ')
+third_number = read_float('Enter the third real number: ')
+
+sum = first_number + second_number + third_number
+
+puts "Sum: #{sum}"
+puts format('Sum rounded to 2 decimal places: %.2f', sum)</code></pre>
+        <figure>
+          <img src="screenshots/task2.png" alt="Task 2 result screenshot">
+          <figcaption>Fig. 2 Task 2 result</figcaption>
+        </figure>
+
+        <h3 class="task-title">2.3. Task 3</h3>
+        <p>Write a program that takes in the width, length, and height of a room in metres and returns the volume of the room in cubic metres and cubic centimetres.</p>
+        <p><strong>Program Code:</strong></p>
+        <pre><code>#!/usr/bin/env ruby
+
+def read_float(prompt)
+  loop do
+    print prompt
+    input = gets&amp;.strip
+    exit if input.nil?
+
+    value = Float(input, exception: false)
+    if !value.nil? &amp;&amp; value &gt;= 0
+      return value
+    end
+
+    puts 'Please enter a valid non-negative number.'
+  end
+end
+
+width = read_float('Enter the room width in metres: ')
+length = read_float('Enter the room length in metres: ')
+height = read_float('Enter the room height in metres: ')
+
+volume_cubic_metres = width * length * height
+volume_cubic_centimetres = volume_cubic_metres * 1_000_000
+
+puts format('Volume: %.3f cubic metres', volume_cubic_metres)
+puts format('Volume: %.0f cubic centimetres', volume_cubic_centimetres)</code></pre>
+        <figure>
+          <img src="screenshots/task3.png" alt="Task 3 result screenshot">
+          <figcaption>Fig. 3 Task 3 result</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <article class="page page-break">
+      <section>
+        <h2 class="section-title">2. Program Code &amp; Results (continued)</h2>
+
+        <h3 class="task-title">2.4. Task 4</h3>
+        <p>Ask the user for age in years and then tell the user how old they are going to be on the next birthday.</p>
+        <p><strong>Program Code:</strong></p>
+        <pre><code>#!/usr/bin/env ruby
+
+def read_integer(prompt)
+  loop do
+    print prompt
+    input = gets&amp;.strip
+    exit if input.nil?
+
+    value = Integer(input, exception: false)
+    return value if !value.nil? &amp;&amp; value &gt;= 0
+
+    puts 'Please enter a valid age in whole years.'
+  end
+end
+
+age = read_integer('Enter your age in years: ')
+
+puts "On your next birthday you will be #{age + 1} years old."</code></pre>
+        <figure>
+          <img src="screenshots/task4.png" alt="Task 4 result screenshot">
+          <figcaption>Fig. 4 Task 4 result</figcaption>
+        </figure>
+
+        <h3 class="task-title">2.5. Task 5</h3>
+        <p>Write a program to express a number of days in weeks and days.</p>
+        <p><strong>Program Code:</strong></p>
+        <pre><code>#!/usr/bin/env ruby
+
+def read_integer(prompt)
+  loop do
+    print prompt
+    input = gets&amp;.strip
+    exit if input.nil?
+
+    value = Integer(input, exception: false)
+    return value if !value.nil? &amp;&amp; value &gt;= 0
+
+    puts 'Please enter a valid non-negative integer.'
+  end
+end
+
+total_days = read_integer('Enter the number of days: ')
+weeks, days = total_days.divmod(7)
+
+puts "#{total_days} day(s) = #{weeks} week(s) and #{days} day(s)."</code></pre>
+        <figure>
+          <img src="screenshots/task5.png" alt="Task 5 result screenshot">
+          <figcaption>Fig. 5 Task 5 result</figcaption>
+        </figure>
+
+        <h3 class="task-title">2.6. Task 6</h3>
+        <p>Write a program to express a given number of seconds in terms of hours, minutes, and seconds.</p>
+        <p><strong>Program Code:</strong></p>
+        <pre><code>#!/usr/bin/env ruby
+
+def read_integer(prompt)
+  loop do
+    print prompt
+    input = gets&amp;.strip
+    exit if input.nil?
+
+    value = Integer(input, exception: false)
+    return value if !value.nil? &amp;&amp; value &gt;= 0
+
+    puts 'Please enter a valid non-negative integer.'
+  end
+end
+
+total_seconds = read_integer('Enter the number of seconds: ')
+hours, remaining_seconds = total_seconds.divmod(3600)
+minutes, seconds = remaining_seconds.divmod(60)
+
+puts "#{total_seconds} second(s) = #{hours} hour(s), #{minutes} minute(s), #{seconds} second(s)."</code></pre>
+        <figure>
+          <img src="screenshots/task6.png" alt="Task 6 result screenshot">
+          <figcaption>Fig. 6 Task 6 result</figcaption>
+        </figure>
+
+        <h3 class="task-title">2.7. Task 7</h3>
+        <p>Write a program to convert km/h into mph using 1 km = 0.62137 mile.</p>
+        <p><strong>Program Code:</strong></p>
+        <pre><code>#!/usr/bin/env ruby
+
+def read_float(prompt)
+  loop do
+    print prompt
+    input = gets&amp;.strip
+    exit if input.nil?
+
+    value = Float(input, exception: false)
+    return value if !value.nil? &amp;&amp; value &gt;= 0
+
+    puts 'Please enter a valid non-negative speed.'
+  end
+end
+
+speed_kmph = read_float('Enter the speed in km/h: ')
+speed_mph = speed_kmph * 0.62137
+
+puts format('%.2f km/h = %.2f mph', speed_kmph, speed_mph)</code></pre>
+        <figure>
+          <img src="screenshots/task7.png" alt="Task 7 result screenshot">
+          <figcaption>Fig. 7 Task 7 result</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <article class="page">
+      <section>
+        <h2 class="section-title">3. Conclusions</h2>
+        <p>
+          All seven tasks were successfully implemented in Ruby. The programs use the basic arithmetic operations of the language, integer division with <code>div</code>, quotient and remainder extraction with <code>divmod</code>, floating-point calculations, and formatted output through <code>format</code>. Sample runs confirm that the expected results were achieved.
+        </p>
+        <p>
+          Ruby is very convenient for this kind of assignment because its syntax is concise and easy to read. Compared with C++ or Java, Ruby requires much less boilerplate code: no explicit type declarations, no semicolons, and no class wrapper for simple console programs. Compared with Python, Ruby is similarly readable, but it provides some expressive numeric helpers such as <code>div</code> and <code>divmod</code> that map naturally to the task requirements.
+        </p>
+        <p>
+          The main advantage of Ruby in this laboratory work is readability and speed of development. The main disadvantage is that Ruby is dynamically typed, so some mistakes are detected only at runtime rather than at compile time. For short educational programs, however, Ruby is a strong choice because it lets the programmer focus on the task logic instead of language ceremony.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">4. Literature List</h2>
+        <ol>
+          <li>Programming Languages Concepts course materials, Lab 2. Basic Operators in PL/Part 1.</li>
+          <li>Ruby Documentation. Core classes <code>Integer</code>, <code>Float</code>, and <code>Numeric</code>. Available at: https://ruby-doc.org/</li>
+          <li>Ruby Documentation. Method <code>Integer#div</code> and <code>Integer#divmod</code>. Available at: https://ruby-doc.org/core/</li>
+          <li>Metric conversion constant used in task 7: 1 kilometre = 0.62137 mile.</li>
+        </ol>
+      </section>
+    </article>
+  </div>
+</body>
+</html>

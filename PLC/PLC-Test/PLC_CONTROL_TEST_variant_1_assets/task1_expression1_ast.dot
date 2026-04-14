@@ -1,0 +1,18 @@
+digraph G {
+  graph [rankdir=TB, ordering=out, nodesep=0.18, ranksep=0.24, pad=0.08, dpi=200, splines=false, ratio=compress];
+  node [shape=plaintext, fontname="Times-Roman", fontsize=14, margin="0.01,0.01"];
+  edge [color="#000000", penwidth=1.0, dir=none];
+  n0 [label="-", color="#000000", fontcolor="#000000"];
+  n1 [label="+", color="#000000", fontcolor="#000000"];
+  n2 [label="*", color="#000000", fontcolor="#000000"];
+  n3 [label="a", color="#000000", fontcolor="#000000"];
+  n2 -> n3;
+  n4 [label="b", color="#000000", fontcolor="#000000"];
+  n2 -> n4;
+  n1 -> n2;
+  n5 [label="c", color="#000000", fontcolor="#000000"];
+  n1 -> n5;
+  n0 -> n1;
+  n6 [label="2", color="#000000", fontcolor="#000000"];
+  n0 -> n6;
+}

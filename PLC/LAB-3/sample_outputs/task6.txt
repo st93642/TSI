@@ -1,0 +1,2 @@
+Enter the rectangle length: Enter the rectangle breadth: Area: 34.00
+Perimeter: 25.00

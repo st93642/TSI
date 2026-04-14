@@ -1,0 +1,5 @@
+1.25
+2.5
+3.75
+Enter the first real number: Enter the second real number: Enter the third real number: Sum: 7.5
+Sum rounded to 2 decimal places: 7.50

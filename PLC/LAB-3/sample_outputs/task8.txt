@@ -1,0 +1,1 @@
+Enter a whole number (0 to stop): Enter a whole number (0 to stop): Enter a whole number (0 to stop): Enter a whole number (0 to stop): Sum: 15

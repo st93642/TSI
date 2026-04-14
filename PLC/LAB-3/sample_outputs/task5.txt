@@ -1,0 +1,1 @@
+Enter the first real number: Enter the second real number: Enter the third real number: Average: 6.90
