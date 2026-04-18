@@ -1,0 +1,12 @@
+LOD X // load the control value
+JMZ 11 // X = 0 -> keep T1 and T2 unchanged
+SUB #1 // ACC = X - 1
+JMZ 5 // X = 1 -> execute the swap
+HLT // any other value leaves the data unchanged
+LOD T1 // save the original first number
+STO T3 // use T3 as temporary storage
+LOD T2 // load the second number
+STO T1 // copy T2 into T1
+LOD T3 // recover the original T1 value
+STO T2 // copy the original T1 into T2
+HLT // end of program

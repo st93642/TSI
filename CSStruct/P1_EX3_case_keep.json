@@ -1,0 +1,37 @@
+{
+  "title": "P1 EX3 - keep values",
+  "created": "2026-04-18",
+  "codeLine": 0,
+  "step": 0,
+  "status": 0,
+  "interval": 500,
+  "focus": {
+    "cell": -1,
+    "var": "",
+    "el": ""
+  },
+  "acc": "0",
+  "code": "LOD X // load the control value\nJMZ 11 // X = 0 -> keep T1 and T2 unchanged\nSUB #1 // ACC = X - 1\nJMZ 5 // X = 1 -> execute the swap\nHLT // any other value leaves the data unchanged\nLOD T1 // save the original first number\nSTO T3 // use T3 as temporary storage\nLOD T2 // load the second number\nSTO T1 // copy T2 into T1\nLOD T3 // recover the original T1 value\nSTO T2 // copy the original T1 into T2\nHLT // end of program",
+  "variables": {
+    "X": "0",
+    "Y": "0",
+    "Z": "0",
+    "W": "0",
+    "T1": "8",
+    "T2": "3",
+    "T3": "0"
+  },
+  "alu": {
+    "e1": "0",
+    "e2": "0",
+    "op": ""
+  },
+  "pc": {
+    "val": 0,
+    "step": 1
+  },
+  "ir": {
+    "cmd": "",
+    "loc": ""
+  }
+}

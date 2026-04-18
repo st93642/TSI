@@ -1,0 +1,33 @@
+LOD X // load the selector value
+JMZ 7 // X = 0 -> sum all ten numbers
+SUB #1 // ACC = X - 1
+JMZ 19 // X = 1 -> sum the first five numbers
+SUB #1 // ACC = X - 2
+JMZ 26 // X = 2 -> sum the last five numbers
+HLT // any other value means no action
+LOD T1 // start full-array sum
+ADD T2 // add T2
+ADD T3 // add T3
+ADD T4 // add T4
+ADD T5 // add T5
+ADD T6 // add T6
+ADD T7 // add T7
+ADD T8 // add T8
+ADD T9 // add T9
+ADD T10 // add T10
+STO W // store the total sum in W
+HLT // end of X = 0 branch
+LOD T1 // start first-half sum
+ADD T2 // add T2
+ADD T3 // add T3
+ADD T4 // add T4
+ADD T5 // add T5
+STO W // store the sum of T1..T5 in W
+HLT // end of X = 1 branch
+LOD T6 // start second-half sum
+ADD T7 // add T7
+ADD T8 // add T8
+ADD T9 // add T9
+ADD T10 // add T10
+STO W // store the sum of T6..T10 in W
+HLT // end of X = 2 branch
