@@ -11,22 +11,22 @@
     "el": ""
   },
   "acc": "0",
-  "code": "LOD X // load the selector value\nJMZ 7 // X = 0 -> sum all ten numbers\nSUB #1 // ACC = X - 1\nJMZ 19 // X = 1 -> sum the first five numbers\nSUB #1 // ACC = X - 2\nJMZ 26 // X = 2 -> sum the last five numbers\nHLT\nLOD T1 // start full-array sum\nADD T2 // add T2\nADD T3 // add T3\nADD T4 // add T4\nADD T5 // add T5\nADD T6 // add T6\nADD T7 // add T7\nADD T8 // add T8\nADD T9 // add T9\nADD T10 // add T10\nSTO W // store the total sum in W\nHLT\nLOD T1 // start first-half sum\nADD T2 // add T2\nADD T3 // add T3\nADD T4 // add T4\nADD T5 // add T5\nSTO W // store the sum of T1..T5 in W\nHLT\nLOD T6 // start second-half sum\nADD T7 // add T7\nADD T8 // add T8\nADD T9 // add T9\nADD T10 // add T10\nSTO W // store the sum of T6..T10 in W\nHLT",
+  "code": "LOD X // load the selector value\nJMZ 7 // X = 0 -> sum all ten numbers\nSUB #1 // ACC = X - 1\nJMZ 19 // X = 1 -> sum the first five numbers\nSUB #1 // ACC = X - 2\nJMZ 26 // X = 2 -> sum the last five numbers\nHLT\nLOD T0 // start full-array sum\nADD T1 // add T1\nADD T2 // add T2\nADD T3 // add T3\nADD T4 // add T4\nADD T5 // add T5\nADD T6 // add T6\nADD T7 // add T7\nADD T8 // add T8\nADD T9 // add T9\nSTO W // store the total sum in W\nHLT\nLOD T0 // start first-half sum\nADD T1 // add T1\nADD T2 // add T2\nADD T3 // add T3\nADD T4 // add T4\nSTO W // store the sum of T0..T4 in W\nHLT\nLOD T5 // start second-half sum\nADD T6 // add T6\nADD T7 // add T7\nADD T8 // add T8\nADD T9 // add T9\nSTO W // store the sum of T5..T9 in W\nHLT",
   "variables": {
     "X": "1",
     "Y": "0",
     "Z": "0",
     "W": "0",
-    "T1": "1",
-    "T2": "2",
-    "T3": "3",
-    "T4": "4",
-    "T5": "5",
-    "T6": "6",
-    "T7": "7",
-    "T8": "8",
-    "T9": "9",
-    "T10": "10"
+    "T0": "1",
+    "T1": "2",
+    "T2": "3",
+    "T3": "4",
+    "T4": "5",
+    "T5": "6",
+    "T6": "7",
+    "T7": "8",
+    "T8": "9",
+    "T9": "10"
   },
   "alu": {
     "e1": "0",

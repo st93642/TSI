@@ -5,7 +5,8 @@ JMZ 19 // X = 1 -> sum the first five numbers
 SUB #1 // ACC = X - 2
 JMZ 26 // X = 2 -> sum the last five numbers
 HLT
-LOD T1 // start full-array sum
+LOD T0 // start full-array sum
+ADD T1 // add T1
 ADD T2 // add T2
 ADD T3 // add T3
 ADD T4 // add T4
@@ -14,20 +15,19 @@ ADD T6 // add T6
 ADD T7 // add T7
 ADD T8 // add T8
 ADD T9 // add T9
-ADD T10 // add T10
 STO W // store the total sum in W
 HLT
-LOD T1 // start first-half sum
+LOD T0 // start first-half sum
+ADD T1 // add T1
 ADD T2 // add T2
 ADD T3 // add T3
 ADD T4 // add T4
-ADD T5 // add T5
-STO W // store the sum of T1..T5 in W
+STO W // store the sum of T0..T4 in W
 HLT
-LOD T6 // start second-half sum
+LOD T5 // start second-half sum
+ADD T6 // add T6
 ADD T7 // add T7
 ADD T8 // add T8
 ADD T9 // add T9
-ADD T10 // add T10
-STO W // store the sum of T6..T10 in W
+STO W // store the sum of T5..T9 in W
 HLT

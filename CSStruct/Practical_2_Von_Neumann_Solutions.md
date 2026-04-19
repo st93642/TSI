@@ -93,16 +93,16 @@ The swap itself needs one temporary memory location, so `T3` is used as auxiliar
 
 ```text
 LOD X // load the control value
-JMZ 11 // X = 0 -> keep T1 and T2 unchanged
+JMZ 11 // X = 0 -> keep T0 and T1 unchanged
 SUB #1 // ACC = X - 1
 JMZ 5 // X = 1 -> execute the swap
 HLT
-LOD T1 // save the original first number
-STO T3 // use T3 as temporary storage
-LOD T2 // load the second number
-STO T1 // copy T2 into T1
-LOD T3 // recover the original T1 value
-STO T2 // copy the original T1 into T2
+LOD T0 // save the original first number
+STO T2 // use T2 as temporary storage
+LOD T1 // load the second number
+STO T0 // copy T1 into T0
+LOD T2 // recover the original T0 value
+STO T1 // copy the original T0 into T1
 HLT
 ```
 
@@ -160,7 +160,8 @@ JMZ 19 // X = 1 -> sum the first five numbers
 SUB #1 // ACC = X - 2
 JMZ 26 // X = 2 -> sum the last five numbers
 HLT
-LOD T1 // start full-array sum
+LOD T0 // start full-array sum
+ADD T1 // add T1
 ADD T2 // add T2
 ADD T3 // add T3
 ADD T4 // add T4
@@ -169,22 +170,21 @@ ADD T6 // add T6
 ADD T7 // add T7
 ADD T8 // add T8
 ADD T9 // add T9
-ADD T10 // add T10
 STO W // store the total sum in W
 HLT
-LOD T1 // start first-half sum
+LOD T0 // start first-half sum
+ADD T1 // add T1
 ADD T2 // add T2
 ADD T3 // add T3
 ADD T4 // add T4
-ADD T5 // add T5
-STO W // store the sum of T1..T5 in W
+STO W // store the sum of T0..T4 in W
 HLT
-LOD T6 // start second-half sum
+LOD T5 // start second-half sum
+ADD T6 // add T6
 ADD T7 // add T7
 ADD T8 // add T8
 ADD T9 // add T9
-ADD T10 // add T10
-STO W // store the sum of T6..T10 in W
+STO W // store the sum of T5..T9 in W
 HLT
 ```
 
