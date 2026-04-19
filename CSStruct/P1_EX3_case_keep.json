@@ -11,7 +11,7 @@
     "el": ""
   },
   "acc": "0",
-  "code": "LOD X // load the control value\nJMZ 11 // X = 0 -> keep T1 and T2 unchanged\nSUB #1 // ACC = X - 1\nJMZ 5 // X = 1 -> execute the swap\nHLT // any other value leaves the data unchanged\nLOD T1 // save the original first number\nSTO T3 // use T3 as temporary storage\nLOD T2 // load the second number\nSTO T1 // copy T2 into T1\nLOD T3 // recover the original T1 value\nSTO T2 // copy the original T1 into T2\nHLT // end of program",
+  "code": "LOD X // load the control value\nJMZ 11 // X = 0 -> keep T1 and T2 unchanged\nSUB #1 // ACC = X - 1\nJMZ 5 // X = 1 -> execute the swap\nHLT\nLOD T1 // save the original first number\nSTO T3 // use T3 as temporary storage\nLOD T2 // load the second number\nSTO T1 // copy T2 into T1\nLOD T3 // recover the original T1 value\nSTO T2 // copy the original T1 into T2\nHLT",
   "variables": {
     "X": "0",
     "Y": "0",

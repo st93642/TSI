@@ -96,14 +96,14 @@ LOD X // load the control value
 JMZ 11 // X = 0 -> keep T1 and T2 unchanged
 SUB #1 // ACC = X - 1
 JMZ 5 // X = 1 -> execute the swap
-HLT // any other value leaves the data unchanged
+HLT
 LOD T1 // save the original first number
 STO T3 // use T3 as temporary storage
 LOD T2 // load the second number
 STO T1 // copy T2 into T1
 LOD T3 // recover the original T1 value
 STO T2 // copy the original T1 into T2
-HLT // end of program
+HLT
 ```
 
 ### Example test cases
@@ -159,7 +159,7 @@ SUB #1 // ACC = X - 1
 JMZ 19 // X = 1 -> sum the first five numbers
 SUB #1 // ACC = X - 2
 JMZ 26 // X = 2 -> sum the last five numbers
-HLT // any other value means no action
+HLT
 LOD T1 // start full-array sum
 ADD T2 // add T2
 ADD T3 // add T3
@@ -171,21 +171,21 @@ ADD T8 // add T8
 ADD T9 // add T9
 ADD T10 // add T10
 STO W // store the total sum in W
-HLT // end of X = 0 branch
+HLT
 LOD T1 // start first-half sum
 ADD T2 // add T2
 ADD T3 // add T3
 ADD T4 // add T4
 ADD T5 // add T5
 STO W // store the sum of T1..T5 in W
-HLT // end of X = 1 branch
+HLT
 LOD T6 // start second-half sum
 ADD T7 // add T7
 ADD T8 // add T8
 ADD T9 // add T9
 ADD T10 // add T10
 STO W // store the sum of T6..T10 in W
-HLT // end of X = 2 branch
+HLT
 ```
 
 ### Example test cases

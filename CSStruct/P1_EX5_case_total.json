@@ -11,7 +11,7 @@
     "el": ""
   },
   "acc": "0",
-  "code": "LOD X // load the selector value\nJMZ 7 // X = 0 -> sum all ten numbers\nSUB #1 // ACC = X - 1\nJMZ 19 // X = 1 -> sum the first five numbers\nSUB #1 // ACC = X - 2\nJMZ 26 // X = 2 -> sum the last five numbers\nHLT // any other value means no action\nLOD T1 // start full-array sum\nADD T2 // add T2\nADD T3 // add T3\nADD T4 // add T4\nADD T5 // add T5\nADD T6 // add T6\nADD T7 // add T7\nADD T8 // add T8\nADD T9 // add T9\nADD T10 // add T10\nSTO W // store the total sum in W\nHLT // end of X = 0 branch\nLOD T1 // start first-half sum\nADD T2 // add T2\nADD T3 // add T3\nADD T4 // add T4\nADD T5 // add T5\nSTO W // store the sum of T1..T5 in W\nHLT // end of X = 1 branch\nLOD T6 // start second-half sum\nADD T7 // add T7\nADD T8 // add T8\nADD T9 // add T9\nADD T10 // add T10\nSTO W // store the sum of T6..T10 in W\nHLT // end of X = 2 branch",
+  "code": "LOD X // load the selector value\nJMZ 7 // X = 0 -> sum all ten numbers\nSUB #1 // ACC = X - 1\nJMZ 19 // X = 1 -> sum the first five numbers\nSUB #1 // ACC = X - 2\nJMZ 26 // X = 2 -> sum the last five numbers\nHLT\nLOD T1 // start full-array sum\nADD T2 // add T2\nADD T3 // add T3\nADD T4 // add T4\nADD T5 // add T5\nADD T6 // add T6\nADD T7 // add T7\nADD T8 // add T8\nADD T9 // add T9\nADD T10 // add T10\nSTO W // store the total sum in W\nHLT\nLOD T1 // start first-half sum\nADD T2 // add T2\nADD T3 // add T3\nADD T4 // add T4\nADD T5 // add T5\nSTO W // store the sum of T1..T5 in W\nHLT\nLOD T6 // start second-half sum\nADD T7 // add T7\nADD T8 // add T8\nADD T9 // add T9\nADD T10 // add T10\nSTO W // store the sum of T6..T10 in W\nHLT",
   "variables": {
     "X": "0",
     "Y": "0",
