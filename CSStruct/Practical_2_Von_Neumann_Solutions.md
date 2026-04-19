@@ -89,30 +89,32 @@ The simulator only provides a zero-test jump (`JMZ`). Because of that, the clean
 
 The swap itself needs one temporary memory location, so `T3` is used as auxiliary storage.
 
-### Program code
+### Program text (`P1_EX3_initials.txt`)
 
 ```text
 LOD X // load the control value
-JMZ 11 // X = 0 -> keep T0 and T1 unchanged
+JMZ 11 // X = 0 -> keep T1 and T2 unchanged
 SUB #1 // ACC = X - 1
 JMZ 5 // X = 1 -> execute the swap
 HLT
-LOD T0 // save the original first number
-STO T2 // use T2 as temporary storage
-LOD T1 // load the second number
-STO T0 // copy T1 into T0
-LOD T2 // recover the original T0 value
-STO T1 // copy the original T0 into T1
+LOD T1 // save the original first number
+STO T3 // use T3 as temporary storage
+LOD T2 // load the second number
+STO T1 // copy T2 into T1
+LOD T3 // recover the original T1 value
+STO T2 // copy the original T1 into T2
 HLT
 ```
 
 ### Example test cases
 
+The imported JSON scenarios keep `T0=0` as padding so the intended data cells are `T1` and `T2`.
+
 | Case | Initial values | Expected final values | Result |
 | --- | --- | --- | --- |
-| Keep values | `X=0, T1=8, T2=3, T3=0` | `T1=8, T2=3` | No swap |
-| Swap values | `X=1, T1=8, T2=3, T3=0` | `T1=3, T2=8` | Swap performed |
-| Invalid selector | `X=2, T1=8, T2=3, T3=0` | `T1=8, T2=3` | Safe halt |
+| Keep values | `X=0, T0=0, T1=8, T2=3, T3=0` | `T0=0, T1=8, T2=3, T3=0` | No swap |
+| Swap values | `X=1, T0=0, T1=8, T2=3, T3=0` | `T0=0, T1=3, T2=8, T3=8` | Swap performed |
+| Invalid selector | `X=2, T0=0, T1=8, T2=3, T3=0` | `T0=0, T1=8, T2=3, T3=0` | Safe halt |
 
 ### Challenges and solution choices
 
@@ -123,7 +125,14 @@ For screenshots, load one of these JSON files in the simulator:
 - `P1_EX3_case_keep.json`
 - `P1_EX3_case_swap.json`
 
-Take one screenshot before execution and one after `HLT`.
+Capture these screenshots for documentation:
+
+1. `X = 0` case, before running: show `T0=0`, `T1=8`, `T2=3`, and `PC` at line 0.
+2. `X = 0` case, after `HLT`: show `T1=8`, `T2=3` unchanged.
+3. `X = 1` case, before running: show `T0=0`, `T1=8`, `T2=3`.
+4. `X = 1` case, after `HLT`: show `T1=3`, `T2=8`, and temporary `T3=8`.
+
+Note: when importing JSON into vnmsim, the scenario includes `T0=0` as padding so that `T1` and `T2` map correctly in the UI and in program execution.
 
 ## Exercise 4 - Conditional Addition of Numbers from an Array
 

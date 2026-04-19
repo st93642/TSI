@@ -11,15 +11,16 @@
     "el": ""
   },
   "acc": "0",
-  "code": "LOD X // load the control value\nJMZ 11 // X = 0 -> keep T0 and T1 unchanged\nSUB #1 // ACC = X - 1\nJMZ 5 // X = 1 -> execute the swap\nHLT\nLOD T0 // save the original first number\nSTO T2 // use T2 as temporary storage\nLOD T1 // load the second number\nSTO T0 // copy T1 into T0\nLOD T2 // recover the original T0 value\nSTO T1 // copy the original T0 into T1\nHLT",
+  "code": "LOD X // load the control value\nJMZ 11 // X = 0 -> keep T1 and T2 unchanged\nSUB #1 // ACC = X - 1\nJMZ 5 // X = 1 -> execute the swap\nHLT\nLOD T1 // save the original first number\nSTO T3 // use T3 as temporary storage\nLOD T2 // load the second number\nSTO T1 // copy T2 into T1\nLOD T3 // recover the original T1 value\nSTO T2 // copy the original T1 into T2\nHLT",
   "variables": {
     "X": "0",
     "Y": "0",
     "Z": "0",
     "W": "0",
-    "T0": "8",
-    "T1": "3",
-    "T2": "0"
+    "T0": "0",
+    "T1": "8",
+    "T2": "3",
+    "T3": "0"
   },
   "alu": {
     "e1": "0",
