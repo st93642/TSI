@@ -1,4 +1,0 @@
-[wokwi]
-version = 1
-firmware = 'build/exercise4.ino.hex'
-elf = 'build/exercise4.ino.elf'

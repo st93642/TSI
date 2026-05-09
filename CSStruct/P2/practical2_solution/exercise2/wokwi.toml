@@ -1,4 +1,0 @@
-[wokwi]
-version = 1
-firmware = 'build/exercise2.ino.hex'
-elf = 'build/exercise2.ino.elf'
