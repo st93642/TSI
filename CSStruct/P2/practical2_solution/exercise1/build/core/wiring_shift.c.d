@@ -1,0 +1,6 @@
+/home/gog/TSI/CSStruct/P2/practical2_solution/exercise1/build/core/wiring_shift.c.o: \
+ /home/gog/.arduino15/packages/arduino/hardware/avr/1.8.7/cores/arduino/wiring_shift.c \
+ /home/gog/.arduino15/packages/arduino/hardware/avr/1.8.7/cores/arduino/wiring_private.h \
+ /home/gog/.arduino15/packages/arduino/hardware/avr/1.8.7/cores/arduino/Arduino.h \
+ /home/gog/.arduino15/packages/arduino/hardware/avr/1.8.7/cores/arduino/binary.h \
+ /home/gog/.arduino15/packages/arduino/hardware/avr/1.8.7/variants/standard/pins_arduino.h
