@@ -4,7 +4,7 @@
   "editor": "wokwi",
   "parts": [
     { "id": "uno", "type": "wokwi-arduino-uno", "top": 180, "left": 10 },
-    { "id": "display", "type": "wokwi-7segment", "top": 0, "left": 260, "attrs": { "common": "cathode", "color": "red" } },
+    { "id": "display", "type": "wokwi-7segment", "top": 0, "left": 260, "attrs": { "digits": "1", "common": "cathode", "color": "red" } },
     { "id": "r1", "type": "wokwi-resistor", "top": 150, "left": 310, "rotate": 90, "attrs": { "value": "1000" } },
     { "id": "btn1", "type": "wokwi-pushbutton", "top": 360, "left": 130, "attrs": { "color": "green", "label": "Reset", "key": "Q", "bounce": "0" } },
     { "id": "buzz1", "type": "wokwi-buzzer", "top": 310, "left": 320, "attrs": { "volume": "0.5" } }
@@ -17,7 +17,7 @@
     [ "uno:12", "display:E", "green", [] ],
     [ "uno:13", "display:F", "green", [] ],
     [ "uno:3", "display:G", "green", [] ],
-    [ "display:COM", "r1:1", "black", [] ],
+    [ "display:DIG1", "r1:1", "black", [] ],
     [ "r1:2", "uno:GND.1", "black", [] ],
     [ "uno:2", "btn1:1.l", "purple", [] ],
     [ "uno:GND.1", "btn1:2.l", "black", [] ],
