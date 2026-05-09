@@ -314,11 +314,11 @@ delay_inner:
   <p><strong>Objective:</strong> Display a countdown from 9 to 0, activate a buzzer when the display reaches 0, and reset the countdown when a button is pressed.</p>
 
   <h2>Implementation Summary</h2>
-  <p>A one-digit common-cathode 7-segment display, a reset pushbutton, and a buzzer were added to the Arduino Uno project. Segments A to F are mapped to PB0..PB5 (pins 8..13). The reset button is connected to PD2 (pin 2) and the buzzer to PD4 (pin 4). The countdown starts from 9, decrements once per second, and enters an alarm loop when 0 is reached.</p>
+  <p>A one-digit common-cathode 7-segment display, a reset pushbutton, and a buzzer were added to the Arduino Uno project. Segments A to F are mapped to PB0..PB5 (pins 8..13), segment G is mapped to PD3, and the common cathode is connected to GND through a single 1kOhm resistor so the hardware matches the assignment equipment list. The reset button is connected to PD2 (pin 2) and the buzzer to PD4 (pin 4). The countdown starts from 9, decrements once per second, and enters an alarm loop when 0 is reached.</p>
   <p>The prepared project for this exercise is stored in <strong>CSStruct/P2/practical2_solution/exercise4</strong>.</p>
 
   <h2>Challenge and Hardware Mapping</h2>
-  <p>The assignment states that the 7-segment display should be connected to Port B. On the ATmega328P used in Arduino Uno, Port B has eight bits, but only PB0..PB5 are externally available on the board. Because a 7-segment digit requires seven segment signals, one practical adaptation was necessary: segments A..F are connected to PB0..PB5, while segment G is connected to PD3. This preserves the direct-register control style and keeps most of the display on Port B while remaining compatible with the actual Arduino Uno hardware.</p>
+  <p>The assignment states that the 7-segment display should be connected to Port B and also lists one 1kOhm resistor in the required equipment. On the ATmega328P used in Arduino Uno, Port B has eight bits, but only PB0..PB5 are externally available on the board. Because a 7-segment digit requires seven segment signals, one practical adaptation was necessary: segments A..F are connected to PB0..PB5, while segment G is connected to PD3. To stay consistent with the single-resistor hardware list, the solution uses a common-cathode display with one shared 1kOhm resistor between the COM pin and GND. This preserves direct-register control and keeps most display lines on Port B while remaining compatible with the actual Arduino Uno hardware.</p>
 
   <table>
     <tr><th>Signal</th><th>Microcontroller pin</th><th>Arduino pin</th></tr>
@@ -329,6 +329,7 @@ delay_inner:
     <tr><td>Segment E</td><td>PB4</td><td>12</td></tr>
     <tr><td>Segment F</td><td>PB5</td><td>13</td></tr>
     <tr><td>Segment G</td><td>PD3</td><td>3</td></tr>
+    <tr><td>Display COM</td><td>Through 1kOhm resistor</td><td>GND</td></tr>
     <tr><td>Reset button</td><td>PD2</td><td>2</td></tr>
     <tr><td>Buzzer</td><td>PD4</td><td>4</td></tr>
   </table>
@@ -343,11 +344,12 @@ delay_inner:
   </ul>
 
   <h2>Challenges and Strategies</h2>
-  <p>This exercise combines three I/O behaviors: static display control, one-second timing, and asynchronous reset handling. A full interrupt-based solution was not required, so a polling strategy was used. The countdown loop checks the button every 10ms, which is fast enough to feel responsive while remaining easy to understand in assembly language.</p>
+  <p>This exercise combines three I/O behaviors: static display control, one-second timing, and asynchronous reset handling. A full interrupt-based solution was not required, so a polling strategy was used. The countdown loop checks the button every 10ms, which is fast enough to feel responsive while remaining easy to understand in assembly language. A shared resistor on the common cathode was selected because the assignment specifies one resistor for the display setup; the software logic therefore keeps the common pin fixed at GND through that resistor and lights segments by driving their output pins HIGH.</p>
 
   <h2>Prepared Code Listing</h2>
   <pre>; Exercise 4
 ; Countdown on a 7-segment display with reset button and buzzer.
+; The display uses a common cathode with one shared 1k resistor to GND.
 
 #define __SFR_OFFSET 0
 

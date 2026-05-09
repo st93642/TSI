@@ -1,5 +1,6 @@
 ; Exercise 4
 ; Countdown on a 7-segment display with reset button and buzzer.
+; The display uses a common cathode with one shared 1k resistor to GND.
 
 #define __SFR_OFFSET 0
 
