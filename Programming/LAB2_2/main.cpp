@@ -11,9 +11,9 @@
 /*                       https://tsi.lv                                      */
 /*****************************************************************************/
 
-#include <stdio.h>
-#include <limits.h>
-#include <string.h>
+#include <cstdio>
+#include <climits>
+#include <cstring>
 
 #define DATA_FILE "shops.txt"
 #define MAX_SHOPS 100
