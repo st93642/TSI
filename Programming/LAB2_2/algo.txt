@@ -1,0 +1,36 @@
+Algorithm description for shop database program
+
+Task number:
+studentCode = 93642
+taskVarCount = 20
+Program prints: studentCode % taskVarCount = 2
+
+Structure:
+Shop
+- title: shop title
+- address: shop address
+- phone: tel. number
+
+File:
+shops.dat stores native binary data: first the shop count, then the array of Shop records.
+
+Algorithm:
+1. Print the individual task number.
+2. Repeat menu until the user selects Exit:
+   1. Add data
+   2. View data
+   3. Define tel. number by address
+   4. Exit
+3. Add data:
+   - Read existing records from shops.dat into native array Shop shops[MAX_SHOPS].
+   - Read shop title, address, and tel. number into the next Shop structure.
+   - Write the updated count and the array of Shop records to shops.dat in binary form.
+4. View data:
+   - Read records from shops.dat into native array Shop shops[MAX_SHOPS].
+   - Print each shop with title, address, and tel. number.
+5. Define tel. number by address:
+   - Read all shops from shops.dat into native array Shop shops[MAX_SHOPS].
+   - Ask for an address.
+   - Compare the entered address with each stored shop address.
+   - If a match is found, print the tel. number; otherwise print that the shop was not found.
+6. Exit the program when menu item 4 is selected.
