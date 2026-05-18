@@ -16,8 +16,8 @@
 #include <iostream>
 #include <limits>
 
-const int	MAX_SHOPS = 100;
-const char	DATABASE_FILE[] = "shops.dat";
+const int MAX_SHOPS = 100;
+const char *DATABASE_FILE = "shops.dat";
 
 struct Shop
 {
@@ -31,13 +31,16 @@ int readShops(Shop *shops)
 	std::ifstream file(DATABASE_FILE, std::ios::binary);
 	int count = 0;
 
-	if (!file) return (0);
+	if (!file)
+		return (0);
 	file.read(reinterpret_cast<char *>(&count), sizeof(count));
-	if (!file || count < 0 || count > MAX_SHOPS) return (0);
+	if (!file || count < 0 || count > MAX_SHOPS)
+		return (0);
 	if (count > 0)
 	{
 		file.read(reinterpret_cast<char *>(shops), sizeof(Shop) * count);
-		if (!file) return (0);
+		if (!file)
+			return (0);
 	}
 	return (count);
 }
