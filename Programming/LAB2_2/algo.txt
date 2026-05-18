@@ -15,22 +15,89 @@ File:
 shops.dat stores native binary data: first the shop count, then the array of Shop records.
 
 Algorithm:
-1. Print the individual task number.
-2. Repeat menu until the user selects Exit:
-   1. Add data
-   2. View data
-   3. Define tel. number by address
-   4. Exit
-3. Add data:
-   - Read existing records from shops.dat into native array Shop shops[MAX_SHOPS].
-   - Read shop title, address, and tel. number into the next Shop structure.
-   - Write the updated count and the array of Shop records to shops.dat in binary form.
-4. View data:
-   - Read records from shops.dat into native array Shop shops[MAX_SHOPS].
-   - Print each shop with title, address, and tel. number.
-5. Define tel. number by address:
-   - Read all shops from shops.dat into native array Shop shops[MAX_SHOPS].
-   - Ask for an address.
-   - Compare the entered address with each stored shop address.
-   - If a match is found, print the tel. number; otherwise print that the shop was not found.
-6. Exit the program when menu item 4 is selected.
+1) Global declarations used by all functions:
+    - const int STUDENT_CODE = 93642;
+    - const int TASK_VAR_COUNT = 20;
+    - const int MAX_SHOPS = 100;
+    - const char DATABASE_FILE[] = "shops.dat";
+    - struct Shop { char title[64]; char address[128]; char phone[32]; };
+
+2) Function int readShops(Shop shops[]):
+    - Create binary input stream: std::ifstream file(DATABASE_FILE, std::ios::binary).
+    - Create local variable int count = 0.
+    - If file cannot be opened (!file), return 0.
+    - Read record count from file into count.
+    - Validate count: if read failed OR count < 0 OR count > MAX_SHOPS, return 0.
+    - If count > 0:
+       - Read exactly count elements of type Shop into array shops.
+       - If read failed, return 0.
+    - Return count.
+
+3) Function bool writeShops(const Shop *shops, int count):
+    - Open binary output stream: std::ofstream file(DATABASE_FILE, std::ios::binary).
+    - If file cannot be opened:
+       - Print "Cannot open file for writing." and return false.
+    - Write count to file.
+    - Write first count elements from shops array to file.
+    - If write failed:
+       - Print "Cannot write data to file." and return false.
+    - Return true.
+
+4) Function void addData(Shop *shops, int *count):
+    - Create local index from current amount: int index = *count.
+    - If index >= MAX_SHOPS:
+       - Print "Database is full." and return.
+    - Read user input into shops[index]:
+       - std::cin.getline(shops[index].title, 64)
+       - std::cin.getline(shops[index].address, 128)
+       - std::cin.getline(shops[index].phone, 32)
+    - Increase shared count: *count = index + 1.
+    - Call writeShops(shops, *count).
+    - If save failed:
+       - Roll back count to previous value: *count = index.
+       - Return.
+    - Print "Data saved.".
+
+5) Function void viewData(const Shop *shops, int count):
+    - If count == 0:
+       - Print "File is empty or does not exist." and return.
+    - Print total count.
+    - Loop variable: for (int index = 0; index < count; index++):
+       - Print shop number index + 1.
+       - Print shops[index].title, shops[index].address, shops[index].phone.
+
+6) Function void definePhoneByAddress(const Shop *shops, int count):
+    - Create local buffer char address[128].
+    - If count == 0:
+       - Print "File is empty or does not exist." and return.
+    - Ask user for address and read it into address via std::cin.getline(address, 128).
+    - Loop variable: for (int index = 0; index < count; index++):
+       - Compare strings: std::strcmp(shops[index].address, address).
+       - If result == 0:
+          - Print matching tel. number shops[index].phone.
+          - Return from function immediately.
+    - If loop finished without return:
+       - Print "Shop with this address was not found.".
+
+7) Function int main(void):
+   - Create one shared array in main: Shop shops[MAX_SHOPS].
+   - Load file once at startup: int count = readShops(shops).
+    - Declare int menuItem.
+   - Print task label "Task 2".
+    - Start infinite loop for menu processing.
+    - Print menu items 1..4 and read menuItem using std::cin >> menuItem.
+    - If numeric read failed:
+       - Call std::cin.clear().
+       - Print "Invalid menu item.".
+    - Always clear line tail after input:
+       - std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n').
+    - Branch by menuItem:
+       - if menuItem == 1: call addData(shops, &count).
+       - else if menuItem == 2: call viewData(shops, count).
+       - else if menuItem == 3: call definePhoneByAddress(shops, count).
+       - else if menuItem == 4: break loop.
+       - else: print "Invalid menu item.".
+    - Return 0.
+
+8) Program termination:
+    - Program exits only when menu item 4 is selected.
