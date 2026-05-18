@@ -5,19 +5,20 @@
 /*  By: st93642@students.tsi.lv                             TT    SSSSSSS II */
 /*                                                          TT         SS II */
 /*  Created: May 16 2026 12:46 st93642                      TT    SSSSSSS II */
-/*  Updated: May 18 2026 17:55 93642                                         */
+/*  Updated: May 18 2026 18:41 93642                                         */
 /*                                                                           */
 /*   Transport and Telecommunication Institute - Riga, Latvia                */
 /*                       https://tsi.lv                                      */
 /*****************************************************************************/
 
 #include <cstring>
+#include <cstddef>
 #include <fstream>
 #include <iostream>
 #include <limits>
 
-const int MAX_SHOPS = 100;
-const char *DATABASE_FILE = "shops.dat";
+const std::size_t	MAX_SHOPS = 100;
+const char			*DATABASE_FILE = "shops.dat";
 
 struct Shop
 {
@@ -26,35 +27,35 @@ struct Shop
 	char phone[32];
 };
 
-int readShops(Shop *shops)
+std::size_t readShops(Shop *shops)
 {
 	std::ifstream file(DATABASE_FILE, std::ios::binary);
-	int count = 0;
+	int			rawCount = 0;
+	std::size_t	count;
 
-	if (!file)
-		return (0);
-	file.read(reinterpret_cast<char *>(&count), sizeof(count));
-	if (!file || count < 0 || count > MAX_SHOPS)
-		return (0);
+	if (!file) return (0);
+	file.read(reinterpret_cast<char *>(&rawCount), sizeof(rawCount));
+	if (!file || rawCount < 0 || static_cast<std::size_t>(rawCount) > MAX_SHOPS) return (0);
+	count = static_cast<std::size_t>(rawCount);
 	if (count > 0)
 	{
 		file.read(reinterpret_cast<char *>(shops), sizeof(Shop) * count);
-		if (!file)
-			return (0);
+		if (!file) return (0);
 	}
 	return (count);
 }
 
-bool writeShops(const Shop *shops, int count)
+bool writeShops(const Shop *shops, std::size_t count)
 {
 	std::ofstream file(DATABASE_FILE, std::ios::binary);
+	int rawCount = static_cast<int>(count);
 
 	if (!file)
 	{
 		std::cout << "Cannot open file for writing.\n";
 		return (false);
 	}
-	file.write(reinterpret_cast<const char *>(&count), sizeof(count));
+	file.write(reinterpret_cast<const char *>(&rawCount), sizeof(rawCount));
 	file.write(reinterpret_cast<const char *>(shops), sizeof(Shop) * count);
 	if (!file)
 	{
@@ -64,9 +65,9 @@ bool writeShops(const Shop *shops, int count)
 	return (true);
 }
 
-void addData(Shop *shops, int *count)
+void addData(Shop *shops, std::size_t *count)
 {
-	int index = *count;
+	std::size_t index = *count;
 
 	if (index >= MAX_SHOPS)
 	{
@@ -89,7 +90,7 @@ void addData(Shop *shops, int *count)
 	std::cout << "Data saved.\n";
 }
 
-void viewData(const Shop *shops, int count)
+void viewData(const Shop *shops, std::size_t count)
 {
 	if (!count)
 	{
@@ -97,14 +98,14 @@ void viewData(const Shop *shops, int count)
 		return;
 	}
 	std::cout << "\nShops in file: " << count << '\n';
-	for (int index = 0; index < count; index++)
+	for (std::size_t index = 0; index < count; index++)
 		std::cout << "Shop " << index + 1 << ":\n"
 				  << "  Title: " << shops[index].title << '\n'
 				  << "  Address: " << shops[index].address << '\n'
 				  << "  Tel. number: " << shops[index].phone << '\n';
 }
 
-void definePhoneByAddress(const Shop *shops, int count)
+void definePhoneByAddress(const Shop *shops, std::size_t count)
 {
 	char address[128];
 
@@ -115,10 +116,10 @@ void definePhoneByAddress(const Shop *shops, int count)
 	}
 	std::cout << "Enter address: ";
 	std::cin.getline(address, 128);
-	for (int index = 0; index < count; index++)
-		if (std::strcmp(shops[index].address, address) == 0)
+	for (std::size_t i = 0; i < count; i++)
+		if (std::strcmp(shops[i].address, address) == 0)
 		{
-			std::cout << "Tel. number: " << shops[index].phone << '\n';
+			std::cout << "Tel. number: " << shops[i].phone << '\n';
 			return;
 		}
 	std::cout << "Shop with this address was not found.\n";
@@ -127,8 +128,8 @@ void definePhoneByAddress(const Shop *shops, int count)
 int main(void)
 {
 	Shop shops[MAX_SHOPS];
-	int count = readShops(shops);
-	int menuItem;
+	std::size_t	count = readShops(shops);
+	int			menuItem;
 
 	std::cout << "Task 2\n";
 	for (;;)

@@ -1,5 +1,5 @@
 CXX      := g++
-CXXFLAGS := -Wextra -Wall -Werror -pedantic -std=c++98
+CXXFLAGS := -Wextra -Wall -Werror -pedantic -std=c++17
 TARGET   := shops
 SRC      := main.cpp
 OBJ      := $(SRC:.cpp=.o)
@@ -11,6 +11,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^
+	rm -f $(OBJ)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
