@@ -4,108 +4,305 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="edge-start-load" edge="1" parent="1" source="start" target="load" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+
+        <!-- ── Begin ── -->
+        <mxCell id="n-begin" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Begin" vertex="1">
+          <mxGeometry x="330" y="10" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ── Open file ── -->
+        <mxCell id="n-open" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Open shops.dat &lt;br&gt;in binary input mode" vertex="1">
+          <mxGeometry x="260" y="90" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-begin-open" edge="1" parent="1" source="n-begin" target="n-open" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Begin" vertex="1">
-          <mxGeometry x="330" y="20" width="120" height="40" as="geometry" />
+
+        <!-- ── File opened? ── -->
+        <mxCell id="n-fileok" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="File opened&lt;br&gt;successfully?" vertex="1">
+          <mxGeometry x="320" y="190" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="edge-load-check" edge="1" parent="1" source="load" target="loaded" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+        <mxCell id="e-open-fileok" edge="1" parent="1" source="n-open" target="n-fileok" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="load" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Load all shop records&lt;br&gt;from file" vertex="1">
-          <mxGeometry x="260" y="100" width="260" height="60" as="geometry" />
+
+        <!-- NO: File open failed -->
+        <mxCell id="n-filefail" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Return 0" vertex="1">
+          <mxGeometry x="560" y="195" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="loaded" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Any records&lt;br&gt;loaded?" vertex="1">
-          <mxGeometry x="330" y="210" width="120" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="edge-loaded-read" edge="1" parent="1" source="loaded" target="readAddress" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="edge-loaded-empty" edge="1" parent="1" source="loaded" target="emptyMsg" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+        <mxCell id="e-fileok-filefail" edge="1" parent="1" source="n-fileok" target="n-filefail" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="650" y="245" />
+              <mxPoint x="520" y="225" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="emptyMsg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Show message:&lt;br&gt;&amp;quot;File is empty or does not exist.&amp;quot;" vertex="1">
-          <mxGeometry x="560" y="210" width="180" height="60" as="geometry" />
+
+        <!-- ── Read count ── -->
+        <mxCell id="n-readcnt" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Read count (int) &lt;br&gt;from file header" vertex="1">
+          <mxGeometry x="260" y="310" width="260" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge-empty-end" edge="1" parent="1" source="emptyMsg" target="emptyEnd" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+        <mxCell id="e-fileok-readcnt" edge="1" parent="1" source="n-fileok" target="n-readcnt" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="emptyEnd" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
-          <mxGeometry x="590" y="320" width="120" height="40" as="geometry" />
+
+        <!-- ── Read succeeded? ── -->
+        <mxCell id="n-readok" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Read succeeded?" vertex="1">
+          <mxGeometry x="320" y="410" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="readAddress" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Read address from user" vertex="1">
-          <mxGeometry x="260" y="340" width="260" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="edge-read-init" edge="1" parent="1" source="readAddress" target="initIndex" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+        <mxCell id="e-readcnt-readok" edge="1" parent="1" source="n-readcnt" target="n-readok" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="initIndex" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="index = 0" vertex="1">
-          <mxGeometry x="330" y="440" width="120" height="40" as="geometry" />
+
+        <!-- NO: Read failed -->
+        <mxCell id="n-readfail" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Return 0" vertex="1">
+          <mxGeometry x="560" y="415" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="edge-init-check" edge="1" parent="1" source="initIndex" target="indexCheck" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="indexCheck" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="index &lt; count?" vertex="1">
-          <mxGeometry x="320" y="530" width="140" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="edge-check-match" edge="1" parent="1" source="indexCheck" target="matchAddress" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="edge-check-notfound" edge="1" parent="1" source="indexCheck" target="notFound" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+        <mxCell id="e-readok-readfail" edge="1" parent="1" source="n-readok" target="n-readfail" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="650" y="570" />
+              <mxPoint x="520" y="445" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="notFound" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Show message:&lt;br&gt;&amp;quot;Shop with this address was not found.&amp;quot;" vertex="1">
-          <mxGeometry x="560" y="540" width="180" height="60" as="geometry" />
+
+        <!-- ── Validate count ── -->
+        <mxCell id="n-validate" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="0 &amp;le; count &amp;le;&lt;br&gt;MAX_SHOPS?" vertex="1">
+          <mxGeometry x="320" y="530" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="edge-notfound-end" edge="1" parent="1" source="notFound" target="resultEnd" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+        <mxCell id="e-readok-validate" edge="1" parent="1" source="n-readok" target="n-validate" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="matchAddress" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="shops[index].address&lt;br&gt;== address?" vertex="1">
-          <mxGeometry x="310" y="670" width="160" height="90" as="geometry" />
+
+        <!-- NO: Invalid count -->
+        <mxCell id="n-invalid" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Return 0" vertex="1">
+          <mxGeometry x="560" y="535" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="edge-match-show" edge="1" parent="1" source="matchAddress" target="showTel" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+        <mxCell id="e-validate-invalid" edge="1" parent="1" source="n-validate" target="n-invalid" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="650" y="715" />
+              <mxPoint x="520" y="565" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="edge-match-inc" edge="1" parent="1" source="matchAddress" target="increment" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="200" y="715" />
-            </Array>
-          </mxGeometry>
+
+        <!-- ── count > 0? ── -->
+        <mxCell id="n-hasdata" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="count &amp;gt; 0?" vertex="1">
+          <mxGeometry x="330" y="650" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="showTel" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Show telephone number" vertex="1">
-          <mxGeometry x="560" y="685" width="180" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="edge-show-end" edge="1" parent="1" source="showTel" target="resultEnd" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+        <mxCell id="e-validate-hasdata" edge="1" parent="1" source="n-validate" target="n-hasdata" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="increment" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="index++" vertex="1">
-          <mxGeometry x="70" y="690" width="120" height="50" as="geometry" />
+
+        <!-- YES: Read shops -->
+        <mxCell id="n-readshops" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Read count records&lt;br&gt;into shops array" vertex="1">
+          <mxGeometry x="260" y="770" width="260" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="edge-inc-check" edge="1" parent="1" source="increment" target="indexCheck" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+        <mxCell id="e-hasdata-readshops" edge="1" parent="1" source="n-hasdata" target="n-readshops" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- NO: skip reading -->
+
+        <!-- ── Read shops succeeded? ── -->
+        <mxCell id="n-readshopok" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Read succeeded?" vertex="1">
+          <mxGeometry x="320" y="870" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e-readshops-readshopok" edge="1" parent="1" source="n-readshops" target="n-readshopok" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- NO: Read shops failed -->
+        <mxCell id="n-readshopfail" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Return 0" vertex="1">
+          <mxGeometry x="560" y="875" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-readshopok-readshopfail" edge="1" parent="1" source="n-readshopok" target="n-readshopfail" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="40" y="715" />
-              <mxPoint x="40" y="570" />
+              <mxPoint x="520" y="905" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="resultEnd" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
-          <mxGeometry x="590" y="840" width="120" height="40" as="geometry" />
+
+        <!-- ── Merge point: after loading ── -->
+        <mxCell id="n-merge-load" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="count = readShops(shops)" vertex="1">
+          <mxGeometry x="280" y="1000" width="220" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="e-hasdata-merge" edge="1" parent="1" source="n-hasdata" target="n-merge-load" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="720" />
+              <mxPoint x="390" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-readshopok-merge" edge="1" parent="1" source="n-readshopok" target="n-merge-load" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="940" />
+              <mxPoint x="390" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ── count == 0? ── -->
+        <mxCell id="n-empty" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="count == 0?" vertex="1">
+          <mxGeometry x="330" y="1090" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e-merge-empty" edge="1" parent="1" source="n-merge-load" target="n-empty" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- YES: Empty -->
+        <mxCell id="n-emptymsg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Show message:&lt;br&gt;&amp;quot;File is empty or does not exist.&amp;quot;" vertex="1">
+          <mxGeometry x="560" y="1085" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-empty-emptymsg" edge="1" parent="1" source="n-empty" target="n-emptymsg" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="1115" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ── Prompt address ── -->
+        <mxCell id="n-prompt" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Print &amp;quot;Enter address: &amp;quot;&lt;br&gt;prompt to console" vertex="1">
+          <mxGeometry x="260" y="1210" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-empty-prompt" edge="1" parent="1" source="n-empty" target="n-prompt" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ── Read address ── -->
+        <mxCell id="n-readaddr" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Read address via&lt;br&gt;std::cin.getline(address, 128)" vertex="1">
+          <mxGeometry x="260" y="1310" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-prompt-readaddr" edge="1" parent="1" source="n-prompt" target="n-readaddr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ── i = 0 ── -->
+        <mxCell id="n-init" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="i = 0" vertex="1">
+          <mxGeometry x="330" y="1410" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-readaddr-init" edge="1" parent="1" source="n-readaddr" target="n-init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ── i &lt; count? ── -->
+        <mxCell id="n-loop" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="i &amp;lt; count?" vertex="1">
+          <mxGeometry x="320" y="1500" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-init-loop" edge="1" parent="1" source="n-init" target="n-loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- NO: Not found -->
+        <mxCell id="n-notfound" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Show message:&lt;br&gt;&amp;quot;Shop with this address was not found.&amp;quot;" vertex="1">
+          <mxGeometry x="560" y="1510" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-loop-notfound" edge="1" parent="1" source="n-loop" target="n-notfound" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="1540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ── strcmp match? ── -->
+        <mxCell id="n-strcmp" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="std::strcmp(&lt;br&gt;shops[i].address,&lt;br&gt;address) == 0?" vertex="1">
+          <mxGeometry x="300" y="1640" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e-loop-strcmp" edge="1" parent="1" source="n-loop" target="n-strcmp" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- YES: Show telephone -->
+        <mxCell id="n-showtel" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Print telephone number:&lt;br&gt;shops[i].phone" vertex="1">
+          <mxGeometry x="560" y="1650" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-strcmp-showtel" edge="1" parent="1" source="n-strcmp" target="n-showtel" value="YES" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="1690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NO: i++ -->
+        <mxCell id="n-inc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="i++" vertex="1">
+          <mxGeometry x="80" y="1665" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-strcmp-inc" edge="1" parent="1" source="n-strcmp" target="n-inc" value="NO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="1690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- i++ back to loop -->
+        <mxCell id="e-inc-loop" edge="1" parent="1" source="n-inc" target="n-loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="1685" />
+              <mxPoint x="40" y="1540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ── End ellipses ── -->
+        <!-- End after file fail -->
+        <mxCell id="n-end-filefail" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
+          <mxGeometry x="560" y="260" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-filefail-end" edge="1" parent="1" source="n-filefail" target="n-end-filefail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- End after read fail -->
+        <mxCell id="n-end-readfail" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
+          <mxGeometry x="560" y="480" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-readfail-end" edge="1" parent="1" source="n-readfail" target="n-end-readfail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- End after invalid count -->
+        <mxCell id="n-end-invalid" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
+          <mxGeometry x="560" y="600" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-invalid-end" edge="1" parent="1" source="n-invalid" target="n-end-invalid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- End after read shops fail -->
+        <mxCell id="n-end-shopfail" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
+          <mxGeometry x="560" y="940" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-shopfail-end" edge="1" parent="1" source="n-readshopfail" target="n-end-shopfail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- End after empty msg -->
+        <mxCell id="n-end-empty" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
+          <mxGeometry x="590" y="1160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-emptymsg-end" edge="1" parent="1" source="n-emptymsg" target="n-end-empty" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Common End for success and not-found -->
+        <mxCell id="n-end-common" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
+          <mxGeometry x="590" y="1780" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-notfound-end" edge="1" parent="1" source="n-notfound" target="n-end-common" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-showtel-end" edge="1" parent="1" source="n-showtel" target="n-end-common" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
