@@ -78,10 +78,31 @@ void addData(Shop *shops, std::size_t *count)
 
 	std::cout << "Enter shop title: ";
 	std::cin.getline(shops[index].title, 64);
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Input error: title too long\n";
+		return;
+	}
 	std::cout << "Enter address: ";
 	std::cin.getline(shops[index].address, 128);
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Input error: address too long\n";
+		return;
+	}
 	std::cout << "Enter tel. number: ";
 	std::cin.getline(shops[index].phone, 32);
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Input error: phone number too long\n";
+		return;
+	}
 	*count = index + 1;
 	if (!writeShops(shops, *count))
 	{
@@ -119,6 +140,13 @@ void definePhoneByAddress(const Shop *shops, std::size_t count)
 	}
 	std::cout << "Enter address: ";
 	std::cin.getline(address, 128);
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Input error: address too long\n";
+		return;
+	}
 	for (std::size_t i = 0; i < count; i++)
 	{
 		if (std::strcmp(shops[i].address, address) == 0)
@@ -148,7 +176,7 @@ int main(void)
 		if (!(std::cin >> menuItem))
 		{
 			std::cin.clear();
-			std::cout << "Invalid menu item.\n";
+			std::cout << "Invalid menu item\n";
 		}
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		if (menuItem == 1)
@@ -160,7 +188,7 @@ int main(void)
 		else if (menuItem == 4)
 			break;
 		else
-			std::cout << "Invalid menu item.\n";
+			std::cout << "Invalid menu item\n";
 	}
 	return (0);
 }

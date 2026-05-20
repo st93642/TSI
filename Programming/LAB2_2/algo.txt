@@ -233,6 +233,13 @@ step-by-step explanation:
          - Title   (up to 63 chars + null)
          - Address (up to 127 chars + null)
          - Phone   (up to 31 chars + null)
+       After each getline call, the function checks std::cin.fail(). If the
+       failbit is set (user typed more characters than the buffer can hold),
+       the function clears the stream state, discards the leftover input via
+       std::cin.ignore, prints a specific error message (e.g. "Input error:
+       title too long"), and returns without saving any data. This prevents
+       corrupted input from propagating into subsequent reads or being
+       persisted to the file.
 
     4. Update the in-memory count
        *count = index + 1;
@@ -260,13 +267,16 @@ step-by-step explanation:
       addData call will overwrite that slot.
 
   Assumptions & potential pitfalls
-    - Input buffer size limits — getline reads at most n-1 characters. If
-      the user types more, the extra characters remain in std::cin and will
-      corrupt the next input operation (e.g., menu selection or the next
-      field). The program does not clear the input buffer after each field.
-    - No validation of user input — Any input is accepted, including empty
-      strings. Invalid telephone numbers or empty addresses are stored
-      without warning.
+    - Input buffer overflow detection — Each getline is followed by a
+      std::cin.fail() check. If the user exceeds the buffer size, the
+      failbit is set; the function clears the stream, discards the leftover
+      input, prints a field-specific error message, and returns without
+      saving. This prevents corrupted or truncated data from entering the
+      database and stops leftover characters from interfering with
+      subsequent reads.
+    - No validation of user input — Any input that fits the buffer is
+      accepted, including empty strings. Invalid telephone numbers or empty
+      addresses are stored without warning.
     - Rollback is partial — Only the count is rolled back. The shops array
       slot still contains the entered data, and if the user re-enters data,
       the old (unwritten) value is silently overwritten.
@@ -352,6 +362,10 @@ match) and prints its telephone number. Here's a step-by-step explanation:
     2. Prompt and read address
        Asks the user "Enter address: " and reads input into a local buffer
        address[128] via std::cin.getline(address, 128).
+       If the read fails (std::cin.fail() — the user typed more than 127
+       characters), the function clears the stream state, discards the
+       leftover input, prints "Input error: address too long", and returns
+       without searching.
 
     3. Linear search
        Iterates through the shops array from index 0 to count - 1.
@@ -368,6 +382,10 @@ match) and prints its telephone number. Here's a step-by-step explanation:
 
   Error handling
     - Empty-database guard prevents searching when there is no data.
+    - Input overflow detection — If the user types an address longer than
+      127 characters, std::cin.getline sets the failbit. The function
+      detects this, clears the stream, discards the excess input, prints an
+      error message, and returns without searching.
     - No match case is handled gracefully with a user message.
 
   Assumptions & potential pitfalls
@@ -379,9 +397,10 @@ match) and prints its telephone number. Here's a step-by-step explanation:
       only the first one's telephone number is displayed. The function does
       not indicate that duplicates exist.
     - Address buffer size — The local address buffer is 128 bytes, matching
-      the struct field size. If the user types more than 127 characters, the
-      remainder stays in the input buffer and will interfere with subsequent
-      input operations.
+      the struct field size. If the user types more than 127 characters,
+      the failbit is detected, the stream is cleared, and the function
+      returns with an error message rather than silently truncating or
+      corrupting subsequent reads.
     - No whitespace trimming — Leading or trailing spaces in either the
       stored address or the user input cause a mismatch.
     - The search is O(n) linear scan. For MAX_SHOPS = 100 this is
