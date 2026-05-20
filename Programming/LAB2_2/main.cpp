@@ -76,6 +76,8 @@ void addData(Shop *shops, std::size_t *count)
 		return;
 	}
 
+	std::memset(&shops[i], 0, sizeof(Shop));
+
 	std::cout << "Enter shop title: ";
 	std::cin.getline(shops[i].title, 64);
 	if (std::cin.fail())
