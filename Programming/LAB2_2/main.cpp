@@ -5,7 +5,7 @@
 /*  By: st93642@students.tsi.lv                             TT    SSSSSSS II */
 /*                                                          TT         SS II */
 /*  Created: May 16 2026 12:46 st93642                      TT    SSSSSSS II */
-/*  Updated: May 20 2026 13:13 st93642                                       */
+/*  Updated: May 20 2026 15:39 st93642                                       */
 /*                                                                           */
 /*   Transport and Telecommunication Institute - Riga, Latvia                */
 /*                       https://tsi.lv                                      */
@@ -32,11 +32,13 @@ std::size_t readShops(Shop *shops)
 {
 	std::ifstream file(DATABASE_FILE, std::ios::binary);
 	std::int32_t	rawCount = 0;
-	std::size_t	count;
+	std::size_t		count;
 
 	if (!file) return (0);
 	file.read(reinterpret_cast<char *>(&rawCount), sizeof(rawCount));
-	if (!file || rawCount < 0 || static_cast<std::size_t>(rawCount) > MAX_SHOPS) return (0);
+	if (!file || rawCount < 0 
+		|| static_cast<std::size_t>(rawCount) > MAX_SHOPS) 
+		return (0);
 	count = static_cast<std::size_t>(rawCount);
 	if (count > 0)
 	{
