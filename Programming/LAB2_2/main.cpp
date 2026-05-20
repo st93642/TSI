@@ -5,7 +5,7 @@
 /*  By: st93642@students.tsi.lv                             TT    SSSSSSS II */
 /*                                                          TT         SS II */
 /*  Created: May 16 2026 12:46 st93642                      TT    SSSSSSS II */
-/*  Updated: May 20 2026 08:30 st93642                                       */
+/*  Updated: May 20 2026 13:13 st93642                                       */
 /*                                                                           */
 /*   Transport and Telecommunication Institute - Riga, Latvia                */
 /*                       https://tsi.lv                                      */
@@ -68,16 +68,16 @@ bool writeShops(const Shop *shops, std::size_t count)
 
 void addData(Shop *shops, std::size_t *count)
 {
-	std::size_t index = *count;
+	std::size_t i = *count;
 
-	if (index >= MAX_SHOPS)
+	if (i >= MAX_SHOPS)
 	{
 		std::cout << "Database is full\n";
 		return;
 	}
 
 	std::cout << "Enter shop title: ";
-	std::cin.getline(shops[index].title, 64);
+	std::cin.getline(shops[i].title, 64);
 	if (std::cin.fail())
 	{
 		std::cin.clear();
@@ -86,7 +86,7 @@ void addData(Shop *shops, std::size_t *count)
 		return;
 	}
 	std::cout << "Enter address: ";
-	std::cin.getline(shops[index].address, 128);
+	std::cin.getline(shops[i].address, 128);
 	if (std::cin.fail())
 	{
 		std::cin.clear();
@@ -95,7 +95,7 @@ void addData(Shop *shops, std::size_t *count)
 		return;
 	}
 	std::cout << "Enter tel. number: ";
-	std::cin.getline(shops[index].phone, 32);
+	std::cin.getline(shops[i].phone, 32);
 	if (std::cin.fail())
 	{
 		std::cin.clear();
@@ -103,10 +103,10 @@ void addData(Shop *shops, std::size_t *count)
 		std::cout << "Input error: phone number too long\n";
 		return;
 	}
-	*count = index + 1;
+	*count = i + 1;
 	if (!writeShops(shops, *count))
 	{
-		*count = index;
+		*count = i;
 		return;
 	}
 	std::cout << "Data saved\n";
@@ -120,12 +120,12 @@ void viewData(const Shop *shops, std::size_t count)
 		return;
 	}
 	std::cout << "\nShops in file: " << count << '\n';
-	for (std::size_t index = 0; index < count; index++)
+	for (std::size_t i = 0; i < count; i++)
 	{
-		std::cout << "Shop " << index + 1 << ":\n"
-				  << "  Title: " << shops[index].title << '\n'
-				  << "  Address: " << shops[index].address << '\n'
-				  << "  Tel. number: " << shops[index].phone << '\n';
+		std::cout << "Shop " << i + 1 << ":\n"
+				  << "  Title: " << shops[i].title << '\n'
+				  << "  Address: " << shops[i].address << '\n'
+				  << "  Tel. number: " << shops[i].phone << '\n';
 	}
 }
 
