@@ -10,18 +10,10 @@ Task number:
 Overview
 ----------------------------------------------------------------------
 
-The program is built around the Shop structure, which stores three
-fixed-size character arrays: title (64 bytes), address (128 bytes), and
-telephone number (32 bytes). The structure is trivially copyable, which
-allows the program to read and write entire records as raw binary data.
-
-Data persistence is handled through the binary file shops.dat. The file
-format is simple: the first 4 bytes store the number of records as a
-std::int32_t, followed by that many Shop structures written contiguously.
-On startup, main() allocates a fixed array of MAX_SHOPS (100) Shop objects
-and calls readShops() to populate it from the file. The program then enters
-an infinite menu loop where the user can add records, view all records,
-search for a telephone number by address, or exit.
+The program manages a shop database using a fixed-size array of Shop
+structures (MAX_SHOPS = 100). Data is persisted in the binary file
+shops.dat: the first 4 bytes store the record count as std::int32_t,
+followed by that many Shop records written as raw bytes.
 
 ----------------------------------------------------------------------
 Structure: Shop
@@ -34,387 +26,76 @@ struct Shop
     char phone[32];
 };
 
-The Shop structure holds the data for a single shop entry. Each field is a
-fixed-size C-string (character array).
-
-How it works
-  - title[64]    — the shop name (up to 63 characters + null terminator).
-  - address[128] — the physical address (up to 127 characters + null terminator).
-  - phone[32]    — the telephone number (up to 31 characters + null terminator).
-
-Assumptions & potential pitfalls
-  - Trivial copyability — Shop contains only plain char arrays, no pointers,
-    no virtual functions, and no user-defined constructors/destructors. This
-    makes it a trivially copyable type, which is required for the raw binary
-    I/O used by readShops / writeShops. If any non-trivial member were added
-    (e.g. std::string), reading/writing raw bytes into the struct would be
-    undefined behaviour.
-  - Fixed-size buffers — all three fields have hard limits. Input overflow
-    is detected via std::cin.fail() checks after each getline call (see
-    addData and definePhoneByAddress below).
-  - Memory layout — no padding is expected between the char arrays because
-    all members have the same alignment requirement (1 byte). For the three
-    arrays sizes (64+128+32 = 224), the total size will be 224 bytes on
-    most compilers.
+Trivially copyable — contains only plain char arrays, which allows raw
+binary I/O via reinterpret_cast. Total size: 224 bytes (no padding).
 
 ----------------------------------------------------------------------
-Function: std::size_t readShops(Shop *shops)
+Why std::int32_t for the count header
 ----------------------------------------------------------------------
 
-readShops(Shop *shops) — opens shops.dat in binary input mode, reads a
-4-byte std::int32_t count, validates it (non-negative and <= MAX_SHOPS),
-then reads exactly count Shop records into the provided buffer. Returns the
-number of shops read, or 0 on any error. The function does not distinguish
-between an empty file and an I/O error, since both produce a return value
-of 0.
+The file header uses std::int32_t (from <cstdint>) instead of plain int or
+std::size_t. Plain int has a platform-dependent size (the C++ standard only
+guarantees at least 16 bits), and std::size_t varies between 4 and 8 bytes
+across architectures. std::int32_t is guaranteed to be exactly 32 bits on
+all platforms, ensuring the binary file format is consistent.
 
-  Function signature
-    std::size_t readShops(Shop *shops)
-
-    Parameter shops: pointer to a memory buffer where the loaded shops will
-    be stored. The caller must ensure that the buffer is large enough to
-    hold up to MAX_SHOPS Shop objects.
-
-    Return value: number of shops successfully read, or 0 if an error
-    occurs.
-
-  How it works
-    1. Open the file
-       std::ifstream file(DATABASE_FILE, std::ios::binary);
-       Opens DATABASE_FILE in binary mode. If opening fails, returns 0.
-
-    2. Read the shop count
-       Reads a std::int32_t (rawCount) from the file — exactly 4 bytes,
-       portable across platforms. If the read fails, or rawCount is
-       negative, or rawCount exceeds MAX_SHOPS, returns 0.
-
-    3. Convert and store the count
-       count = static_cast<std::size_t>(rawCount);
-       Since rawCount is guaranteed non-negative and <= MAX_SHOPS, the cast
-       to std::size_t is safe.
-
-    4. Read the shop objects (if any)
-       If count > 0, reads exactly count * sizeof(Shop) bytes directly into
-       the buffer. If this read fails, returns 0.
-
-    5. Return the number of shops
-       On success, returns count.
-
-  Error handling
-    Returns 0 in all error scenarios, making 0 an ambiguous result (could
-    mean "no shops" or "error"). The caller cannot distinguish between an
-    empty database and a file I/O / validation failure.
-
-  Assumptions & potential pitfalls
-    - Buffer safety — The function does not verify that the caller's buffer
-      has enough capacity. The caller must allocate at least
-      MAX_SHOPS * sizeof(Shop) bytes.
-    - Trivial copyability — Shop must be trivially copyable, otherwise
-      reading raw bytes into objects is undefined behaviour.
-    - Portable count header — std::int32_t (from <cstdint>) is used instead
-      of plain int for the count header. Plain int has a platform-dependent
-      size (the C++ standard only guarantees at least 16 bits), and
-      std::size_t varies between 4 and 8 bytes across architectures.
-      std::int32_t is guaranteed to be exactly 32 bits on all platforms,
-      ensuring the binary file format is consistent.
-    - Endianness & portability — The file format assumes the same endianness
-      as the running program. Files written on a different-endian platform
-      may be unreadable.
-    - No versioning or integrity check — There is no magic number, checksum,
-      or format version, making the code fragile to file corruption or
-      format changes.
+Both readShops and writeShops use std::int32_t for the count header,
+keeping the read and write sides in agreement.
 
 ----------------------------------------------------------------------
-Function: bool writeShops(const Shop *shops, std::size_t count)
+Input validation (stdin checks)
 ----------------------------------------------------------------------
 
-writeShops(const Shop *shops, std::size_t count) — opens shops.dat in
-binary output mode (overwriting any previous content), writes the count as
-a 4-byte std::int32_t, then writes all count Shop records as raw bytes.
-Reports success or failure with a console message and a bool return value.
-On failure the file may be left in a partially-written state, since there
-is no atomic-write mechanism (e.g., a temporary file + rename).
+The program uses std::cin.getline() for all string input. After each
+getline call, std::cin.fail() is checked to detect buffer overflow (user
+typed more characters than the buffer can hold). On overflow:
 
-  Function signature
-    bool writeShops(const Shop *shops, std::size_t count)
+  a. std::cin.clear() resets the stream fail state.
+  b. std::cin.ignore(..., '\n') discards the leftover input.
+  c. A field-specific error message is printed (e.g. "Input error: title
+     too long").
+  d. The operation is aborted without saving.
 
-    Parameter shops: pointer to a constant array of Shop objects to be
-    written. The function does not modify the data.
-
-    Parameter count: the number of Shop elements to write.
-
-    Return value: true on success, false on failure.
-
-  How it works
-    1. Open the file for writing
-       std::ofstream file(DATABASE_FILE, std::ios::binary);
-       Opens DATABASE_FILE in binary write mode. Creates the file if it
-       does not exist; discards previous content if it does.
-
-    2. Check the file stream
-       If the file could not be opened, prints an error message and returns
-       false.
-
-    3. Write the shop count
-       Converts count to std::int32_t (rawCount) and writes it as 4 raw
-       bytes. This serves as the record count header.
-
-    4. Write the shop data
-       Writes count * sizeof(Shop) bytes from the shops array.
-
-    5. Verify the write operation
-       If any write failed, prints an error message and returns false.
-
-    6. Return success
-       On success, returns true.
-
-  Error handling
-    - Two distinct error messages: one for file open failure, one for write
-      failure.
-    - On failure, the file stream is closed automatically by the destructor,
-      but the file may be left in a partially-written state.
-
-  Assumptions & potential pitfalls
-    - Data loss on failure — If the write fails partway through, the output
-      file is left inconsistent. The original data is overwritten before
-      the new data is fully written.
-    - Integer truncation — The function converts std::size_t to std::int32_t.
-      Since count is bounded by MAX_SHOPS (100), this is not a practical
-      concern, but the cast is technically narrowing.
-    - Portable count header — Both readShops and writeShops use std::int32_t
-      for the count header, keeping the read and write sides in agreement
-      and ensuring the 4-byte header is consistent across platforms.
-    - Trivial copyability — Same constraint as readShops.
-    - Endianness & portability — Same limitation as readShops.
-    - No atomicity — No temporary file + rename strategy; a crash during
-      writing corrupts the database.
-    - No null-pointer check — If shops is nullptr and count > 0, behaviour
-      is undefined.
+This pattern is used in:
+  - addData()       — for title, address, and phone fields.
+  - definePhoneByAddress() — for the search address.
+  - main()          — for the menu choice (std::cin >> menuItem with
+                      fail() check for non-numeric input).
 
 ----------------------------------------------------------------------
-Function: void addData(Shop *shops, std::size_t *count)
+Functions
 ----------------------------------------------------------------------
 
-addData(Shop *shops, std::size_t *count) — prompts the user for the three
-fields via std::cin.getline(), validates each input for buffer overflow,
-stores the new entry at the first free slot in the array, increments the
-count, and persists the entire array to disk via writeShops(). If the disk
-write fails, the count is rolled back to its previous value. The function
-rejects new entries when the array is full (count >= MAX_SHOPS).
+readShops(Shop *shops)
+  Opens shops.dat in binary input mode, reads the 4-byte std::int32_t
+  count, validates it (non-negative and <= MAX_SHOPS), then reads count
+  Shop records into the buffer. Returns the number of shops read, or 0 on
+  any error (does not distinguish between an empty file and an I/O error).
 
-  Function signature
-    void addData(Shop *shops, std::size_t *count)
+writeShops(const Shop *shops, std::size_t count)
+  Opens shops.dat in binary output mode (overwriting previous content),
+  writes the count as a 4-byte std::int32_t, then writes all count Shop
+  records as raw bytes. Returns true on success, false on failure. On
+  failure the file may be left partially written — there is no atomic-write
+  mechanism.
 
-    Parameter shops: pointer to the in-memory array of Shop objects. The
-    new entry is written at index *count.
+addData(Shop *shops, std::size_t *count)
+  Prompts for title, address, and phone via std::cin.getline() with
+  overflow detection on each field. Stores the entry at index *count,
+  increments the count, and persists via writeShops(). Rolls back *count if
+  the write fails. Rejects when count >= MAX_SHOPS.
 
-    Parameter count: pointer to the current number of shops. Incremented
-    on success via the pointer.
+viewData(const Shop *shops, std::size_t count)
+  Iterates over the array and prints all records with a 1-based index.
+  Prints a message if count is 0.
 
-    Return value: none (void).
+definePhoneByAddress(const Shop *shops, std::size_t count)
+  Prompts for an address with overflow detection, then performs a
+  case-sensitive linear search using std::strcmp. Prints the phone number
+  of the first match, or a "not found" message.
 
-  How it works
-    1. Capture the insertion index
-       std::size_t index = *count;
-
-    2. Check capacity
-       If index >= MAX_SHOPS, prints "Database is full" and returns.
-
-    3. Read user input with overflow detection
-       Prompts for three fields via std::cin.getline():
-         - Title   (buffer: 64)
-         - Address (buffer: 128)
-         - Phone   (buffer: 32)
-       After each getline, checks std::cin.fail(). If the failbit is set
-       (user typed more characters than the buffer can hold), the function:
-         a. Clears the stream state with std::cin.clear()
-         b. Discards leftover input with std::cin.ignore()
-         c. Prints a field-specific error (e.g. "Input error: title too
-            long")
-         d. Returns without saving
-       This prevents corrupted input from propagating into subsequent reads
-       or being persisted to the file.
-
-    4. Update the in-memory count
-       *count = index + 1;
-       Incremented optimistically before the disk write.
-
-    5. Persist to file
-       Calls writeShops(shops, *count).
-
-    6. Rollback on failure
-       If writeShops returns false, *count is restored to index.
-
-    7. Confirm success
-       Prints "Data saved".
-
-  Error handling
-    - Capacity check prevents buffer overflow of the in-memory array.
-    - Input overflow detection on every field — failbit is caught, stream
-      is cleaned, and the operation is aborted with a specific message.
-    - Rollback mechanism restores the count if the disk write fails.
-      (The new data remains in the shops[index] slot but will be overwritten
-      by the next successful addData call.)
-
-  Assumptions & potential pitfalls
-    - No semantic validation — Any input that fits the buffer is accepted,
-      including empty strings.
-    - No preview before saving — The user cannot review entered data before
-      it is committed to disk.
-    - The function assumes *count was initialised by a prior readShops call.
-
-----------------------------------------------------------------------
-Function: void viewData(const Shop *shops, std::size_t count)
-----------------------------------------------------------------------
-
-viewData(const Shop *shops, std::size_t count) — iterates over the
-in-memory array and prints all records with a 1-based index. If count is 0,
-it prints a message indicating the file is empty or missing.
-
-  Function signature
-    void viewData(const Shop *shops, std::size_t count)
-
-    Parameter shops: pointer to a constant array of Shop objects to display.
-
-    Parameter count: the number of Shop elements to display.
-
-    Return value: none (void).
-
-  How it works
-    1. Check for empty database
-       If count == 0, prints "File is empty or does not exist" and returns.
-
-    2. Print header
-       Displays "Shops in file: N".
-
-    3. Iterate and print
-       Loops from index = 0 to count - 1, printing each shop with a
-       1-based index and all three fields.
-
-  Error handling
-    - No explicit error handling beyond the empty-count guard.
-
-  Assumptions & potential pitfalls
-    - Const-correctness — Takes const Shop* for read-only access.
-    - The message "File is empty or does not exist" is slightly misleading:
-      the function works on the in-memory array, and count == 0 could also
-      mean readShops failed, not that the file is actually empty.
-
-----------------------------------------------------------------------
-Function: void definePhoneByAddress(const Shop *shops, std::size_t count)
-----------------------------------------------------------------------
-
-definePhoneByAddress(const Shop *shops, std::size_t count) — performs a
-case-sensitive, exact-match linear search through the shops array for a
-user-provided address. Validates the address input for buffer overflow
-before searching. If a match is found, the corresponding telephone number
-is printed; otherwise a "not found" message is shown. Only the first
-matching record is returned; duplicate addresses are ignored silently.
-
-  Function signature
-    void definePhoneByAddress(const Shop *shops, std::size_t count)
-
-    Parameter shops: pointer to a constant array of Shop objects to search.
-
-    Parameter count: the number of Shop elements in the array.
-
-    Return value: none (void).
-
-  How it works
-    1. Check for empty database
-       If count == 0, prints "File is empty or does not exist" and returns.
-
-    2. Prompt and read address with overflow detection
-       Prints "Enter address: " and reads into a local buffer address[128]
-       via std::cin.getline(address, 128).
-       If std::cin.fail() (user typed more than 127 characters):
-         a. Clears the stream with std::cin.clear()
-         b. Discards leftover input with std::cin.ignore()
-         c. Prints "Input error: address too long"
-         d. Returns without searching
-
-    3. Linear search
-       Iterates i from 0 to count - 1. For each shop, compares
-       shops[i].address with the user input using std::strcmp.
-
-    4. Match found
-       If strcmp returns 0, prints "Tel. number: " followed by
-       shops[i].phone and returns immediately.
-
-    5. No match
-       If the loop completes without finding a match, prints
-       "Shop with this address was not found".
-
-  Error handling
-    - Empty-database guard prevents searching when there is no data.
-    - Input overflow detection — caught via std::cin.fail(), stream is
-      cleaned, and the function returns with an error message.
-    - No-match case is handled gracefully with a user message.
-
-  Assumptions & potential pitfalls
-    - Exact match only — std::strcmp is case-sensitive and requires an
-      exact character-by-character match.
-    - Only first match returned — Duplicate addresses are not reported.
-    - No whitespace trimming — Leading or trailing spaces cause a mismatch.
-    - O(n) linear scan — acceptable for MAX_SHOPS = 100.
-    - Const-correctness is properly maintained.
-
-----------------------------------------------------------------------
-Function: int main(void)
-----------------------------------------------------------------------
-
-main() — orchestrates the program. It declares the shops array, loads data
-once via readShops(), then runs an infinite loop displaying a 4-option
-menu. Input validation handles non-numeric entries by clearing the stream
-fail state and discarding the invalid line. The loop exits only when the
-user selects option 4 (Exit).
-
-  Function signature
-    int main(void)
-
-    Parameters: none.
-
-    Return value: 0 on successful termination.
-
-  How it works
-    1. Local declarations
-       Shop shops[MAX_SHOPS];
-       std::size_t count = readShops(shops);
-       int menuItem;
-
-    2. Print task label
-       Prints "Task 2".
-
-    3. Infinite menu loop
-       for (;;) repeatedly:
-         a. Displays the 4-option menu
-         b. Reads the user's choice via std::cin >> menuItem
-         c. If extraction fails (non-numeric input), clears the stream
-            state and prints "Invalid menu item"
-         d. Discards the rest of the input line via std::cin.ignore()
-         e. Dispatches:
-            - 1 -> addData(shops, &count)
-            - 2 -> viewData(shops, count)
-            - 3 -> definePhoneByAddress(shops, count)
-            - 4 -> break (exit loop)
-            - otherwise -> "Invalid menu item"
-
-    4. Program termination
-       Returns 0.
-
-  Error handling
-    - Non-numeric menu input is caught via std::cin.fail(), the stream is
-      cleared, and the program continues.
-    - Menu items outside 1-4 are rejected with a message.
-    - If readShops returns 0, the program starts with an empty array; the
-      user can still add data.
-
-  Assumptions & potential pitfalls
-    - The ignore always consumes one full line after menu input, preventing
-      leftover characters from interfering with subsequent reads.
-    - The in-memory array is the single source of truth; external file
-      modifications are invisible until the program is restarted.
-    - Data is persisted immediately on each addData call (no save/discard
-      prompt).
-    - The entire file is rewritten on each add, not appended — fine for
-      MAX_SHOPS = 100.
+main()
+  Declares the shops array, loads data via readShops(), then runs an
+  infinite menu loop (1-Add, 2-View, 3-Search, 4-Exit). Non-numeric menu
+  input is caught via std::cin.fail() and the stream is cleaned. The loop
+  exits on option 4.
