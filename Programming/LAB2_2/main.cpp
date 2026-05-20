@@ -5,12 +5,13 @@
 /*  By: st93642@students.tsi.lv                             TT    SSSSSSS II */
 /*                                                          TT         SS II */
 /*  Created: May 16 2026 12:46 st93642                      TT    SSSSSSS II */
-/*  Updated: May 18 2026 18:41 93642                                         */
+/*  Updated: May 20 2026 08:30 st93642                                       */
 /*                                                                           */
 /*   Transport and Telecommunication Institute - Riga, Latvia                */
 /*                       https://tsi.lv                                      */
 /*****************************************************************************/
 
+#include <cstdint>
 #include <cstring>
 #include <cstddef>
 #include <fstream>
@@ -30,7 +31,7 @@ struct Shop
 std::size_t readShops(Shop *shops)
 {
 	std::ifstream file(DATABASE_FILE, std::ios::binary);
-	int			rawCount = 0;
+	std::int32_t	rawCount = 0;
 	std::size_t	count;
 
 	if (!file) return (0);
@@ -48,18 +49,18 @@ std::size_t readShops(Shop *shops)
 bool writeShops(const Shop *shops, std::size_t count)
 {
 	std::ofstream file(DATABASE_FILE, std::ios::binary);
-	int rawCount = static_cast<int>(count);
+	std::int32_t rawCount = static_cast<std::int32_t>(count);
 
 	if (!file)
 	{
-		std::cout << "Cannot open file for writing.\n";
+		std::cout << "Cannot open file for writing\n";
 		return (false);
 	}
 	file.write(reinterpret_cast<const char *>(&rawCount), sizeof(rawCount));
 	file.write(reinterpret_cast<const char *>(shops), sizeof(Shop) * count);
 	if (!file)
 	{
-		std::cout << "Cannot write data to file.\n";
+		std::cout << "Cannot write data to file\n";
 		return (false);
 	}
 	return (true);
@@ -71,7 +72,7 @@ void addData(Shop *shops, std::size_t *count)
 
 	if (index >= MAX_SHOPS)
 	{
-		std::cout << "Database is full.\n";
+		std::cout << "Database is full\n";
 		return;
 	}
 
@@ -87,14 +88,14 @@ void addData(Shop *shops, std::size_t *count)
 		*count = index;
 		return;
 	}
-	std::cout << "Data saved.\n";
+	std::cout << "Data saved\n";
 }
 
 void viewData(const Shop *shops, std::size_t count)
 {
 	if (!count)
 	{
-		std::cout << "File is empty or does not exist.\n";
+		std::cout << "File is empty or does not exist\n";
 		return;
 	}
 	std::cout << "\nShops in file: " << count << '\n';
@@ -111,7 +112,7 @@ void definePhoneByAddress(const Shop *shops, std::size_t count)
 
 	if (!count)
 	{
-		std::cout << "File is empty or does not exist.\n";
+		std::cout << "File is empty or does not exist\n";
 		return;
 	}
 	std::cout << "Enter address: ";
@@ -122,7 +123,7 @@ void definePhoneByAddress(const Shop *shops, std::size_t count)
 			std::cout << "Tel. number: " << shops[i].phone << '\n';
 			return;
 		}
-	std::cout << "Shop with this address was not found.\n";
+	std::cout << "Shop with this address was not found\n";
 }
 
 int main(void)
