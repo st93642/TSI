@@ -100,10 +100,12 @@ void viewData(const Shop *shops, std::size_t count)
 	}
 	std::cout << "\nShops in file: " << count << '\n';
 	for (std::size_t index = 0; index < count; index++)
+	{
 		std::cout << "Shop " << index + 1 << ":\n"
 				  << "  Title: " << shops[index].title << '\n'
 				  << "  Address: " << shops[index].address << '\n'
 				  << "  Tel. number: " << shops[index].phone << '\n';
+	}
 }
 
 void definePhoneByAddress(const Shop *shops, std::size_t count)
@@ -118,11 +120,13 @@ void definePhoneByAddress(const Shop *shops, std::size_t count)
 	std::cout << "Enter address: ";
 	std::cin.getline(address, 128);
 	for (std::size_t i = 0; i < count; i++)
+	{
 		if (std::strcmp(shops[i].address, address) == 0)
 		{
 			std::cout << "Tel. number: " << shops[i].phone << '\n';
 			return;
 		}
+	}
 	std::cout << "Shop with this address was not found\n";
 }
 
