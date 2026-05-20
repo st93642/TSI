@@ -30,19 +30,6 @@
         <mxCell id="n-init" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="i = 0" vertex="1">
           <mxGeometry height="40" width="120" x="115.5" y="279" as="geometry" />
         </mxCell>
-        <mxCell id="cVM8dNcouLVQLOFJUMjv-1" edge="1" parent="1" source="n-loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cAYkd1qodfln6Jge_QN4-16" value="">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="43" y="363" />
-              <mxPoint x="43" y="546" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="cVM8dNcouLVQLOFJUMjv-2" connectable="0" parent="cVM8dNcouLVQLOFJUMjv-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
-          <mxGeometry relative="1" x="-0.2273" y="2" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="n-loop" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="i &amp;lt; count?" vertex="1">
           <mxGeometry height="46" width="140" x="105.5" y="340" as="geometry" />
         </mxCell>
@@ -59,11 +46,11 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cVM8dNcouLVQLOFJUMjv-3" edge="1" parent="1" source="n-strcmp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="n-inc" value="">
+        <mxCell id="cAYkd1qodfln6Jge_QN4-17" edge="1" parent="1" source="n-strcmp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="cAYkd1qodfln6Jge_QN4-16" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cVM8dNcouLVQLOFJUMjv-4" connectable="0" parent="cVM8dNcouLVQLOFJUMjv-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="N O" vertex="1">
-          <mxGeometry relative="1" x="-0.3448" as="geometry">
+        <mxCell id="cAYkd1qodfln6Jge_QN4-18" connectable="0" parent="cAYkd1qodfln6Jge_QN4-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
+          <mxGeometry relative="1" x="-0.6098" y="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -73,22 +60,11 @@
         <mxCell id="e-loop-strcmp" edge="1" parent="1" source="n-loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="n-strcmp" value="YES">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cVM8dNcouLVQLOFJUMjv-5" edge="1" parent="1" source="n-inc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="n-loop">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="n-inc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="i++" vertex="1">
-          <mxGeometry height="40" width="120" x="340" y="457" as="geometry" />
+          <mxGeometry height="40" width="120" x="132" y="720" as="geometry" />
         </mxCell>
         <mxCell id="n-end-common" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="End" vertex="1">
-          <mxGeometry height="40" width="120" x="603" y="585" as="geometry" />
-        </mxCell>
-        <mxCell id="cVM8dNcouLVQLOFJUMjv-6" edge="1" parent="1" source="cAYkd1qodfln6Jge_QN4-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="n-end-common">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="800" y="135" />
-              <mxPoint x="800" y="605" />
-            </Array>
-          </mxGeometry>
+          <mxGeometry height="40" width="120" x="590" y="800" as="geometry" />
         </mxCell>
         <mxCell id="cAYkd1qodfln6Jge_QN4-2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Print message:&lt;/span&gt;&lt;br style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&quot;File is empty or does not exist&quot;&lt;/span&gt;" vertex="1">
           <mxGeometry height="60" width="217" x="561" y="105" as="geometry" />
@@ -108,11 +84,8 @@
         <mxCell id="cAYkd1qodfln6Jge_QN4-12" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Read address via&lt;/span&gt;&lt;br style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;std::cin.getline(address, 128)&lt;/span&gt;" vertex="1">
           <mxGeometry height="44" width="177" x="87" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="cVM8dNcouLVQLOFJUMjv-7" edge="1" parent="1" source="cAYkd1qodfln6Jge_QN4-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="n-end-common">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="cAYkd1qodfln6Jge_QN4-16" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Print message:&lt;/span&gt;&lt;br style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&quot;Shop with this address was not found&quot;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="51" width="191" x="80" y="520" as="geometry" />
+          <mxGeometry height="51" width="191" x="304.5" y="438" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
