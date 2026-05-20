@@ -36,6 +36,9 @@
         <mxCell id="e-init-loop" edge="1" parent="1" source="n-init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="n-loop">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="n-notfound" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;" value="Print message:&lt;br&gt;&amp;quot;Shop with this address was not found&amp;quot;" vertex="1">
+          <mxGeometry height="50" width="180" x="115.5" y="596" as="geometry" />
+        </mxCell>
         <mxCell id="cAYkd1qodfln6Jge_QN4-9" edge="1" parent="1" source="n-strcmp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cAYkd1qodfln6Jge_QN4-11" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="550" y="363" as="targetPoint" />
@@ -43,14 +46,6 @@
         </mxCell>
         <mxCell id="cAYkd1qodfln6Jge_QN4-10" connectable="0" parent="cAYkd1qodfln6Jge_QN4-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="YES" vertex="1">
           <mxGeometry relative="1" x="-0.0492" y="2" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="cAYkd1qodfln6Jge_QN4-17" edge="1" parent="1" source="n-strcmp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="cAYkd1qodfln6Jge_QN4-16" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="cAYkd1qodfln6Jge_QN4-18" connectable="0" parent="cAYkd1qodfln6Jge_QN4-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
-          <mxGeometry relative="1" x="-0.6098" y="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -83,9 +78,6 @@
         </mxCell>
         <mxCell id="cAYkd1qodfln6Jge_QN4-12" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Read address via&lt;/span&gt;&lt;br style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;std::cin.getline(address, 128)&lt;/span&gt;" vertex="1">
           <mxGeometry height="44" width="177" x="87" y="200" as="geometry" />
-        </mxCell>
-        <mxCell id="cAYkd1qodfln6Jge_QN4-16" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Print message:&lt;/span&gt;&lt;br style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;&quot;Shop with this address was not found&quot;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="51" width="191" x="304.5" y="438" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
